@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Abstractions\Services\" />
     <Folder Include="Queries\" />
     <Folder Include="Commands\" />
   </ItemGroup>

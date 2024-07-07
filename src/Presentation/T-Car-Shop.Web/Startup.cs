@@ -1,7 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
+﻿using T_Car_Shop.Infrastructure;
+using T_Car_Shop.Web.Extensions;
 using System.Reflection;
-using T_Car_Shop.Infrastructure;
 
 namespace T_Car_Shop.Web
 {
@@ -9,6 +8,8 @@ namespace T_Car_Shop.Web
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAppOptions();
+            services.AddAppDbContext();
 
             services.AddMediatR(config => config.RegisterServicesFromAssemblies(Assembly.GetAssembly(typeof(AssemblyMarker))));
             services.AddControllers();

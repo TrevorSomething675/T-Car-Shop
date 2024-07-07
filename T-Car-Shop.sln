@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "T-Car-Shop.Infrastructure",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "T-Car-Shop.Core", "src\Core\T-Car-Shop.Core\T-Car-Shop.Core.csproj", "{1CF36C4A-6929-4F81-A53A-4F7299FA9B6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T-Car-Shop.DataAccess", "src\Infrasrtucture\T-Car-Shop.DataAccess\T-Car-Shop.DataAccess.csproj", "{A8F7B069-C7A0-48C8-9192-ED007CBC5C90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "T-Car-Shop.DataAccess", "src\Infrasrtucture\T-Car-Shop.DataAccess\T-Car-Shop.DataAccess.csproj", "{A8F7B069-C7A0-48C8-9192-ED007CBC5C90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

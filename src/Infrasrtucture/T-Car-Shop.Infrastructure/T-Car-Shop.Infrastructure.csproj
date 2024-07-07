@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>T_Car_Shop.Infrastructure</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\T-Car-Shop.Core\T-Car-Shop.Core.csproj" />
+    <ProjectReference Include="..\T-Car-Shop.DataAccess\T-Car-Shop.DataAccess.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="MediatR" Version="12.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Queries\" />
+    <Folder Include="Commands\" />
+  </ItemGroup>
+
+</Project>

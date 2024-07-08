@@ -1,8 +1,8 @@
-﻿using T_Car_Shop.DataAccess.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using T_Car_Shop.DataAccess.Configuration;
 using Microsoft.Extensions.Options;
 using T_Car_Shop.Core.OptionModels;
+using T_Car_Shop.Core.Entities;
 
 namespace T_Car_Shop.DataAccess.Contexts
 {

@@ -1,4 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using T_Car_Shop.Infrastructure.Commands.CarCommands;
+using T_Car_Shop.Infrastructure.Queries.CarQueries;
+using T_Car_Shop.Core.DomainModels;
+using Microsoft.AspNetCore.Mvc;
+using T_Car_Shop.Core.Shared;
+using MediatR;
 
 namespace T_Car_Shop.Web.Controllers
 {
@@ -6,10 +11,17 @@ namespace T_Car_Shop.Web.Controllers
     [ApiController]
     public class CarController : ControllerBase
     {
-        [HttpGet]
-        public async Task<ActionResult> Get()
+        private readonly IMediator _mediator;
+        public CarController(IMediator mediator) 
         {
-            return Ok("jija");
+            _mediator = mediator;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IResult<Car>>> Get(CancellationToken cancellationToken = default)
+        {
+            return (await _mediator.Send(new GetCarsQuery(), cancellationToken)).ToActionResult();
+            
         }
 
         [HttpPost]
@@ -19,9 +31,9 @@ namespace T_Car_Shop.Web.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult> Remove()
+        public async Task<Result<Guid>> Remove([FromQuery] Guid carId, CancellationToken cancellationToken = default)
         {
-            return Ok("jija");
+            return (await _mediator.Send(new RemoveCarCommand(carId), cancellationToken))).ToActionResult()
         }
 
         [HttpPut]

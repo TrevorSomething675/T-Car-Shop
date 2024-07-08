@@ -10,3 +10,4 @@ E:\Repositories\T-Car-Shop\src\Core\T-Car-Shop.Core\obj\Debug\net8.0\T-Car-Shop.
 E:\Repositories\T-Car-Shop\src\Core\T-Car-Shop.Core\obj\Debug\net8.0\refint\T-Car-Shop.Core.dll
 E:\Repositories\T-Car-Shop\src\Core\T-Car-Shop.Core\obj\Debug\net8.0\T-Car-Shop.Core.pdb
 E:\Repositories\T-Car-Shop\src\Core\T-Car-Shop.Core\obj\Debug\net8.0\ref\T-Car-Shop.Core.dll
+E:\Repositories\T-Car-Shop\src\Core\T-Car-Shop.Core\obj\Debug\net8.0\T-Car-Shop.Core.csproj.AssemblyReference.cache

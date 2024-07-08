@@ -16,3 +16,5 @@ E:\Repositories\T-Car-Shop\src\Infrasrtucture\T-Car-Shop.Infrastructure\obj\Debu
 E:\Repositories\T-Car-Shop\src\Infrasrtucture\T-Car-Shop.Infrastructure\obj\Debug\net8.0\ref\T-Car-Shop.Infrastructure.dll
 E:\Repositories\T-Car-Shop\src\Infrasrtucture\T-Car-Shop.Infrastructure\bin\Debug\net8.0\T-Car-Shop.DataAccess.dll
 E:\Repositories\T-Car-Shop\src\Infrasrtucture\T-Car-Shop.Infrastructure\bin\Debug\net8.0\T-Car-Shop.DataAccess.pdb
+E:\Repositories\T-Car-Shop\src\Infrasrtucture\T-Car-Shop.Infrastructure\bin\Debug\net8.0\T-Car-Shop.Application.dll
+E:\Repositories\T-Car-Shop\src\Infrasrtucture\T-Car-Shop.Infrastructure\bin\Debug\net8.0\T-Car-Shop.Application.pdb

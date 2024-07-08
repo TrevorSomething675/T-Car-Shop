@@ -1,4 +1,6 @@
-﻿using T_Car_Shop.Infrastructure;
+﻿using T_Car_Shop.Application.Repositories;
+using T_Car_Shop.DataAccess.Repositories;
+using T_Car_Shop.Infrastructure;
 using T_Car_Shop.Web.Extensions;
 using System.Reflection;
 
@@ -10,6 +12,9 @@ namespace T_Car_Shop.Web
         {
             services.AddAppOptions();
             services.AddAppDbContext();
+            services.AddAppAutoMapper();
+
+            services.AddScoped<ICarRepository, CarRepository>();
 
             services.AddMediatR(config => config.RegisterServicesFromAssemblies(Assembly.GetAssembly(typeof(AssemblyMarker))));
             services.AddControllers();

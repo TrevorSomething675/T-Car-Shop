@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using T_Car_Shop.DataAccess.Entities;
 using Microsoft.EntityFrameworkCore;
+using T_Car_Shop.Core.Entities;
 
 namespace T_Car_Shop.DataAccess.Configuration
 {

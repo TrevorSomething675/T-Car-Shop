@@ -1,5 +1,6 @@
-﻿using T_Car_Shop.Infrastructure.Models;
-using T_Car_Shop.DataAccess.Entities;
+﻿using T_Car_Shop.Core.DomainModels;
+using T_Car_Shop.Core.Entities;
+using T_Car_Shop.Core.Shared;
 using AutoMapper;
 
 namespace T_Car_Shop.Infrastructure.Mappings.CarProfile
@@ -9,6 +10,8 @@ namespace T_Car_Shop.Infrastructure.Mappings.CarProfile
         public CarProfile() 
         {
             CreateMap<Car, CarEntitiy>().ReverseMap();
+            CreateMap<PagedResult<Car>, PagedResult<CarEntitiy>>()
+                .ReverseMap();
         }
     }
 }

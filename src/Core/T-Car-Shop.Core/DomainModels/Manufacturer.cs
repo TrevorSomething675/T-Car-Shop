@@ -1,8 +1,8 @@
 ﻿namespace T_Car_Shop.Core.DomainModels
 {
-    public class Manufacturer
+    public class Manufacturer : BaseDomainModel
     {
-        public string Name { get; set; }
-        public List<Brand> Brands { get; set; }
+        public string? Name { get; set; }
+        public List<Brand>? Brands { get; set; }
     }
 }

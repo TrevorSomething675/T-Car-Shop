@@ -1,9 +1,9 @@
 ﻿using T_Car_Shop.Infrastructure.Commands.CarCommands;
 using T_Car_Shop.Infrastructure.Queries.CarQueries;
-using T_Car_Shop.Core.DomainModels;
 using Microsoft.AspNetCore.Mvc;
 using T_Car_Shop.Core.Shared;
 using MediatR;
+using T_Car_Shop.Core.DomainModels;
 
 namespace T_Car_Shop.Web.Controllers
 {
@@ -18,28 +18,27 @@ namespace T_Car_Shop.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IResult<Car>>> Get(CancellationToken cancellationToken = default)
+        public async Task<IActionResult> Get(CancellationToken cancellationToken = default)
         {
             return (await _mediator.Send(new GetCarsQuery(), cancellationToken)).ToActionResult();
-            
         }
 
         [HttpPost]
-        public async Task<ActionResult> Create()
+        public async Task<ActionResult> Create([FromQuery] CreateCarCommand command, CancellationToken cancellationToken = default)
         {
-            return Ok("jija");
+            return (await _mediator.Send(command, cancellationToken)).ToActionResult();
         }
 
         [HttpDelete]
-        public async Task<Result<Guid>> Remove([FromQuery] Guid carId, CancellationToken cancellationToken = default)
+        public async Task<IActionResult> Remove([FromQuery] Guid carId, CancellationToken cancellationToken = default)
         {
-            return (await _mediator.Send(new RemoveCarCommand(carId), cancellationToken))).ToActionResult()
+            return (await _mediator.Send(new RemoveCarCommand(carId), cancellationToken)).ToActionResult();
         }
 
         [HttpPut]
-        public async Task<ActionResult> Update()
+        public async Task<IActionResult> Update([FromQuery] Car car, CancellationToken cancellationToken = default)
         {
-            return Ok("jija");
+            return (await _mediator.Send(new UpdateCarCommand(car), cancellationToken)).ToActionResult();
         }
     }
 }

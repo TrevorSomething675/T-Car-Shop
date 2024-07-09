@@ -18,19 +18,18 @@ namespace T_Car_Shop.Infrastructure.Commands.CarCommands
         }
         public async Task<Result<Car>> Handle(RemoveCarCommand request, CancellationToken cancellationToken)
         {
-            var carEntity = new Result<CarEntitiy>();
+            var carEntity = new CarEntity();
             try
             {
                 carEntity = await _carRepository.Remove(request.Id, cancellationToken);
             }
             catch (Exception ex)
             {
-                carEntity.BadRequest();
-                return _mapper.Map<Result<Car>>(carEntity);
+                return _mapper.Map<Result<Car>>(new Result<CarEntity>(carEntity));
             }
 
-            if (carEntity.Value == null)
-                return _mapper.Map<Result<Car>>(carEntity).NotFound();
+            if (carEntity == null)
+                return _mapper.Map<Result<Car>>(new Result<CarEntity>(carEntity)).NotFound();
 
             return _mapper.Map<Result<Car>>(carEntity);
         }

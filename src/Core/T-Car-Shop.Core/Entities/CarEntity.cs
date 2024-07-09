@@ -1,6 +1,6 @@
 ﻿namespace T_Car_Shop.Core.Entities
 {
-    public class CarEntitiy : BaseEntity
+    public class CarEntity : BaseEntity
     {
         public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;

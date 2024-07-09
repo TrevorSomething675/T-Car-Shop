@@ -22,7 +22,7 @@ namespace T_Car_Shop.DataAccess.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("CarEntitiyUserEntity", b =>
+            modelBuilder.Entity("CarEntityUserEntity", b =>
                 {
                     b.Property<Guid>("CarsId")
                         .HasColumnType("uuid");
@@ -37,7 +37,7 @@ namespace T_Car_Shop.DataAccess.Migrations
                     b.ToTable("CarUser", (string)null);
                 });
 
-            modelBuilder.Entity("T_Car_Shop.DataAccess.Entities.BrandEntity", b =>
+            modelBuilder.Entity("T_Car_Shop.Core.Entities.BrandEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -57,7 +57,7 @@ namespace T_Car_Shop.DataAccess.Migrations
                     b.ToTable("Brands");
                 });
 
-            modelBuilder.Entity("T_Car_Shop.DataAccess.Entities.CarEntitiy", b =>
+            modelBuilder.Entity("T_Car_Shop.Core.Entities.CarEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -84,7 +84,7 @@ namespace T_Car_Shop.DataAccess.Migrations
                     b.ToTable("Cars");
                 });
 
-            modelBuilder.Entity("T_Car_Shop.DataAccess.Entities.ImageEntity", b =>
+            modelBuilder.Entity("T_Car_Shop.Core.Entities.ImageEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -108,7 +108,7 @@ namespace T_Car_Shop.DataAccess.Migrations
                     b.ToTable("Images");
                 });
 
-            modelBuilder.Entity("T_Car_Shop.DataAccess.Entities.ManufacturerEntity", b =>
+            modelBuilder.Entity("T_Car_Shop.Core.Entities.ManufacturerEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -123,7 +123,7 @@ namespace T_Car_Shop.DataAccess.Migrations
                     b.ToTable("Manufacturers");
                 });
 
-            modelBuilder.Entity("T_Car_Shop.DataAccess.Entities.RoleEntity", b =>
+            modelBuilder.Entity("T_Car_Shop.Core.Entities.RoleEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -138,7 +138,7 @@ namespace T_Car_Shop.DataAccess.Migrations
                     b.ToTable("Roles");
                 });
 
-            modelBuilder.Entity("T_Car_Shop.DataAccess.Entities.UserEntity", b =>
+            modelBuilder.Entity("T_Car_Shop.Core.Entities.UserEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -166,24 +166,24 @@ namespace T_Car_Shop.DataAccess.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("CarEntitiyUserEntity", b =>
+            modelBuilder.Entity("CarEntityUserEntity", b =>
                 {
-                    b.HasOne("T_Car_Shop.DataAccess.Entities.CarEntitiy", null)
+                    b.HasOne("T_Car_Shop.Core.Entities.CarEntity", null)
                         .WithMany()
                         .HasForeignKey("CarsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("T_Car_Shop.DataAccess.Entities.UserEntity", null)
+                    b.HasOne("T_Car_Shop.Core.Entities.UserEntity", null)
                         .WithMany()
                         .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("T_Car_Shop.DataAccess.Entities.BrandEntity", b =>
+            modelBuilder.Entity("T_Car_Shop.Core.Entities.BrandEntity", b =>
                 {
-                    b.HasOne("T_Car_Shop.DataAccess.Entities.ManufacturerEntity", "Manufacturer")
+                    b.HasOne("T_Car_Shop.Core.Entities.ManufacturerEntity", "Manufacturer")
                         .WithMany("Brands")
                         .HasForeignKey("ManufacturerId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -192,51 +192,50 @@ namespace T_Car_Shop.DataAccess.Migrations
                     b.Navigation("Manufacturer");
                 });
 
-            modelBuilder.Entity("T_Car_Shop.DataAccess.Entities.CarEntitiy", b =>
+            modelBuilder.Entity("T_Car_Shop.Core.Entities.CarEntity", b =>
                 {
-                    b.HasOne("T_Car_Shop.DataAccess.Entities.BrandEntity", "Brand")
+                    b.HasOne("T_Car_Shop.Core.Entities.BrandEntity", "Brand")
                         .WithMany("Cars")
                         .HasForeignKey("BrandId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Brand");
                 });
 
-            modelBuilder.Entity("T_Car_Shop.DataAccess.Entities.ImageEntity", b =>
+            modelBuilder.Entity("T_Car_Shop.Core.Entities.ImageEntity", b =>
                 {
-                    b.HasOne("T_Car_Shop.DataAccess.Entities.CarEntitiy", "Car")
+                    b.HasOne("T_Car_Shop.Core.Entities.CarEntity", "Car")
                         .WithMany("Images")
                         .HasForeignKey("CarId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Car");
                 });
 
-            modelBuilder.Entity("T_Car_Shop.DataAccess.Entities.UserEntity", b =>
+            modelBuilder.Entity("T_Car_Shop.Core.Entities.UserEntity", b =>
                 {
-                    b.HasOne("T_Car_Shop.DataAccess.Entities.RoleEntity", null)
+                    b.HasOne("T_Car_Shop.Core.Entities.RoleEntity", null)
                         .WithMany("Users")
                         .HasForeignKey("RoleEntityId");
                 });
 
-            modelBuilder.Entity("T_Car_Shop.DataAccess.Entities.BrandEntity", b =>
+            modelBuilder.Entity("T_Car_Shop.Core.Entities.BrandEntity", b =>
                 {
                     b.Navigation("Cars");
                 });
 
-            modelBuilder.Entity("T_Car_Shop.DataAccess.Entities.CarEntitiy", b =>
+            modelBuilder.Entity("T_Car_Shop.Core.Entities.CarEntity", b =>
                 {
                     b.Navigation("Images");
                 });
 
-            modelBuilder.Entity("T_Car_Shop.DataAccess.Entities.ManufacturerEntity", b =>
+            modelBuilder.Entity("T_Car_Shop.Core.Entities.ManufacturerEntity", b =>
                 {
                     b.Navigation("Brands");
                 });
 
-            modelBuilder.Entity("T_Car_Shop.DataAccess.Entities.RoleEntity", b =>
+            modelBuilder.Entity("T_Car_Shop.Core.Entities.RoleEntity", b =>
                 {
                     b.Navigation("Users");
                 });

@@ -7,6 +7,6 @@
         public Guid ManufacturerId { get; set; }
         public ManufacturerEntity Manufacturer { get; set; }
 
-        public List<CarEntitiy> Cars { get; set; }
+        public List<CarEntity> Cars { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using MediatR;
 
 namespace T_Car_Shop.Infrastructure.Queries.CarQueries
 {
-    public class GetCarsQueryHandler : IRequestHandler<GetCarsQuery, PagedResult<Car>>
+    public class GetCarsQueryHandler : IRequestHandler<GetCarsQuery, Result<PagedData<Car>>>
     {
         private readonly IMapper _mapper;
         private readonly ICarRepository _carRepository;
@@ -15,12 +15,12 @@ namespace T_Car_Shop.Infrastructure.Queries.CarQueries
             _carRepository = carRepository;
             _mapper = mapper;
         }
-        public async Task<PagedResult<Car>> Handle(GetCarsQuery request, CancellationToken cancellationToken = default)
+        public async Task<Result<PagedData<Car>>> Handle(GetCarsQuery request, CancellationToken cancellationToken = default)
         {
             var pagedCars = await _carRepository.GetAll(cancellationToken);
-            var cars = _mapper.Map<PagedResult<Car>>(pagedCars).Ok();
+            var cars = _mapper.Map<PagedData<Car>>(pagedCars);
 
-            return cars;
+            return new Result<PagedData<Car>>(cars).Ok();
         }
     }
 }

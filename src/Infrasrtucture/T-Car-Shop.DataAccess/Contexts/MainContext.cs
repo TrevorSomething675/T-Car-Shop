@@ -9,7 +9,7 @@ namespace T_Car_Shop.DataAccess.Contexts
     public class MainContext : DbContext
     {
         private readonly DataBaseOptions _options;
-        public DbSet<CarEntitiy> Cars { get; set; }
+        public DbSet<CarEntity> Cars { get; set; }
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<ImageEntity> Images { get; set; }
         public DbSet<BrandEntity> Brands { get; set; }
@@ -29,6 +29,8 @@ namespace T_Car_Shop.DataAccess.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new CarEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new BrandEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new ManufacturerEntityConfiguration());
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace T_Car_Shop.Core.DomainModels
 {
-    public class User
+    public class User : BaseDomainModel
     {
         public string Name { get; set; }
         public string Email { get; set; }

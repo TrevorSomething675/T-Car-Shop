@@ -11,4 +11,8 @@
     <ProjectReference Include="..\..\Core\T-Car-Shop.Core\T-Car-Shop.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>

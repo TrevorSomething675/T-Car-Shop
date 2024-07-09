@@ -4,9 +4,9 @@ using T_Car_Shop.Core.Entities;
 
 namespace T_Car_Shop.DataAccess.Configuration
 {
-    public class CarEntityConfiguration : IEntityTypeConfiguration<CarEntitiy>
+    public class CarEntityConfiguration : IEntityTypeConfiguration<CarEntity>
     {
-        public void Configure(EntityTypeBuilder<CarEntitiy> builder)
+        public void Configure(EntityTypeBuilder<CarEntity> builder)
         {
             builder.HasKey(c => c.Id);
 
@@ -16,7 +16,8 @@ namespace T_Car_Shop.DataAccess.Configuration
 
             builder.HasMany(c => c.Images)
                 .WithOne(i => i.Car)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Cascade)
+                .IsRequired(false);
 
             builder.HasOne(c => c.Brand)
                 .WithMany(b => b.Cars)

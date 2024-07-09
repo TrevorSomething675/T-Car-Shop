@@ -2,30 +2,35 @@
 
 namespace T_Car_Shop.Core.Shared
 {
-    public class Result<T> : IResult<T>
+    public class Result<T> : IActionResult
     {
         public T? Value { get; set; }
         public int StatusCode { get; set; } = 200;
 
-        public IResult<T> Ok()
+        public Result(T? value) 
+        {
+            Value = value;
+        }
+
+        public Result<T> Ok()
         {
             StatusCode = 200;
             return this;
         }
 
-        public IResult<T> NotFound()
+        public Result<T> NotFound()
         {
             StatusCode = 404;
             return this;
         }
 
-        public IResult<T> BadRequest()
+        public Result<T> BadRequest()
         {
             StatusCode = 400;
             return this;
         }
 
-        public ActionResult<IResult<T>> ToActionResult()
+        public ActionResult ToActionResult()
         {
             switch (StatusCode)
             {
@@ -38,6 +43,11 @@ namespace T_Car_Shop.Core.Shared
                 default:
                     return new ObjectResult(this) { StatusCode = StatusCode };
             }
+        }
+
+        public Task ExecuteResultAsync(ActionContext context)
+        {
+            throw new NotImplementedException();
         }
     }
 }

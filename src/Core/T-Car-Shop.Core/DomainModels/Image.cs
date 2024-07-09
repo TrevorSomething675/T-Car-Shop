@@ -1,6 +1,6 @@
 ﻿namespace T_Car_Shop.Core.DomainModels
 {
-    public class Image
+    public class Image : BaseDomainModel
     {
         public string Path { get; set; }
         public string Name { get; set; }

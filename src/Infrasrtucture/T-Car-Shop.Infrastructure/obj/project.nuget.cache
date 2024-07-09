@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "JJiu+IPLWIc=",
+  "dgSpecHash": "VaDolPK/kvM=",
   "success": true,
   "projectFilePath": "E:\\Repositories\\T-Car-Shop\\src\\Infrasrtucture\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Win10Pro\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
+    "C:\\Users\\Win10Pro\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
+    "C:\\Users\\Win10Pro\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\Win10Pro\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\Win10Pro\\.nuget\\packages\\mediatr\\12.3.0\\mediatr.12.3.0.nupkg.sha512",
     "C:\\Users\\Win10Pro\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Win10Pro\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

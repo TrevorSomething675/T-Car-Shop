@@ -9,8 +9,8 @@ namespace T_Car_Shop.Infrastructure.Mappings.CarProfile
     {
         public CarProfile() 
         {
-            CreateMap<Car, CarEntitiy>().ReverseMap();
-            CreateMap<PagedResult<Car>, PagedResult<CarEntitiy>>()
+            CreateMap<Car, CarEntity>().ReverseMap();
+            CreateMap<PagedData<Car>, PagedData<CarEntity>>()
                 .ReverseMap();
         }
     }

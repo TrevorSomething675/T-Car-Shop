@@ -4,5 +4,5 @@ using MediatR;
 
 namespace T_Car_Shop.Infrastructure.Queries.CarQueries
 {
-    public class GetCarsQuery : IRequest<PagedResult<Car>>;
+    public class GetCarsQuery : IRequest<Result<PagedData<Car>>>;
 }

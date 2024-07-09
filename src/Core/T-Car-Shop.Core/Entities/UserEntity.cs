@@ -6,6 +6,6 @@
         public string Email { get; set; }
         public string PasswordHash { get; set; }
 
-        public List<CarEntitiy> Cars { get; set; }
+        public List<CarEntity> Cars { get; set; }
     }
 }

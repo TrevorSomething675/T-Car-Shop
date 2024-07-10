@@ -1,6 +1,6 @@
-﻿using T_Car_Shop.Core.Models.WebModels.Car;
-using T_Car_Shop.Core.Models.DomainModels;
-using T_Car_Shop.DataAccess.Entities;
+﻿using T_Car_Shop.Core.Models.Presentation.Car;
+using T_Car_Shop.Core.Models.Infrastructure;
+using T_Car_Shop.Core.Models.DataAccess;
 using T_Car_Shop.Core.Shared;
 using AutoMapper;
 

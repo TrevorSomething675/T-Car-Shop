@@ -1,5 +1,4 @@
-﻿using T_Car_Shop.Core.Models.WebModels.Car;
-using T_Car_Shop.Core.Models.DomainModels;
+﻿using T_Car_Shop.Core.Models.Presentation.Car;
 using T_Car_Shop.Core.Shared;
 using MediatR;
 

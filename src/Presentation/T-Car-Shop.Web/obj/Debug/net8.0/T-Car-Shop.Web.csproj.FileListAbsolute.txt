@@ -119,7 +119,6 @@ E:\Repositories\T-Car-Shop\src\Presentation\T-Car-Shop.Web\obj\Debug\net8.0\T-Ca
 E:\Repositories\T-Car-Shop\src\Presentation\T-Car-Shop.Web\obj\Debug\net8.0\T-Car-Shop.Web.AssemblyInfoInputs.cache
 E:\Repositories\T-Car-Shop\src\Presentation\T-Car-Shop.Web\obj\Debug\net8.0\T-Car-Shop.Web.AssemblyInfo.cs
 E:\Repositories\T-Car-Shop\src\Presentation\T-Car-Shop.Web\obj\Debug\net8.0\T-Car-Shop.Web.csproj.CoreCompileInputs.cache
-E:\Repositories\T-Car-Shop\src\Presentation\T-Car-Shop.Web\obj\Debug\net8.0\T-Car-Shop.Web.MvcApplicationPartsAssemblyInfo.cs
 E:\Repositories\T-Car-Shop\src\Presentation\T-Car-Shop.Web\obj\Debug\net8.0\T-Car-Shop.Web.MvcApplicationPartsAssemblyInfo.cache
 E:\Repositories\T-Car-Shop\src\Presentation\T-Car-Shop.Web\obj\Debug\net8.0\T-Car-Shop.Web.sourcelink.json
 E:\Repositories\T-Car-Shop\src\Presentation\T-Car-Shop.Web\bin\Debug\net8.0\appsettings.Development.json

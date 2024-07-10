@@ -1,5 +1,5 @@
 ﻿using T_Car_Shop.Application.Repositories;
-using T_Car_Shop.DataAccess.Entities;
+using T_Car_Shop.Core.Models.DataAccess;
 using T_Car_Shop.DataAccess.Contexts;
 using Microsoft.EntityFrameworkCore;
 using T_Car_Shop.Core.Shared;

@@ -1,5 +1,5 @@
 ﻿using T_Car_Shop.DataAccess.Configuration;
-using T_Car_Shop.DataAccess.Entities;
+using T_Car_Shop.Core.Models.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using T_Car_Shop.Core.OptionModels;

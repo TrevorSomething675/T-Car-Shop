@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\T-Car-Shop.Application\T-Car-Shop.Application.csproj" />
+    <ProjectReference Include="..\..\Core\T-Car-Shop.Application\T-Car-Shop.Application.csproj" />
     <ProjectReference Include="..\T-Car-Shop.DataAccess\T-Car-Shop.DataAccess.csproj" />
   </ItemGroup>
 

@@ -3096,8 +3096,8 @@
     },
     "T-Car-Shop.Application/1.0.0": {
       "type": "project",
-      "path": "../T-Car-Shop.Application/T-Car-Shop.Application.csproj",
-      "msbuildProject": "../T-Car-Shop.Application/T-Car-Shop.Application.csproj"
+      "path": "../../Core/T-Car-Shop.Application/T-Car-Shop.Application.csproj",
+      "msbuildProject": "../../Core/T-Car-Shop.Application/T-Car-Shop.Application.csproj"
     },
     "T-Car-Shop.Core/1.0.0": {
       "type": "project",
@@ -3143,8 +3143,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj": {
-              "projectPath": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj"
+            "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj": {
+              "projectPath": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj"
             }
           }
         }

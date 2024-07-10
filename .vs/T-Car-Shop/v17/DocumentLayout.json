@@ -3,8 +3,36 @@
   "WorkspaceRootPath": "E:\\Repositories\\T-Car-Shop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{97974DAB-60D1-4514-8C95-BEC7B32744E8}|src\\CarService\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj|e:\\repositories\\t-car-shop\\src\\carservice\\presentation\\t-car-shop.web\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97974DAB-60D1-4514-8C95-BEC7B32744E8}|src\\CarService\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj|solutionrelative:src\\carservice\\presentation\\t-car-shop.web\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{01400ADF-49CC-4EB4-82A6-F5042155DB1C}|src\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj|e:\\repositories\\t-car-shop\\src\\presentation\\t-car-shop.web\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01400ADF-49CC-4EB4-82A6-F5042155DB1C}|src\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj|solutionrelative:src\\presentation\\t-car-shop.web\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01400ADF-49CC-4EB4-82A6-F5042155DB1C}|src\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj|e:\\repositories\\t-car-shop\\src\\presentation\\t-car-shop.web\\t-car-shop.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{01400ADF-49CC-4EB4-82A6-F5042155DB1C}|src\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj|solutionrelative:src\\presentation\\t-car-shop.web\\t-car-shop.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDF4E7AC-D4E4-49D0-A6E0-853A046551E9}|src\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj|e:\\repositories\\t-car-shop\\src\\infrastructure\\t-car-shop.infrastructure\\queries\\carqueries\\getcarsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDF4E7AC-D4E4-49D0-A6E0-853A046551E9}|src\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj|solutionrelative:src\\infrastructure\\t-car-shop.infrastructure\\queries\\carqueries\\getcarsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDF4E7AC-D4E4-49D0-A6E0-853A046551E9}|src\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj|e:\\repositories\\t-car-shop\\src\\infrastructure\\t-car-shop.infrastructure\\commands\\carcommands\\removecarcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDF4E7AC-D4E4-49D0-A6E0-853A046551E9}|src\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj|solutionrelative:src\\infrastructure\\t-car-shop.infrastructure\\commands\\carcommands\\removecarcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDF4E7AC-D4E4-49D0-A6E0-853A046551E9}|src\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj|e:\\repositories\\t-car-shop\\src\\infrastructure\\t-car-shop.infrastructure\\commands\\carcommands\\updatecarcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDF4E7AC-D4E4-49D0-A6E0-853A046551E9}|src\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj|solutionrelative:src\\infrastructure\\t-car-shop.infrastructure\\commands\\carcommands\\updatecarcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDF4E7AC-D4E4-49D0-A6E0-853A046551E9}|src\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj|e:\\repositories\\t-car-shop\\src\\infrastructure\\t-car-shop.infrastructure\\commands\\carcommands\\createcarcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDF4E7AC-D4E4-49D0-A6E0-853A046551E9}|src\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj|solutionrelative:src\\infrastructure\\t-car-shop.infrastructure\\commands\\carcommands\\createcarcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28C0D8FF-F002-453A-B1B5-264623D134F0}|src\\Infrastructure\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj|e:\\repositories\\t-car-shop\\src\\infrastructure\\t-car-shop.application\\repositories\\icarrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28C0D8FF-F002-453A-B1B5-264623D134F0}|src\\Infrastructure\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj|solutionrelative:src\\infrastructure\\t-car-shop.application\\repositories\\icarrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3AC1441-3454-40F5-A099-1231C63A67F6}|src\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj|e:\\repositories\\t-car-shop\\src\\infrastructure\\t-car-shop.dataaccess\\repositories\\carrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3AC1441-3454-40F5-A099-1231C63A67F6}|src\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj|solutionrelative:src\\infrastructure\\t-car-shop.dataaccess\\repositories\\carrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -20,13 +48,104 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Startup.cs",
-              "DocumentMoniker": "E:\\Repositories\\T-Car-Shop\\src\\CarService\\Presentation\\T-Car-Shop.Web\\Startup.cs",
-              "RelativeDocumentMoniker": "src\\CarService\\Presentation\\T-Car-Shop.Web\\Startup.cs",
-              "ToolTip": "E:\\Repositories\\T-Car-Shop\\src\\CarService\\Presentation\\T-Car-Shop.Web\\Startup.cs",
-              "RelativeToolTip": "src\\CarService\\Presentation\\T-Car-Shop.Web\\Startup.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAE8AAAAPAAAA",
+              "DocumentMoniker": "E:\\Repositories\\T-Car-Shop\\src\\Presentation\\T-Car-Shop.Web\\Startup.cs",
+              "RelativeDocumentMoniker": "src\\Presentation\\T-Car-Shop.Web\\Startup.cs",
+              "ToolTip": "E:\\Repositories\\T-Car-Shop\\src\\Presentation\\T-Car-Shop.Web\\Startup.cs",
+              "RelativeToolTip": "src\\Presentation\\T-Car-Shop.Web\\Startup.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFIAAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T18:37:05.047Z",
+              "WhenOpened": "2024-07-10T17:38:49.48Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "T-Car-Shop.Web",
+              "DocumentMoniker": "E:\\Repositories\\T-Car-Shop\\src\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj",
+              "RelativeDocumentMoniker": "src\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj",
+              "ToolTip": "E:\\Repositories\\T-Car-Shop\\src\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj",
+              "RelativeToolTip": "src\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-10T17:38:23.746Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GetCarsQueryHandler.cs",
+              "DocumentMoniker": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\Queries\\CarQueries\\GetCarsQueryHandler.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\T-Car-Shop.Infrastructure\\Queries\\CarQueries\\GetCarsQueryHandler.cs",
+              "ToolTip": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\Queries\\CarQueries\\GetCarsQueryHandler.cs",
+              "RelativeToolTip": "src\\Infrastructure\\T-Car-Shop.Infrastructure\\Queries\\CarQueries\\GetCarsQueryHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T17:38:14.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RemoveCarCommandHandler.cs",
+              "DocumentMoniker": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\Commands\\CarCommands\\RemoveCarCommandHandler.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\T-Car-Shop.Infrastructure\\Commands\\CarCommands\\RemoveCarCommandHandler.cs",
+              "ToolTip": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\Commands\\CarCommands\\RemoveCarCommandHandler.cs",
+              "RelativeToolTip": "src\\Infrastructure\\T-Car-Shop.Infrastructure\\Commands\\CarCommands\\RemoveCarCommandHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T17:38:06.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UpdateCarCommandHandler.cs",
+              "DocumentMoniker": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\Commands\\CarCommands\\UpdateCarCommandHandler.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\T-Car-Shop.Infrastructure\\Commands\\CarCommands\\UpdateCarCommandHandler.cs",
+              "ToolTip": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\Commands\\CarCommands\\UpdateCarCommandHandler.cs",
+              "RelativeToolTip": "src\\Infrastructure\\T-Car-Shop.Infrastructure\\Commands\\CarCommands\\UpdateCarCommandHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T17:37:59.694Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreateCarCommandHandler.cs",
+              "DocumentMoniker": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\Commands\\CarCommands\\CreateCarCommandHandler.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\T-Car-Shop.Infrastructure\\Commands\\CarCommands\\CreateCarCommandHandler.cs",
+              "ToolTip": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\Commands\\CarCommands\\CreateCarCommandHandler.cs",
+              "RelativeToolTip": "src\\Infrastructure\\T-Car-Shop.Infrastructure\\Commands\\CarCommands\\CreateCarCommandHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T17:37:49.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ICarRepository.cs",
+              "DocumentMoniker": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Application\\Repositories\\ICarRepository.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\T-Car-Shop.Application\\Repositories\\ICarRepository.cs",
+              "ToolTip": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Application\\Repositories\\ICarRepository.cs",
+              "RelativeToolTip": "src\\Infrastructure\\T-Car-Shop.Application\\Repositories\\ICarRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T17:37:41.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CarRepository.cs",
+              "DocumentMoniker": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\Repositories\\CarRepository.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\T-Car-Shop.DataAccess\\Repositories\\CarRepository.cs",
+              "ToolTip": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\Repositories\\CarRepository.cs",
+              "RelativeToolTip": "src\\Infrastructure\\T-Car-Shop.DataAccess\\Repositories\\CarRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAABcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T17:35:15.022Z",
               "EditorCaption": ""
             }
           ]

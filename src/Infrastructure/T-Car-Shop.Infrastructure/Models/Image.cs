@@ -1,4 +1,4 @@
-﻿namespace T_Car_Shop.Core.Models.DomainModels
+﻿namespace T_Car_Shop.Infrastructure.Models
 {
     public class Image : BaseModel
     {

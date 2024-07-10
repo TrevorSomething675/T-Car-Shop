@@ -1,5 +1,4 @@
-﻿using T_Car_Shop.DataAccess.Entities;
-using T_Car_Shop.Core.Shared;
+﻿using T_Car_Shop.Core.Shared;
 
 namespace T_Car_Shop.Application.Repositories
 {

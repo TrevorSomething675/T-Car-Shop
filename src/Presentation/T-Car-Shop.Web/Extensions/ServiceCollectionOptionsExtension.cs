@@ -8,6 +8,7 @@ namespace T_Car_Shop.Web.Extensions
         {
             var configuration = services.BuildServiceProvider().GetRequiredService<IConfiguration>();
             services.Configure<DataBaseOptions>(configuration.GetSection(DataBaseOptions.SectionName));
+            services.Configure<JwtAuthOptions>(configuration.GetSection(JwtAuthOptions.SectionName));
             return services;
         }
     }

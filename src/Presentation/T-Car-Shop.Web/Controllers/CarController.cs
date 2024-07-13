@@ -15,6 +15,12 @@ namespace T_Car_Shop.Web.Controllers
             _mediator = mediator;
         }
 
+        [HttpGet("Id")]
+        public async Task<IActionResult> GetById(Guid id, CancellationToken cancellationToken = default)
+        {
+            return (await _mediator.Send(new GetCarByIdQuery(id), cancellationToken)).ToActionResult();
+        }
+
         [HttpGet]
         public async Task<IActionResult> Get(CancellationToken cancellationToken = default)
         {

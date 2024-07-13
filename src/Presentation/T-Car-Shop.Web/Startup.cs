@@ -17,6 +17,11 @@ namespace T_Car_Shop.Web
             services.AddAppAutoMapper();
 
             services.AddScoped<ICarRepository, CarRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+
+            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<ITokenService, TokenService>();
+
             services.AddScoped<ICarService, CarService>();
 
             /*
@@ -83,8 +88,9 @@ namespace T_Car_Shop.Web
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
                 options.RoutePrefix = string.Empty;
             });
-
             app.UseRouting();
+            app.UseAppAuth();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

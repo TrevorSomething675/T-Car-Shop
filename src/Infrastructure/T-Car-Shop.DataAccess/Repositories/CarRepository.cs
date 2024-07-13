@@ -3,56 +3,69 @@ using T_Car_Shop.Core.Models.DataAccess;
 using T_Car_Shop.DataAccess.Contexts;
 using Microsoft.EntityFrameworkCore;
 using T_Car_Shop.Core.Shared;
+using T_Car_Shop.Core.Models.Infrastructure;
+using AutoMapper;
 
 namespace T_Car_Shop.DataAccess.Repositories
 {
     public class CarRepository : ICarRepository
     {
+        private readonly IMapper _mapper;
         private readonly IDbContextFactory<MainContext> _dbContextFactory;
-        public CarRepository(IDbContextFactory<MainContext> dbContextFactory) 
+        public CarRepository(IDbContextFactory<MainContext> dbContextFactory, IMapper mapper) 
         {
+            _mapper = mapper;
             _dbContextFactory = dbContextFactory;
         }
 
-        public async Task<PagedData<CarEntity>> GetAll(CancellationToken cancellationToken = default)
+        public async Task<Car> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
-            using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
+            await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken)) 
             {
-                var cars = await context.Cars.ToListAsync(cancellationToken);
+                var car = await context.Cars.FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
+                return _mapper.Map<Car>(car);
+            }
+        }
+
+        public async Task<PagedData<Car>> GetAllAsync(CancellationToken cancellationToken = default)
+        {
+            await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
+            {
+                var cars = _mapper.Map<List<Car>>(await context.Cars.ToListAsync(cancellationToken));
                 var count = cars.Count;
                 var pageCount = (int)Math.Ceiling((double)count / 8);
 
-                return new PagedData<CarEntity>(cars, count, pageCount);
+                return new PagedData<Car>(cars, count, pageCount);
             }
         }
-        public async Task<CarEntity> Update(CarEntity car, CancellationToken cancellationToken = default)
+        public async Task<Car> UpdateAsync(Car car, CancellationToken cancellationToken = default)
         {
-            using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
+            await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
-                var result = context.Cars.Attach(car);
+                var result = context.Cars.Attach(_mapper.Map<CarEntity>(car));
                 context.Entry(car).State = EntityState.Modified;
                 await context.SaveChangesAsync(cancellationToken);
 
-                return result.Entity;
+                return _mapper.Map<Car>(result.Entity);
             }
         }
-        public async Task<CarEntity> Create(CarEntity car, CancellationToken cancellationToken = default)
+        public async Task<Car> CreateAsync(Car car, CancellationToken cancellationToken = default)
         {
-            using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
+            await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
-                var result = context.Cars.Add(car);
+                var result = context.Cars.Add(_mapper.Map<CarEntity>(car));
                 await context.SaveChangesAsync(cancellationToken);
-                return result.Entity;
+                return _mapper.Map<Car>(result.Entity);
             }
         }
-        public async Task<CarEntity> Remove(Guid carId, CancellationToken cancellationToken = default)
+        public async Task<Car> RemoveAsync(Guid carId, CancellationToken cancellationToken = default)
         {
             using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
                 var car = await context.Cars.FirstOrDefaultAsync(c => c.Id == carId, cancellationToken);
                 var result = (car == null) ? null : context.Remove(car).Entity;
                 await context.SaveChangesAsync();
-                return result;
+                return _mapper.Map<Car>(result);
             }
         }
     }

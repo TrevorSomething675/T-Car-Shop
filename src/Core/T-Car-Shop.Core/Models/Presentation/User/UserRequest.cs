@@ -1,4 +1,5 @@
-﻿using T_Car_Shop.Core.Models.Presentation.Car;
+﻿using T_Car_Shop.Core.Models.Presentation.Role;
+using T_Car_Shop.Core.Models.Presentation.Car;
 
 namespace T_Car_Shop.Core.Models.Presentation.User
 {
@@ -8,6 +9,7 @@ namespace T_Car_Shop.Core.Models.Presentation.User
         public string Email { get; set; }
         public string PasswordHash { get; set; }
 
+        public RoleRequest Role { get; set; }
         public List<CarRequest> Cars { get; set; }
     }
 }

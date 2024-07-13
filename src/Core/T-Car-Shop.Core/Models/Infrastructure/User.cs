@@ -6,6 +6,7 @@
         public string Email { get; set; }
         public string PasswordHash { get; set; }
 
+        public Role Role { get; set; }
         public List<Car> Cars { get; set; }
     }
 }

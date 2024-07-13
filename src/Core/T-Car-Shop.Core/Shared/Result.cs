@@ -6,6 +6,7 @@ namespace T_Car_Shop.Core.Shared
     {
         public T? Value { get; set; }
         public int StatusCode { get; set; } = 200;
+        public string[] ErrorMessages { get; set; } = Array.Empty<string>();
 
         public Result() { }
         public Result(T? value) 
@@ -13,7 +14,7 @@ namespace T_Car_Shop.Core.Shared
             Value = value;
         }
 
-        public Result<T> Ok()
+        public Result<T> Success()
         {
             StatusCode = 200;
             return this;
@@ -25,8 +26,9 @@ namespace T_Car_Shop.Core.Shared
             return this;
         }
 
-        public Result<T> BadRequest()
+        public Result<T> BadRequest(string message = "")
         {
+            ErrorMessages.Append(message);
             StatusCode = 400;
             return this;
         }

@@ -1,11 +1,11 @@
-﻿using T_Car_Shop.Core.Models.DataAccess;
+﻿using T_Car_Shop.Core.Models.Infrastructure;
 using T_Car_Shop.Core.Shared;
 
 namespace T_Car_Shop.Application.Repositories
 {
     public interface IUserRepository
     {
-        Task<UserEntity> GetById(Guid id, CancellationToken cancellationToken = default);
-        Task<PagedData<UserEntity>> GelAll(CancellationToken cancellationToken = default);
+        Task<User> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
+        Task<PagedData<User>> GelAllAsync(CancellationToken cancellationToken = default);
     }
 }

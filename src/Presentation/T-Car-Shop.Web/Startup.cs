@@ -22,8 +22,6 @@ namespace T_Car_Shop.Web
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<ITokenService, TokenService>();
 
-            services.AddScoped<ICarService, CarService>();
-
             /*
             using (var context = services.BuildServiceProvider().GetRequiredService<MainContext>())
             {

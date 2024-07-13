@@ -19,7 +19,7 @@ namespace T_Car_Shop.Infrastructure.Services
         }
         public async Task<Result<TokenResponse>> CreateToken(Guid id, string role, CancellationToken cancellationToken = default)
         {
-            var user = _mapper.Map<User>(await _userRepository.GetById(id, cancellationToken));
+            var user = _mapper.Map<User>(await _userRepository.GetByIdAsync(id, cancellationToken));
             if(user == null)
                 return new Result<TokenResponse>().NotFound();
 

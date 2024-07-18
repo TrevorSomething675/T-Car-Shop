@@ -1,5 +1,6 @@
 ﻿using T_Car_Shop.Core.Models.Infrastructure;
 using T_Car_Shop.Application.Repositories;
+using T_Car_Shop.Core.Models.DataAccess;
 using T_Car_Shop.Core.Shared;
 using AutoMapper;
 using MediatR;
@@ -19,7 +20,8 @@ namespace T_Car_Shop.Infrastructure.Commands.CarCommands
         {
             try
             {
-                var updatedCar = _mapper.Map<Car>(await _carRepository.UpdateAsync(request.Car, cancellationToken));
+                var carToUpdate = _mapper.Map<CarEntity>(request.Car);
+                var updatedCar = _mapper.Map<Car>(await _carRepository.UpdateAsync(carToUpdate, cancellationToken));
                 if (updatedCar != null)
                     return new Result<Car>(updatedCar).Success();
                 else

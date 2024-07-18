@@ -1,5 +1,4 @@
-﻿using T_Car_Shop.Core.Models.Infrastructure;
-using T_Car_Shop.Application.Repositories;
+﻿using T_Car_Shop.Application.Repositories;
 using T_Car_Shop.Core.Models.DataAccess;
 using T_Car_Shop.DataAccess.Contexts;
 using Microsoft.EntityFrameworkCore;
@@ -38,22 +37,22 @@ namespace T_Car_Shop.DataAccess.Repositories
                 return new PagedData<CarEntity>(cars, count, pageCount);
             }
         }
-        public async Task<CarEntity> UpdateAsync(Car car, CancellationToken cancellationToken = default)
+        public async Task<CarEntity> UpdateAsync(CarEntity car, CancellationToken cancellationToken = default)
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
-                var result = context.Cars.Attach(_mapper.Map<CarEntity>(car));
+                var result = context.Cars.Attach(car);
                 context.Entry(car).State = EntityState.Modified;
                 await context.SaveChangesAsync(cancellationToken);
 
                 return result.Entity;
             }
         }
-        public async Task<CarEntity> CreateAsync(Car car, CancellationToken cancellationToken = default)
+        public async Task<CarEntity> CreateAsync(CarEntity car, CancellationToken cancellationToken = default)
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
-                var result = context.Cars.Add(_mapper.Map<CarEntity>(car));
+                var result = context.Cars.Add(car);
                 await context.SaveChangesAsync(cancellationToken);
                 return result.Entity;
             }

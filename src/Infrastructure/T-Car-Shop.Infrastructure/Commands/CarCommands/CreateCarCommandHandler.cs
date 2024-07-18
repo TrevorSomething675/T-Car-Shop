@@ -1,5 +1,6 @@
 ﻿using T_Car_Shop.Core.Models.Infrastructure;
 using T_Car_Shop.Application.Repositories;
+using T_Car_Shop.Core.Models.DataAccess;
 using T_Car_Shop.Core.Shared;
 using AutoMapper;
 using MediatR;
@@ -21,7 +22,8 @@ namespace T_Car_Shop.Infrastructure.Commands.CarCommands
         {
             try
             {
-                var createdCar = _mapper.Map<Car>(await _carRepository.CreateAsync(request.Car));
+                var carToCreate = _mapper.Map<CarEntity>(request.Car);
+                var createdCar = _mapper.Map<Car>(await _carRepository.CreateAsync(carToCreate));
                 return new Result<Car>(createdCar).Success();
             }
             catch (Exception ex)

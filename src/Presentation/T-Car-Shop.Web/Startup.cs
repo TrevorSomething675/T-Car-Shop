@@ -5,6 +5,8 @@ using T_Car_Shop.Application.Services;
 using T_Car_Shop.Infrastructure;
 using T_Car_Shop.Web.Extensions;
 using System.Reflection;
+using T_Car_Shop.Core.Models.DataAccess;
+using T_Car_Shop.DataAccess.Contexts;
 
 namespace T_Car_Shop.Web
 {
@@ -15,52 +17,39 @@ namespace T_Car_Shop.Web
             services.AddAppOptions();
             services.AddAppDbContext();
             services.AddAppAutoMapper();
+            services.AddCors();
 
             services.AddScoped<ICarRepository, CarRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
 
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<ITokenService, TokenService>();
-
-            /*
+            
             using (var context = services.BuildServiceProvider().GetRequiredService<MainContext>())
             {
-                if (context.Cars.ToList().Count == 0)
+                if (!context.Manufacturers.Any())
                 {
+                    context.Manufacturers.Add(new ManufacturerEntity { Name = "BMW" });
+                    context.SaveChanges();
+
+                }
+                if (!context.Cars.Any())
+                {
+                    var manufacturer = context.Manufacturers.FirstOrDefault();
+
                     var cars = new List<CarEntity>
                     {
                         new CarEntity{
-                            Name = "test-name-1",
-                            Brand = new BrandEntity
-                            {
-                                Name = "test-brand-1",
-                                Manufacturer = new ManufacturerEntity
-                                {
-                                    Name = "test-manufacturer-1"
-                                }
-                            }
+                            Name = "BMW 2 серии 2020",
+                            Manufacturer = manufacturer
                         },
                         new CarEntity{
-                            Name = "test-name-2",
-                            Brand = new BrandEntity
-                            {
-                                Name = "test-brand-2",
-                                Manufacturer = new ManufacturerEntity
-                                {
-                                    Name = "test-manufacturer-2"
-                                }
-                            }
+                            Name = "BMW 3 серии 2013",
+                            Manufacturer = manufacturer
                         },
                         new CarEntity{
-                            Name = "test-name-3",
-                            Brand = new BrandEntity
-                            {
-                                Name = "test-brand-3",
-                                Manufacturer = new ManufacturerEntity
-                                {
-                                    Name = "test-manufacturer-3"
-                                }
-                            }
+                            Name = "BMW 4 серии 2014",
+                            Manufacturer = manufacturer
                         }
                     };
 
@@ -68,7 +57,6 @@ namespace T_Car_Shop.Web
                     context.SaveChanges();
                 }
             }
-            */
 
             services.AddMediatR(config => config.RegisterServicesFromAssemblies(Assembly.GetAssembly(typeof(AssemblyMarker))));
             services.AddControllers();
@@ -77,6 +65,12 @@ namespace T_Car_Shop.Web
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(builder =>
+            {
+                builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            });
             app.UseSwagger(options =>
             {
                 options.SerializeAsV2 = true;

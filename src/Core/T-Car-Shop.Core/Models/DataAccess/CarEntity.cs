@@ -14,7 +14,7 @@ namespace T_Car_Shop.Core.Models.DataAccess
         public List<ImageEntity> Images { get; set; } = new List<ImageEntity>();
         public List<ColorEntity> Colors { get; set; } = new List<ColorEntity>();
 
-        public Guid BrandId { get; set; }
-        public BrandEntity Brand { get; set; } = null!;
+        public Guid ManufacturerId { get; set; }
+        public ManufacturerEntity Manufacturer { get; set; } = null!;
     }
 }

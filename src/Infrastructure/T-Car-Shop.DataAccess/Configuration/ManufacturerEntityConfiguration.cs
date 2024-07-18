@@ -8,7 +8,7 @@ namespace T_Car_Shop.DataAccess.Configuration
     {
         public void Configure(EntityTypeBuilder<ManufacturerEntity> builder)
         {
-            builder.HasMany(m => m.Brands)
+            builder.HasMany(m => m.Cars)
                 .WithOne(b => b.Manufacturer)
                 .OnDelete(DeleteBehavior.Cascade);
         }

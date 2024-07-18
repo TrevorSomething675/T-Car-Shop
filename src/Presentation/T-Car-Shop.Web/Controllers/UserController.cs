@@ -15,7 +15,7 @@ namespace T_Car_Shop.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll(CancellationToken cancellationToken = default)
+        public async Task<IActionResult> Get(CancellationToken cancellationToken = default)
         {
             return (await _mediator.Send(new GetUsersQuery(), cancellationToken)).ToActionResult();
         }

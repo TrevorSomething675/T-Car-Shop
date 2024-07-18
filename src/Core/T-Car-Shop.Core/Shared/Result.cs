@@ -6,7 +6,7 @@ namespace T_Car_Shop.Core.Shared
     {
         public T? Value { get; set; }
         public int StatusCode { get; set; } = 200;
-        public string[] ErrorMessages { get; set; } = Array.Empty<string>();
+        public List<string> ErrorMessages { get; set; } = new List<string>();
 
         public Result() { }
         public Result(T? value) 
@@ -28,7 +28,7 @@ namespace T_Car_Shop.Core.Shared
 
         public Result<T> BadRequest(string message = "")
         {
-            ErrorMessages.Append(message);
+            ErrorMessages.Add(message);
             StatusCode = 400;
             return this;
         }

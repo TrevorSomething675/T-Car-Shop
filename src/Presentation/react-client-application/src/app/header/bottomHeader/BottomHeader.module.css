@@ -1,0 +1,46 @@
+.bottomHeader{
+    background-color: var(--dark-grey-color);
+    height: 2.5rem;
+    border-bottom: 2px var(--blue-color) solid;
+}
+
+.ul{
+    height: 100%;
+    list-style: none;
+    display: flex;
+}
+
+.li{
+    height: 100%;
+}
+
+.button{
+    color: var(--light-grey-color);
+    background: none;
+    border: none;
+    transition: .3s;
+    height: 100%;
+    font-size: 1.5rem;
+    padding: 0 0.5rem 0 0.5rem;
+    cursor: pointer;
+}
+
+.button:hover{
+    color: var(--dark-grey-color);
+    background-color: var(--light-grey-color);
+}
+
+.button:active{
+    background-color: var(--blue-color);
+    transition: .1s;
+}
+
+.rightNavBar{
+    height: 100%;
+    float: right;
+}
+
+.leftNavBar{
+    height: 100%;
+    float: left;
+}

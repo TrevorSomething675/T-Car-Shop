@@ -1,0 +1,35 @@
+.search{
+    height: 100%;
+}
+
+.searchSection{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.searchInput{
+    margin-right: 1.75rem;
+    width: 25rem;
+    height: 1.5rem;
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+}
+
+.searchButton{
+    color: var(--dark-grey-color);
+    background-color: var(--light-grey-color);
+    transition: .3s;
+    padding: 0 0.5rem 0 0.5rem;
+    height: 1.6rem;
+    width: 1.6rem;
+    border: none;
+    padding: 0 0 0 0;
+}
+
+.searchButton:hover{
+    background-color: var(--blue-color);
+    transition: .3s;
+    cursor: pointer;
+}

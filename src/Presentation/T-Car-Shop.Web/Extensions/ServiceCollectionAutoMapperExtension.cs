@@ -1,5 +1,4 @@
-﻿using T_Car_Shop.Infrastructure;
-using System.Reflection;
+﻿using System.Reflection;
 using AutoMapper;
 
 namespace T_Car_Shop.Web.Extensions
@@ -10,8 +9,7 @@ namespace T_Car_Shop.Web.Extensions
         {
             var mapperConfig = new MapperConfiguration(config =>
             {
-                config.AddMaps(Assembly.GetAssembly(typeof(AssemblyMarker)));
-                config.AddMaps(Assembly.GetExecutingAssembly());
+                config.AddMaps(Assembly.GetAssembly(typeof(Core.AssemblyMarker)));
             });
             var mapper = mapperConfig.CreateMapper();
             services.AddSingleton(mapper);

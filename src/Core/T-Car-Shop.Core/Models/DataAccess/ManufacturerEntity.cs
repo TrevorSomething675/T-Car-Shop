@@ -3,6 +3,6 @@
     public class ManufacturerEntity : BaseEntity
     {
         public string Name { get; set; }
-        public List<BrandEntity> Brands { get; set; }
+        public List<CarEntity> Cars { get; set; }
     }
 }

@@ -1,11 +1,11 @@
-﻿using T_Car_Shop.Core.Models.Presentation.Car;
+﻿using T_Car_Shop.Core.Models.Infrastructure;
 using T_Car_Shop.Core.Shared;
 using MediatR;
 
 namespace T_Car_Shop.Infrastructure.Commands.CarCommands
 {
-    public class UpdateCarCommand(CarRequest car) : IRequest<Result<CarResponse>>
+    public class UpdateCarCommand(Car car) : IRequest<Result<Car>>
     {
-        public CarRequest Car { get; set; } = car;
+        public Car Car { get; set; } = car;
     }
 }

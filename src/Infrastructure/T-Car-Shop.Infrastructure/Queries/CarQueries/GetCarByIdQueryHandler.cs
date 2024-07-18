@@ -1,4 +1,4 @@
-﻿using T_Car_Shop.Core.Models.Presentation.Car;
+﻿using T_Car_Shop.Core.Models.Infrastructure;
 using T_Car_Shop.Application.Repositories;
 using T_Car_Shop.Core.Shared;
 using AutoMapper;
@@ -6,7 +6,7 @@ using MediatR;
 
 namespace T_Car_Shop.Infrastructure.Queries.CarQueries
 {
-    public class GetCarByIdQueryHandler : IRequestHandler<GetCarByIdQuery, Result<CarResponse>>
+    public class GetCarByIdQueryHandler : IRequestHandler<GetCarByIdQuery, Result<Car>>
     {
         private readonly IMapper _mapper;
         private readonly ICarRepository _carRepository;
@@ -15,19 +15,19 @@ namespace T_Car_Shop.Infrastructure.Queries.CarQueries
             _carRepository = carRepository;
             _mapper = mapper;
         }
-        public async Task<Result<CarResponse>> Handle(GetCarByIdQuery request, CancellationToken cancellationToken)
+        public async Task<Result<Car>> Handle(GetCarByIdQuery request, CancellationToken cancellationToken)
         {
             try
             {
-                var car = await _carRepository.GetByIdAsync(request.Id);
+                var car = _mapper.Map<Car>(await _carRepository.GetByIdAsync(request.Id));
                 if (car != null)
-                    return _mapper.Map<Result<CarResponse>>(car);
+                    return new Result<Car>(car).Success();
                 else
-                    return new Result<CarResponse>().NotFound();
+                    return new Result<Car>().NotFound();
             }
             catch (Exception ex)
             {
-                return new Result<CarResponse>().BadRequest(ex.Message);
+                return new Result<Car>().BadRequest(ex.Message);
             }
         }
     }

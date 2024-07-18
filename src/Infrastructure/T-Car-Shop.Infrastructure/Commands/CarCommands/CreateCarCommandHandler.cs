@@ -1,5 +1,4 @@
-﻿using T_Car_Shop.Core.Models.Presentation.Car;
-using T_Car_Shop.Core.Models.Infrastructure;
+﻿using T_Car_Shop.Core.Models.Infrastructure;
 using T_Car_Shop.Application.Repositories;
 using T_Car_Shop.Core.Shared;
 using AutoMapper;
@@ -7,7 +6,7 @@ using MediatR;
 
 namespace T_Car_Shop.Infrastructure.Commands.CarCommands
 {
-    public class CreateCarCommandHandler : IRequestHandler<CreateCarCommand, Result<CarResponse>>
+    public class CreateCarCommandHandler : IRequestHandler<CreateCarCommand, Result<Car>>
     {
         private readonly IMapper _mapper;
         private readonly ICarRepository _carRepository;
@@ -18,16 +17,16 @@ namespace T_Car_Shop.Infrastructure.Commands.CarCommands
             _mapper = mapper;
         }
 
-        public async Task<Result<CarResponse>> Handle(CreateCarCommand request, CancellationToken cancellationToken)
+        public async Task<Result<Car>> Handle(CreateCarCommand request, CancellationToken cancellationToken)
         {
             try
             {
-                var createdCar = await _carRepository.CreateAsync(_mapper.Map<Car>(request.Car));
-                return _mapper.Map<Result<CarResponse>>(createdCar);
+                var createdCar = _mapper.Map<Car>(await _carRepository.CreateAsync(request.Car));
+                return new Result<Car>(createdCar).Success();
             }
             catch (Exception ex)
             {
-                return new Result<CarResponse>().BadRequest(ex.Message);
+                return new Result<Car>().BadRequest(ex.Message);
             }
         }
     }

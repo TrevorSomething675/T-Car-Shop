@@ -1,5 +1,4 @@
-﻿using T_Car_Shop.Core.Models.Presentation.Car;
-using T_Car_Shop.Core.Models.Infrastructure;
+﻿using T_Car_Shop.Core.Models.Infrastructure;
 using T_Car_Shop.Core.Models.DataAccess;
 using T_Car_Shop.Core.Shared;
 using AutoMapper;
@@ -10,14 +9,13 @@ namespace T_Car_Shop.Core.Mappings
     {
         public CarProfile() 
         {
-            CreateMap<CarRequest, Car>();
-            CreateMap<Result<CarRequest>, Result<Car>>();
-
             CreateMap<Car, CarEntity>().ReverseMap();
             CreateMap<Result<Car>,  Result<CarEntity>>().ReverseMap();
-
-            CreateMap<Car, CarResponse>();
-            CreateMap<Result<Car>, Result<CarResponse>>();
+            CreateMap<PagedData<CarEntity>, PagedData<Car>>()
+                .ForMember(src => src.Items, opt => opt.MapFrom(x => x.Items))
+                .ForMember(src => src.Count, opt => opt.MapFrom(x => x.Count))
+                .ForMember(src => src.PageCount, opt => opt.MapFrom(x => x.PageCount))
+                .ReverseMap();
         }
     }
 }

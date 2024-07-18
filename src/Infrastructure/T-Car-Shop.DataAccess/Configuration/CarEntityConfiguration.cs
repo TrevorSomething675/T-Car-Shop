@@ -19,7 +19,7 @@ namespace T_Car_Shop.DataAccess.Configuration
                 .OnDelete(DeleteBehavior.Cascade)
                 .IsRequired(false);
 
-            builder.HasOne(c => c.Brand)
+            builder.HasOne(c => c.Manufacturer)
                 .WithMany(b => b.Cars)
                 .OnDelete(DeleteBehavior.NoAction);
         }

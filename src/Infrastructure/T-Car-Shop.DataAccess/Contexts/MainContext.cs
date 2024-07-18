@@ -12,7 +12,6 @@ namespace T_Car_Shop.DataAccess.Contexts
         public DbSet<CarEntity> Cars { get; set; }
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<ImageEntity> Images { get; set; }
-        public DbSet<BrandEntity> Brands { get; set; }
         public DbSet<ManufacturerEntity> Manufacturers { get; set; }
         public DbSet<RoleEntity> Roles { get; set; }
         public DbSet<ColorEntity> Colors { get; set; }
@@ -31,7 +30,6 @@ namespace T_Car_Shop.DataAccess.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new CarEntityConfiguration());
-            modelBuilder.ApplyConfiguration(new BrandEntityConfiguration());
             modelBuilder.ApplyConfiguration(new ManufacturerEntityConfiguration());
         }
     }

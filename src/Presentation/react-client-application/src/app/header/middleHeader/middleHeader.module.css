@@ -1,0 +1,30 @@
+.middleHeader{
+    background-color: var(--grey-color);
+    display: flex;
+    font-size: 3rem;
+    min-height: 5rem;
+}
+
+.searchComponent{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    align-items: center;
+}
+
+.logoText{
+    color:var(--light-grey-color);
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    align-items: center;
+    font-size: 2rem;
+    margin-left: 2rem;
+}

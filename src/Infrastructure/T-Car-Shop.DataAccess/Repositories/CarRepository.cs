@@ -1,9 +1,9 @@
-﻿using T_Car_Shop.Application.Repositories;
+﻿using T_Car_Shop.Core.Models.Infrastructure;
+using T_Car_Shop.Application.Repositories;
 using T_Car_Shop.Core.Models.DataAccess;
 using T_Car_Shop.DataAccess.Contexts;
 using Microsoft.EntityFrameworkCore;
 using T_Car_Shop.Core.Shared;
-using T_Car_Shop.Core.Models.Infrastructure;
 using AutoMapper;
 
 namespace T_Car_Shop.DataAccess.Repositories
@@ -18,27 +18,27 @@ namespace T_Car_Shop.DataAccess.Repositories
             _dbContextFactory = dbContextFactory;
         }
 
-        public async Task<Car> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
+        public async Task<CarEntity> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken)) 
             {
                 var car = await context.Cars.FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
-                return _mapper.Map<Car>(car);
+                return car;
             }
         }
 
-        public async Task<PagedData<Car>> GetAllAsync(CancellationToken cancellationToken = default)
+        public async Task<PagedData<CarEntity>> GetAllAsync(CancellationToken cancellationToken = default)
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
-                var cars = _mapper.Map<List<Car>>(await context.Cars.ToListAsync(cancellationToken));
+                var cars = await context.Cars.ToListAsync(cancellationToken);
                 var count = cars.Count;
                 var pageCount = (int)Math.Ceiling((double)count / 8);
 
-                return new PagedData<Car>(cars, count, pageCount);
+                return new PagedData<CarEntity>(cars, count, pageCount);
             }
         }
-        public async Task<Car> UpdateAsync(Car car, CancellationToken cancellationToken = default)
+        public async Task<CarEntity> UpdateAsync(Car car, CancellationToken cancellationToken = default)
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
@@ -46,26 +46,26 @@ namespace T_Car_Shop.DataAccess.Repositories
                 context.Entry(car).State = EntityState.Modified;
                 await context.SaveChangesAsync(cancellationToken);
 
-                return _mapper.Map<Car>(result.Entity);
+                return result.Entity;
             }
         }
-        public async Task<Car> CreateAsync(Car car, CancellationToken cancellationToken = default)
+        public async Task<CarEntity> CreateAsync(Car car, CancellationToken cancellationToken = default)
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
                 var result = context.Cars.Add(_mapper.Map<CarEntity>(car));
                 await context.SaveChangesAsync(cancellationToken);
-                return _mapper.Map<Car>(result.Entity);
+                return result.Entity;
             }
         }
-        public async Task<Car> RemoveAsync(Guid carId, CancellationToken cancellationToken = default)
+        public async Task<CarEntity> RemoveAsync(Guid carId, CancellationToken cancellationToken = default)
         {
             using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
                 var car = await context.Cars.FirstOrDefaultAsync(c => c.Id == carId, cancellationToken);
                 var result = (car == null) ? null : context.Remove(car).Entity;
                 await context.SaveChangesAsync();
-                return _mapper.Map<Car>(result);
+                return result;
             }
         }
     }

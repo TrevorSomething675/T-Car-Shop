@@ -1,5 +1,7 @@
 'use client'
 
+import Header from '@/app/header/Header';
+import Footer from '@/app/footer/Footer';
 import React, {useState, useEffect} from 'react' 
 import axios from 'axios'
 import Cars from '@/components/cars/Cars'
@@ -20,8 +22,12 @@ const CarsPage = () =>
         fetchData();
     }, []);
 
-    return <div>
-        <Cars cars={cars}/>
+    return <div className='page-container'>
+        <Header />
+        <div className='page-body'>
+            <Cars cars={cars}/>
+        </div>
+        <Footer />
     </div>
 };
 

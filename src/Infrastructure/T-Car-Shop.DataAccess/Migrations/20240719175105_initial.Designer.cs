@@ -12,7 +12,7 @@ using T_Car_Shop.DataAccess.Contexts;
 namespace T_Car_Shop.DataAccess.Migrations
 {
     [DbContext(typeof(MainContext))]
-    [Migration("20240714163811_initial")]
+    [Migration("20240719175105_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -62,6 +62,9 @@ namespace T_Car_Shop.DataAccess.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<decimal>("OldPrice")
+                        .HasColumnType("numeric");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
@@ -122,6 +125,9 @@ namespace T_Car_Shop.DataAccess.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
+
+                    b.Property<string>("Base64String")
+                        .HasColumnType("text");
 
                     b.Property<Guid>("CarId")
                         .HasColumnType("uuid");

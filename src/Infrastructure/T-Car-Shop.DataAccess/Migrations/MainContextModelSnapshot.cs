@@ -60,6 +60,9 @@ namespace T_Car_Shop.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<decimal>("OldPrice")
+                        .HasColumnType("numeric");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
 
@@ -119,6 +122,9 @@ namespace T_Car_Shop.DataAccess.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
+
+                    b.Property<string>("Base64String")
+                        .HasColumnType("text");
 
                     b.Property<Guid>("CarId")
                         .HasColumnType("uuid");

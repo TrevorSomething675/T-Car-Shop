@@ -30,6 +30,7 @@ namespace T_Car_Shop.DataAccess.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new CarEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new ImageEntityConfiguration());
             modelBuilder.ApplyConfiguration(new ManufacturerEntityConfiguration());
         }
     }

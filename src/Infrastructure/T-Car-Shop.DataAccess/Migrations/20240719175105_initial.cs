@@ -44,6 +44,7 @@ namespace T_Car_Shop.DataAccess.Migrations
                     Description = table.Column<string>(type: "text", nullable: false),
                     IsVisible = table.Column<bool>(type: "boolean", nullable: false),
                     Price = table.Column<decimal>(type: "numeric", nullable: false),
+                    OldPrice = table.Column<decimal>(type: "numeric", nullable: false),
                     CurrencyType = table.Column<byte>(type: "smallint", nullable: false),
                     ManufacturerId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
@@ -125,6 +126,7 @@ namespace T_Car_Shop.DataAccess.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Path = table.Column<string>(type: "text", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
+                    Base64String = table.Column<string>(type: "text", nullable: true),
                     CarId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>

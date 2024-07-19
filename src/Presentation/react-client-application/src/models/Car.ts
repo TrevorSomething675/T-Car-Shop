@@ -4,7 +4,9 @@ interface Car {
     description: string;
     isVisible: boolean;
     users: string[];
-    images: string[];
+    images: Image[];
     manufacturerId: string;
     manufacturer: any;
+    price: number;
+    oldPrice: number;
   }

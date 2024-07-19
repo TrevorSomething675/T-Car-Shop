@@ -30,7 +30,8 @@ namespace T_Car_Shop.DataAccess.Repositories
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
-                var cars = await context.Cars.ToListAsync(cancellationToken);
+                var cars = await context.Cars
+                    .Include(c => c.Images).ToListAsync(cancellationToken);
                 var count = cars.Count;
                 var pageCount = (int)Math.Ceiling((double)count / 8);
 

@@ -8,7 +8,8 @@ namespace T_Car_Shop.Core.Models.DataAccess
         public string Description { get; set; } = string.Empty;
         public bool IsVisible { get; set; } = true;
         public decimal Price { get; set; }
-        public CurrencyType CurrencyType { get; set; }
+		public decimal OldPrice { get; set; }
+		public CurrencyType CurrencyType { get; set; }
 
         public List<UserEntity> Users { get; set; } = new List<UserEntity>();
         public List<ImageEntity> Images { get; set; } = new List<ImageEntity>();

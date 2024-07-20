@@ -19,7 +19,7 @@ namespace T_Car_Shop.Infrastructure.Queries.CarQueries
         {
             try
             {
-                var cars = await _carService.GetAllAsync(cancellationToken);
+                var cars = await _carService.GetAllAsync(request.Filter, cancellationToken);
                 return new Result<PagedData<Car>>(cars);
             }
             catch (Exception ex)

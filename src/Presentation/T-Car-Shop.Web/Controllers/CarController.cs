@@ -1,6 +1,7 @@
 ﻿using T_Car_Shop.Infrastructure.Commands.CarCommands;
 using T_Car_Shop.Infrastructure.Queries.CarQueries;
 using Microsoft.AspNetCore.Mvc;
+using T_Car_Shop.Core.Filters;
 using MediatR;
 
 namespace T_Car_Shop.Web.Controllers
@@ -21,13 +22,12 @@ namespace T_Car_Shop.Web.Controllers
             return (await _mediator.Send(new GetCarByIdQuery(id), cancellationToken)).ToActionResult();
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Get(CancellationToken cancellationToken = default)
+		[HttpGet] public async Task<IActionResult> Get([FromQuery] GetCarsFilterModel filter, CancellationToken cancellationToken = default) 
         {
-            return (await _mediator.Send(new GetCarsQuery(), cancellationToken)).ToActionResult();
+            return (await _mediator.Send(new GetCarsQuery(filter), cancellationToken)).ToActionResult();
         }
 
-        [HttpPost]
+		[HttpPost]
         public async Task<ActionResult> Create([FromQuery] CreateCarCommand command, CancellationToken cancellationToken = default)
         {
             return (await _mediator.Send(command, cancellationToken)).ToActionResult();

@@ -12,7 +12,7 @@ namespace T_Car_Shop.Infrastructure.Services
 			_minioClientFactory = minioClientFactory;
 		}
 
-		public async Task<string> GetObjectAsync(string path)
+		public async Task<string> GetObjectAsync(string path, CancellationToken cancellationToken = default)
 		{
 			string bucketName = Path.GetDirectoryName(path);
 			string objectName = Path.GetFileName(path);
@@ -32,7 +32,7 @@ namespace T_Car_Shop.Infrastructure.Services
 								objectBytes = ms.ToArray();
 							}
 						});
-					await client.GetObjectAsync(args);
+					await client.GetObjectAsync(args, cancellationToken);
 					return Convert.ToBase64String(objectBytes);
 				}
 			}

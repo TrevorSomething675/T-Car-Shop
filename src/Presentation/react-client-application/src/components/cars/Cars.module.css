@@ -1,6 +1,6 @@
 .ul{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Один элемент в ряду */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
     padding: 0;
     list-style: none;

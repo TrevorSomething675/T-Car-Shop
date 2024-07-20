@@ -1,11 +1,9 @@
-  interface ApiResponse {
-      data:{
-        value: {
-          items: Car[];
-          count: number;
-          pageCount: number;
-        };
-        statusCode: number;
-        errorMessages: string[];
-      }
-    }
+interface ApiResponse {
+       value: {
+         items: Car[];
+         count: number;
+         pageCount: number;
+       };
+      statusCode: number;
+      errorMessages: string[];
+  }

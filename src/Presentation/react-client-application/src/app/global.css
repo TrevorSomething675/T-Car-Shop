@@ -17,5 +17,8 @@ ul{
 
 .page-body {
     flex: 1;
+    display: flex;
     background-color: var(--light-grey-color);
+    flex-direction: column;
+    justify-content: space-between;
 }

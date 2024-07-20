@@ -5,7 +5,7 @@ const Cars: React.FC<{cars: Car[]}> = ({cars}) => {
     return <>
         <ul className={styles.ul}>
             {cars.map((car) => 
-                <Car car={car}/>
+                <Car key={car.id} car={car}/>
             )}
         </ul>
     </> 

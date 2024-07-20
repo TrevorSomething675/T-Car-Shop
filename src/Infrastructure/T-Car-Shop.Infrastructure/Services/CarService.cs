@@ -21,7 +21,7 @@ namespace T_Car_Shop.Infrastructure.Services
 		}
 		public async Task<PagedData<Car>> GetAllAsync(GetCarsFilterModel filter, CancellationToken cancellationToken = default)
 		{
-			var cars = await _carRepository.GetAllAsync(cancellationToken);
+			var cars = await _carRepository.GetAllAsync(filter, cancellationToken);
 
 			switch (filter.ImagesFillingType)
 			{

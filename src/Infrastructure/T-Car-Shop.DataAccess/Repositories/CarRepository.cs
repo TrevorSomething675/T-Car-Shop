@@ -2,6 +2,7 @@
 using T_Car_Shop.Core.Models.DataAccess;
 using T_Car_Shop.DataAccess.Contexts;
 using Microsoft.EntityFrameworkCore;
+using T_Car_Shop.Core.Filters;
 using T_Car_Shop.Core.Shared;
 using AutoMapper;
 
@@ -26,13 +27,21 @@ namespace T_Car_Shop.DataAccess.Repositories
             }
         }
 
-        public async Task<PagedData<CarEntity>> GetAllAsync(CancellationToken cancellationToken = default)
+        public async Task<PagedData<CarEntity>> GetAllAsync(GetCarsFilterModel filter, CancellationToken cancellationToken = default)
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
                 var cars = await context.Cars
-                    .Include(c => c.Images).ToListAsync(cancellationToken);
-                var count = cars.Count;
+                    .Include(c => c.Images)
+                    .Skip((filter.PageNumber - 1) * 8)
+                    .Take(filter.PageNumber * 8)
+                    .AsNoTracking()
+                    .ToListAsync(cancellationToken);
+
+                var allCars = await context.Cars
+                    .AsNoTracking().ToListAsync(cancellationToken);
+
+                var count = allCars.Count;
                 var pageCount = (int)Math.Ceiling((double)count / 8);
 
                 return new PagedData<CarEntity>(cars, count, pageCount);

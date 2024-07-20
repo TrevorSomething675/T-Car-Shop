@@ -1,5 +1,6 @@
 interface GetCarsFilterModel{
     imagesFillingType: ImagesFillingTypeEnum
+    
 }
 
 enum ImagesFillingTypeEnum {

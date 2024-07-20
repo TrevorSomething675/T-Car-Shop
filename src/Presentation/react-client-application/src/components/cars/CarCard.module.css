@@ -1,9 +1,28 @@
 .car {
-    padding: 0.25rem;
+    background-color: var(--super-light-grey-color);
+    margin: 0.25rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px var(--grey-color);
+    cursor: pointer;
+    transition: .2s;
+}
+
+.car:hover{
+    box-shadow: 0px 0px 15px var(--grey-color);
+    transition: .2s;
+}
+
+.car:active{
+    box-shadow: 0px 0px 20px var(--dark-grey-color);
+    transition: .2s;
 }
 
 .header{
     font-size: 2rem;
+}
+
+.cardBotton{
+    margin: 0.5rem;
 }
 
 .description{
@@ -33,5 +52,6 @@
 
 .priceContainer{
     display: flex;
-    padding: 1rem 0.5rem 1rem 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }

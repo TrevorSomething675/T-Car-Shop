@@ -1,11 +1,11 @@
 import styles from './Cars.module.css';
-import Car from './Car';
+import CarCard from './CarCard';
 
 const Cars: React.FC<{cars: Car[]}> = ({cars}) => {
     return <>
         <ul className={styles.ul}>
             {cars.map((car) => 
-                <Car key={car.id} car={car}/>
+                <CarCard key={car.id} car={car}/>
             )}
         </ul>
     </> 

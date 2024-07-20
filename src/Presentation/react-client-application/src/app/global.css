@@ -22,3 +22,8 @@ ul{
     flex-direction: column;
     justify-content: space-between;
 }
+
+a{
+    color: var(--dark-grey-color);
+    text-decoration: none;
+}

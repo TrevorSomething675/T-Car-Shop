@@ -1,11 +1,11 @@
 'use client'
 
-import Header from '@/app/header/Header';
-import Footer from '@/app/footer/Footer';
+import Header from '@/components/header/Header';
+import Footer from '@/components/footer/Footer';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Cars from '@/components/cars/Cars';
-import Pagging from '@/components/paggingComponent/Paggind';
+import Pagging from '@/components/pagging/Paggind';
 
 const CarsPage = () => {
     const [cars, setCars] = useState<Car[]>([]);

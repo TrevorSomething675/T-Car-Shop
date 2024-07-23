@@ -6,6 +6,7 @@ namespace T_Car_Shop.Application.Services
 {
 	public interface ICarService
 	{
+		Task<Car> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
 		Task<PagedData<Car>> GetAllAsync(GetCarsFilterModel filter, CancellationToken cancellationToken = default);
 	}
 }

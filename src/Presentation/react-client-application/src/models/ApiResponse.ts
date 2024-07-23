@@ -1,9 +1,5 @@
-interface ApiResponse {
-       value: {
-         items: Car[];
-         count: number;
-         pageCount: number;
-       };
-      statusCode: number;
-      errorMessages: string[];
-  }
+interface ApiResponse<T>{
+    value: T;
+    statusCode: number;
+    errerMessages: [];
+}

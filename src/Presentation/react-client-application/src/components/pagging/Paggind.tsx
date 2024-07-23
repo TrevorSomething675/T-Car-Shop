@@ -13,7 +13,7 @@ const Pagging: React.FC<{pageCount: number, onPageNumberChange: (pageNumber: num
 
     return <div className={sytles.paggingContainer}>
         {pagesArray.map((pageNumber) => 
-            <button className={sytles.button} onClick={() => ChangePageNumber(pageNumber)}>
+            <button key={pageNumber} className={sytles.button} onClick={() => ChangePageNumber(pageNumber)}>
                 {pageNumber}
             </button>
         )}

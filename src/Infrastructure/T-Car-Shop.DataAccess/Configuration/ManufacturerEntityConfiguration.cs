@@ -11,6 +11,10 @@ namespace T_Car_Shop.DataAccess.Configuration
             builder.HasMany(m => m.Cars)
                 .WithOne(b => b.Manufacturer)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasMany(m => m.Images)
+                .WithOne(i => i.Manufacturer)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

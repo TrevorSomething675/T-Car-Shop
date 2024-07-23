@@ -1,10 +1,10 @@
 ﻿using T_Car_Shop.Core.Models.Infrastructure;
 using T_Car_Shop.Application.Repositories;
 using T_Car_Shop.Application.Services;
-using T_Car_Shop.Core.Shared;
-using AutoMapper;
-using T_Car_Shop.Core.Enums;
 using T_Car_Shop.Core.Filters;
+using T_Car_Shop.Core.Shared;
+using T_Car_Shop.Core.Enums;
+using AutoMapper;
 
 namespace T_Car_Shop.Infrastructure.Services
 {
@@ -19,9 +19,20 @@ namespace T_Car_Shop.Infrastructure.Services
 			_minioService = minioService;
 			_mapper = mapper;
 		}
+
+		public async Task<Car> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
+		{
+			var car = _mapper.Map<Car>(await _carRepository.GetByIdAsync(id, cancellationToken));
+			foreach (var image in car.Images)
+			{
+				image.Base64String = await _minioService.GetObjectAsync(image.Path);
+			}
+			return car;
+		}
+
 		public async Task<PagedData<Car>> GetAllAsync(GetCarsFilterModel filter, CancellationToken cancellationToken = default)
 		{
-			var cars = await _carRepository.GetAllAsync(filter, cancellationToken);
+			var cars = _mapper.Map<PagedData<Car>>(await _carRepository.GetAllAsync(filter, cancellationToken));
 
 			switch (filter.ImagesFillingType)
 			{
@@ -47,7 +58,7 @@ namespace T_Car_Shop.Infrastructure.Services
 					break;
 			}
 
-			return _mapper.Map<PagedData<Car>>(cars);
+			return cars;
 		}
 	}
 }

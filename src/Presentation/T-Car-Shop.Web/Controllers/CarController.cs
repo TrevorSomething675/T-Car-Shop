@@ -15,30 +15,26 @@ namespace T_Car_Shop.Web.Controllers
         {
             _mediator = mediator;
         }
-
-        [HttpGet("Id")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id, CancellationToken cancellationToken = default)
         {
             return (await _mediator.Send(new GetCarByIdQuery(id), cancellationToken)).ToActionResult();
         }
-
-		[HttpGet] public async Task<IActionResult> Get([FromQuery] GetCarsFilterModel filter, CancellationToken cancellationToken = default) 
+		[HttpGet] 
+        public async Task<IActionResult> Get([FromQuery] GetCarsFilterModel filter, CancellationToken cancellationToken = default)
         {
             return (await _mediator.Send(new GetCarsQuery(filter), cancellationToken)).ToActionResult();
         }
-
 		[HttpPost]
-        public async Task<ActionResult> Create([FromQuery] CreateCarCommand command, CancellationToken cancellationToken = default)
+        public async Task<IActionResult> Create([FromQuery] CreateCarCommand command, CancellationToken cancellationToken = default)
         {
             return (await _mediator.Send(command, cancellationToken)).ToActionResult();
         }
-
         [HttpDelete]
         public async Task<IActionResult> Remove([FromQuery] Guid carId, CancellationToken cancellationToken = default)
         {
             return (await _mediator.Send(new RemoveCarCommand(carId), cancellationToken)).ToActionResult();
         }
-
         [HttpPut]
         public async Task<IActionResult> Update([FromQuery] UpdateCarCommand command, CancellationToken cancellationToken = default)
         {

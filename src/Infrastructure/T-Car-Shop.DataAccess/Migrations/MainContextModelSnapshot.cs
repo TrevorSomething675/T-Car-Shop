@@ -46,10 +46,6 @@ namespace T_Car_Shop.DataAccess.Migrations
                     b.Property<byte>("CurrencyType")
                         .HasColumnType("smallint");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<bool>("IsVisible")
                         .HasColumnType("boolean");
 
@@ -65,6 +61,10 @@ namespace T_Car_Shop.DataAccess.Migrations
 
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
+
+                    b.Property<string>("ShortDescription")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -112,7 +112,8 @@ namespace T_Car_Shop.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CarId");
+                    b.HasIndex("CarId")
+                        .IsUnique();
 
                     b.ToTable("Descriptions");
                 });
@@ -150,13 +151,79 @@ namespace T_Car_Shop.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("OfficialWebsite")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
                     b.ToTable("Manufacturers");
+                });
+
+            modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.ManufacturerImageEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Base64String")
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("ManufacturerId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Path")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ManufacturerId");
+
+                    b.ToTable("ManufacturerImageEntity");
+                });
+
+            modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.OffersEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CarId")
+                        .HasColumnType("uuid");
+
+                    b.Property<bool>("IsSale")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("IsSell")
+                        .HasColumnType("boolean");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarId")
+                        .IsUnique();
+
+                    b.ToTable("Offers");
                 });
 
             modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.RoleEntity", b =>
@@ -242,8 +309,8 @@ namespace T_Car_Shop.DataAccess.Migrations
             modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.DescriptionEntity", b =>
                 {
                     b.HasOne("T_Car_Shop.Core.Models.DataAccess.CarEntity", "Car")
-                        .WithMany()
-                        .HasForeignKey("CarId")
+                        .WithOne("Description")
+                        .HasForeignKey("T_Car_Shop.Core.Models.DataAccess.DescriptionEntity", "CarId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -256,6 +323,28 @@ namespace T_Car_Shop.DataAccess.Migrations
                         .WithMany("Images")
                         .HasForeignKey("CarId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("Car");
+                });
+
+            modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.ManufacturerImageEntity", b =>
+                {
+                    b.HasOne("T_Car_Shop.Core.Models.DataAccess.ManufacturerEntity", "Manufacturer")
+                        .WithMany("Images")
+                        .HasForeignKey("ManufacturerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Manufacturer");
+                });
+
+            modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.OffersEntity", b =>
+                {
+                    b.HasOne("T_Car_Shop.Core.Models.DataAccess.CarEntity", "Car")
+                        .WithOne("Offers")
+                        .HasForeignKey("T_Car_Shop.Core.Models.DataAccess.OffersEntity", "CarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Car");
                 });
@@ -275,12 +364,20 @@ namespace T_Car_Shop.DataAccess.Migrations
                 {
                     b.Navigation("Colors");
 
+                    b.Navigation("Description")
+                        .IsRequired();
+
                     b.Navigation("Images");
+
+                    b.Navigation("Offers")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.ManufacturerEntity", b =>
                 {
                     b.Navigation("Cars");
+
+                    b.Navigation("Images");
                 });
 
             modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.RoleEntity", b =>

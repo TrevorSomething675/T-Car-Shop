@@ -16,6 +16,7 @@ namespace T_Car_Shop.DataAccess.Contexts
         public DbSet<RoleEntity> Roles { get; set; }
         public DbSet<ColorEntity> Colors { get; set; }
         public DbSet<DescriptionEntity> Descriptions { get; set; }
+        public DbSet<OffersEntity> Offers { get; set; }
 
         public MainContext(IOptions<DataBaseOptions> options)
         {
@@ -32,6 +33,7 @@ namespace T_Car_Shop.DataAccess.Contexts
             modelBuilder.ApplyConfiguration(new CarEntityConfiguration());
             modelBuilder.ApplyConfiguration(new ImageEntityConfiguration());
             modelBuilder.ApplyConfiguration(new ManufacturerEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new ManufacturerImageEntityConfiguration());
         }
     }
 }

@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using T_Car_Shop.Core.Filters;
 using T_Car_Shop.Core.Shared;
 using AutoMapper;
+using T_Car_Shop.Core.Specification;
 
 namespace T_Car_Shop.DataAccess.Repositories
 {
@@ -22,22 +23,31 @@ namespace T_Car_Shop.DataAccess.Repositories
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken)) 
             {
-                var car = await context.Cars.FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
+                var car = await context.Cars
+                    .Include(c => c.Description)
+                    .Include(c => c.Images)
+                    .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
                 return car;
             }
         }
 
-        public async Task<PagedData<CarEntity>> GetAllAsync(GetCarsFilterModel filter, CancellationToken cancellationToken = default)
+        public async Task<PagedData<CarEntity>> GetAllAsync(ISpecification<CarEntity> specification, GetCarsFilterModel filter, CancellationToken cancellationToken = default)
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
-                var cars = await context.Cars
+                var cars = await context.Cars.AsQueryable()
+                    .Include(specification.Includes)
+                    .Where(specification.Query)
+                    .ToListAsync(cancellationToken);
+
+                /*var cars = await context.Cars
                     .Include(c => c.Images)
+                    .Include(c => c.Offers)
                     .Skip((filter.PageNumber - 1) * 8)
                     .Take(filter.PageNumber * 8)
                     .AsNoTracking()
                     .ToListAsync(cancellationToken);
-
+                */
                 var allCars = await context.Cars
                     .AsNoTracking().ToListAsync(cancellationToken);
 

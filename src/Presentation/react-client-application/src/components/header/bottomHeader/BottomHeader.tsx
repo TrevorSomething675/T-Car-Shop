@@ -11,8 +11,8 @@ const BottomHeader = () => {
                     </Link>
                 </li>
                 <li className={styles.li}>
-                    <Link href="/brands">
-                        <button className={styles.button}>Бренды</button>
+                    <Link href="/manufacturers">
+                        <button className={styles.button}>Производители</button>
                     </Link>
                 </li>
                 <li className={styles.li}>

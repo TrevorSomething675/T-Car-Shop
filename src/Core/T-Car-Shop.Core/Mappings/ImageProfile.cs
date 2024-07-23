@@ -9,6 +9,7 @@ namespace T_Car_Shop.Core.Mappings
 		public ImageProfile() 
 		{
 			CreateMap<Image, ImageEntity>().ReverseMap();
+			CreateMap<ManufacturerImage, ManufacturerImageEntity>().ReverseMap();
 		}
 	}
 }

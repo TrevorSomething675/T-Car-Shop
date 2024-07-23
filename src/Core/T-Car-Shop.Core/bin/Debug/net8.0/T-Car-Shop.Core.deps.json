@@ -8,11 +8,20 @@
     ".NETCoreApp,Version=v8.0": {
       "T-Car-Shop.Core/1.0.0": {
         "dependencies": {
+          "Ardalis.Specification": "8.0.0",
           "AutoMapper": "13.0.1",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5"
         },
         "runtime": {
           "T-Car-Shop.Core.dll": {}
+        }
+      },
+      "Ardalis.Specification/8.0.0": {
+        "runtime": {
+          "lib/net8.0/Ardalis.Specification.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.0.0"
+          }
         }
       },
       "AutoMapper/13.0.1": {
@@ -750,6 +759,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Ardalis.Specification/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1/YP932oZJtaDlm85rWfqvgOjALbk2+VDZaj36sM2TdsJMNkVqMbF5UzY6f7OfzA8eymv3hnCXIgYmEBEiUOhQ==",
+      "path": "ardalis.specification/8.0.0",
+      "hashPath": "ardalis.specification.8.0.0.nupkg.sha512"
     },
     "AutoMapper/13.0.1": {
       "type": "package",

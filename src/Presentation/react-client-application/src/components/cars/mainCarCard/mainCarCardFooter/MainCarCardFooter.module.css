@@ -1,0 +1,65 @@
+.container{
+    border-radius: 0 0 10px 10px;
+    padding: 0 1rem 0 1rem;
+    border: 2px var(--grey-color) solid;
+    margin: 1rem 0 1rem 0;
+    box-shadow: 0px 0px 5px var(--grey-color);
+    background-color: var(--super-light-grey-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+.price{
+    font-size: 1.5rem;
+    color:var(--dark-red-color);
+}
+
+.oldPrice{
+    font-size: 1rem;
+    margin-left: 0.25rem;
+    text-decoration: line-through;
+    color:var(--grey-color);
+}
+
+.priceContainer{
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.submitButton{
+    color: var(--green-color);
+    font-size: 1.4rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.submitButton:hover{
+    text-shadow:0px 0px 15px var(--grey-color);
+    transition: .2s;
+}
+
+.favoriteButton{
+    color: var(--orange-color);
+    font-size: 1.4rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.favoriteButton:hover{
+    text-shadow:0px 0px 15px var(--grey-color);
+    transition: .2s;
+}
+
+.actionContainer{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.actionContainer > button{
+    margin-left: 0.25rem;
+}

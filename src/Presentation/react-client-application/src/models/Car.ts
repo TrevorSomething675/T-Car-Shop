@@ -1,7 +1,7 @@
 interface Car {
     id: string;
     name: string;
-    description: string;
+    shortDescription: string;
     isVisible: boolean;
     users: string[];
     images: Image[];
@@ -9,4 +9,7 @@ interface Car {
     manufacturer: any;
     price: number;
     oldPrice: number;
+    description: Description;
+    currencyType: number;
+    offers: Offers;
   }

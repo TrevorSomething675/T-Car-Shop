@@ -1,7 +1,37 @@
+'use client'
+
+import Header from '@/components/header/Header';
+import Footer from '@/components/footer/Footer';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import MainCarCard from '@/components/cars/mainCarCard/MainCarCard';
+
 const CarPage = () => {
-    return <>
-        <h2>Car</h2>
-    </>
+    const [car, setCar] = useState<Car | null>(null);
+    const pathname = usePathname();
+
+    useEffect(() => {
+        const id = pathname.split('/').pop();
+        const fetchData = async () => {
+            const response = await axios.get<ApiResponse<Car>>(`https://localhost:7049/Car/${id}`)
+            setCar(response.data.value);
+        }
+        
+        fetchData();
+
+    }, [])
+
+    return <div className='page-container'>
+        <Header />
+        <div className='page-body'>
+            {
+                car != null &&
+                <MainCarCard car = {car}/>
+            }
+        </div>
+        <Footer />
+    </div>
 }
 
 export default CarPage;

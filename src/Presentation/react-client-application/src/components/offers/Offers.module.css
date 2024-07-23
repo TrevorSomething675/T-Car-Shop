@@ -1,0 +1,33 @@
+.container{
+    position: absolute;
+    display: flex;
+    right: 0;
+}
+
+.offersContainer{
+    margin: 1rem;
+    display: flex;
+    list-style: none;
+}
+
+.saleOffer{
+    height: 2.8rem;
+    width: 2.8rem;
+    background-color: var(--green-color);
+    border-radius: 2rem;
+}
+
+.sellOffer{
+    height: 2.8rem;
+    width: 2.8rem;
+    background-color: var(--light-grey-color);
+    border-radius: 2rem;
+    margin-left: 0.5rem;
+}
+
+.offerText{
+    font-weight: 600;
+    margin: 0.7rem 0 0.8rem 0.3rem;
+    color: var(--super-light-grey-color);
+    text-shadow: 0px 0px 10px var(--grey-color);
+}

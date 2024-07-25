@@ -2,6 +2,7 @@
 using T_Car_Shop.Application.Services;
 using T_Car_Shop.Core.Shared;
 using MediatR;
+using T_Car_Shop.Core.Specification.Models;
 
 namespace T_Car_Shop.Infrastructure.Queries.ManufacturerQueries
 {
@@ -18,6 +19,8 @@ namespace T_Car_Shop.Infrastructure.Queries.ManufacturerQueries
 		{
 			try
 			{
+				var specification = new ManufacturerSpecification()
+					.Include(request.Filter.Includes);
 				var manufacturers = await _manufacturerService.GetManufacturersAsync(request.Filter, cancellationToken);
 				return new Result<PagedData<Manufacturer>>(manufacturers).Success();
 			}

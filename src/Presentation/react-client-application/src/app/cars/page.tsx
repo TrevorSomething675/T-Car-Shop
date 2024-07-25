@@ -10,21 +10,22 @@ import Pagging from '@/components/pagging/Paggind';
 const CarsPage = () => {
     const [cars, setCars] = useState<Car[]>([]);
     const [pageCount, setPageCount] = useState<number>(1);
+    
     const handlePageNumberChange = (pageNumber: number) => {
         fetchData(pageNumber);
     }
-
     useEffect(() => {
+        const includes:string[] = ['Images'];
         const source = axios.CancelToken.source();
         const fetchData = async (pageNumber:number) => {
             try {
                 const response = await axios.get<ApiItemsResponse<Car>>('https://localhost:7049/Car', {
                     cancelToken: source.token,
                     params:{
-                        pageNumber: pageNumber
+                        pageNumber: pageNumber,
+                        Includes: includes.join(',')
                     }
                 });
-                console.log(response.data.value.items);
                 setCars(response.data.value.items);
                 setPageCount(response.data.value.pageCount);
             } catch (error) {
@@ -39,11 +40,13 @@ const CarsPage = () => {
 
     const fetchData = async (pageNumber:number) => {
         try {
+            const includes:string[] = ['Images'];
             const source = axios.CancelToken.source();
             const response = await axios.get<ApiItemsResponse<Car>>('https://localhost:7049/Car', {
                 cancelToken: source.token,
                 params:{
-                    pageNumber: pageNumber
+                    pageNumber: pageNumber,
+                    Includes: includes.join(',')
                 }
             });
             setCars(response.data.value.items);

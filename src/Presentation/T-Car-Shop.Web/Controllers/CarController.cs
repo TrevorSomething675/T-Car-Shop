@@ -11,16 +11,16 @@ namespace T_Car_Shop.Web.Controllers
     public class CarController : ControllerBase
     {
         private readonly IMediator _mediator;
-        public CarController(IMediator mediator) 
+        public CarController(IMediator mediator)
         {
             _mediator = mediator;
         }
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(Guid id, CancellationToken cancellationToken = default)
+        public async Task<IActionResult> GetById([FromQuery] GetCarFilterModel filter, CancellationToken cancellationToken = default)
         {
-            return (await _mediator.Send(new GetCarByIdQuery(id), cancellationToken)).ToActionResult();
+            return (await _mediator.Send(new GetCarByIdQuery(filter), cancellationToken)).ToActionResult();
         }
-		[HttpGet] 
+        [HttpGet]
         public async Task<IActionResult> Get([FromQuery] GetCarsFilterModel filter, CancellationToken cancellationToken = default)
         {
             return (await _mediator.Send(new GetCarsQuery(filter), cancellationToken)).ToActionResult();

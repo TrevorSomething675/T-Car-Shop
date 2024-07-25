@@ -1,33 +1,41 @@
-﻿using System.Linq.Expressions;
+﻿using T_Car_Shop.Core.Exceptions.DomainExceptions;
+using System.Linq.Expressions;
+using T_Car_Shop.Core.Shared;
 
 namespace T_Car_Shop.Core.Specification
 {
-	public class BaseSpecification<T> : ISpecification<T>
+	public class BaseSpecification<T> : ISpecification<T>// where T : BaseSpecification<T>, new()
 	{
-		public BaseSpecification()
-		{
+		public List<string> Includes { get; set; } = new List<string>();
+		public Expression<Func<T, bool>> Query { get; private set; } = (T => true);
+		public Expression<Func<T, object>> SortQuery { get; private set; }
 
-		}
-		public BaseSpecification(Expression<Func<T, bool>> query)
+		protected void AddFilter(Expression<Func<T, bool>> filter)
 		{
-			Query = query;
+			Query = filter;
 		}
 
-		public List<Expression<Func<T, object>>> Includes { get; } = new List<Expression<Func<T, object>>>();
-		public Expression<Func<T, bool>> Query { get; }
-		public Expression<Func<T, object>> OrderBy { get; private set; }
-		public Expression<Func<T, object>> OrderByDescending { get; private set; }
-		protected void AddInclude(Expression<Func<T, object>> include)
+		protected void AddIncludes(List<string> includes)
 		{
-			Includes.Add(include);
+			Includes.AddRange(includes);
+			//return (T)this;
 		}
-		protected void AddOrderBy(Expression<Func<T, object>> orderBy)
+
+		public void AddOrderBy(string sortField)
 		{
-			OrderBy = orderBy;
-		}
-		protected void AddOrderByDescending(Expression<Func<T, object>> orderByDescending)
-		{
-			OrderByDescending = orderByDescending;
+			if (!string.IsNullOrEmpty(sortField))
+			{
+				var propertyInfo = typeof(T).GetProperty(sortField);
+				if (propertyInfo != null)
+				{
+					var orderByExp = Converter.CreateOrderByExpression<T>(sortField);
+					SortQuery = orderByExp;
+				}
+				else
+				{
+					throw new FilterException("Wrong filter name.");
+				}
+			}
 		}
 	}
 }

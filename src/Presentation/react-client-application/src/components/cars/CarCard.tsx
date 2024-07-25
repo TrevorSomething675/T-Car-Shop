@@ -8,7 +8,9 @@ const CarCard: React.FC<{car: Car}> = ({car}) => {
     return <div className={styles.car}>
         <Link href={`car/${car.id}`}>
             <Offers offers={car?.offers} />
-            <Base64Image base64String={car.images[0].base64String} />
+            {car.images.length > 0 && 
+                <Base64Image base64String={car?.images[0].base64String} />
+            }
             <div className={styles.cardBotton}>
                 <h2 className={styles.h2}>
                     {car.name}

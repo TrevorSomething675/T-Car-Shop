@@ -21,10 +21,10 @@ namespace T_Car_Shop.DataAccess.Repositories
 			using(var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
 			{
 				var manufacturers = await context.Manufacturers
+					.AsNoTracking()
 					.Include(m => m.Images)
 					.Skip((filter.PageNumber - 1) * 8)
 					.Take(filter.PageNumber * 8)
-					.AsNoTracking()
 					.ToListAsync(cancellationToken);
 
 				var count = manufacturers.Count();

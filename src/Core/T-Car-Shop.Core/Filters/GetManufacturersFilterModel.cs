@@ -2,7 +2,7 @@
 
 namespace T_Car_Shop.Core.Filters
 {
-	public class GetManufacturersFilterModel
+	public class GetManufacturersFilterModel : BaseFilter
 	{
 		public int PageNumber { get; set; } = 1;
 		public ImagesFillingType ImagesFillingType { get; set; } = ImagesFillingType.WithAllImages;

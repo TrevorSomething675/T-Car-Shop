@@ -19,7 +19,7 @@ const Manufacturer:React.FC<{manufacturer: Manufacturer}> = ({manufacturer}) =>{
         </div>
         <div className={styles.imagesContainer}>
             <AliceCarousel items={
-                manufacturer.images.map((image) =><Base64Image base64String={image.base64String}/>)} 
+                manufacturer.images.map((image) => <Base64Image key={image.id} base64String={image.base64String}/>)} 
                 responsive={responsive}
             />
         </div>

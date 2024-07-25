@@ -1,4 +1,5 @@
 ﻿using T_Car_Shop.Core.Models.Infrastructure;
+using T_Car_Shop.Core.Specification.Models;
 using T_Car_Shop.Application.Repositories;
 using T_Car_Shop.Application.Services;
 using T_Car_Shop.Core.Filters;
@@ -20,9 +21,9 @@ namespace T_Car_Shop.Infrastructure.Services
 			_mapper = mapper;
 		}
 
-		public async Task<Car> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
+		public async Task<Car> GetByIdAsync(CarSpecification specification, Guid id, CancellationToken cancellationToken = default)
 		{
-			var car = _mapper.Map<Car>(await _carRepository.GetByIdAsync(id, cancellationToken));
+			var car = _mapper.Map<Car>(await _carRepository.GetByIdAsync(specification, id, cancellationToken));
 			foreach (var image in car.Images)
 			{
 				image.Base64String = await _minioService.GetObjectAsync(image.Path);
@@ -30,32 +31,38 @@ namespace T_Car_Shop.Infrastructure.Services
 			return car;
 		}
 
-		public async Task<PagedData<Car>> GetAllAsync(GetCarsFilterModel filter, CancellationToken cancellationToken = default)
+		public async Task<PagedData<Car>> GetAllAsync(CarSpecification specification, GetCarsFilterModel filter, CancellationToken cancellationToken = default)
 		{
-			var cars = _mapper.Map<PagedData<Car>>(await _carRepository.GetAllAsync(filter, cancellationToken));
+			var cars = _mapper.Map<PagedData<Car>>(await _carRepository.GetAllAsync(specification, filter, cancellationToken));
+			try 
+			{ 
+				switch (filter.ImagesFillingType)
+				{
+					case ImagesFillingType.WithoutImages:
+						break;
 
-			switch (filter.ImagesFillingType)
-			{
-				case ImagesFillingType.WithoutImages:
-					break;
-
-				case ImagesFillingType.WithAllImages:
-					foreach (var car in cars.Items)
-					{
-						foreach (var img in car.Images)
+					case ImagesFillingType.WithAllImages:
+						foreach (var car in cars.Items)
 						{
-							img.Base64String = await _minioService.GetObjectAsync(img.Path, cancellationToken);
+							foreach (var img in car.Images)
+							{
+								img.Base64String = await _minioService.GetObjectAsync(img.Path, cancellationToken);
+							}
 						}
-					}
-					break;
+						break;
 
-				case ImagesFillingType.WithFirstImage:
-					foreach (var car in cars.Items)
-					{
-						var firstImage = car.Images.First();
-						firstImage.Base64String = await _minioService.GetObjectAsync(firstImage.Path, cancellationToken);
-					}
-					break;
+					case ImagesFillingType.WithFirstImage:
+						foreach (var car in cars.Items)
+						{
+							var firstImage = car.Images.First();
+							firstImage.Base64String = await _minioService.GetObjectAsync(firstImage.Path, cancellationToken);
+						}
+						break;
+				}
+			}
+			catch(Exception ex)
+			{
+
 			}
 
 			return cars;

@@ -893,7 +893,8 @@
       "T-Car-Shop.Core/1.0.0": {
         "dependencies": {
           "AutoMapper": "13.0.1",
-          "Microsoft.AspNetCore.Mvc.Core": "2.2.5"
+          "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
+          "Microsoft.EntityFrameworkCore": "8.0.6"
         },
         "runtime": {
           "T-Car-Shop.Core.dll": {}

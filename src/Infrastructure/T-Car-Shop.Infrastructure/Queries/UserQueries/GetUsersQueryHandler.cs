@@ -1,4 +1,5 @@
 ﻿using T_Car_Shop.Core.Models.Infrastructure;
+using T_Car_Shop.Core.Specification.Models;
 using T_Car_Shop.Application.Repositories;
 using T_Car_Shop.Core.Shared;
 using AutoMapper;
@@ -19,7 +20,8 @@ namespace T_Car_Shop.Infrastructure.Queries.UserQueries
         {
             try
             {
-                var users = _mapper.Map<PagedData<User>>(await _userRepository.GelAllAsync(cancellationToken));
+                var specification = new UserSpectification();
+				var users = _mapper.Map<PagedData<User>>(await _userRepository.GelAllAsync(specification, cancellationToken));
                 return new Result<PagedData<User>>(users).Success();
             }
             catch (Exception ex) 

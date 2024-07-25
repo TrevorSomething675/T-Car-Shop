@@ -1,11 +1,12 @@
-﻿using T_Car_Shop.Application.Repositories;
+﻿using T_Car_Shop.Core.Specification.Models;
+using T_Car_Shop.Application.Repositories;
 using T_Car_Shop.Core.Models.DataAccess;
 using T_Car_Shop.DataAccess.Contexts;
 using Microsoft.EntityFrameworkCore;
+using T_Car_Shop.Core.Extensions;
 using T_Car_Shop.Core.Filters;
 using T_Car_Shop.Core.Shared;
 using AutoMapper;
-using T_Car_Shop.Core.Specification;
 
 namespace T_Car_Shop.DataAccess.Repositories
 {
@@ -19,44 +20,41 @@ namespace T_Car_Shop.DataAccess.Repositories
             _dbContextFactory = dbContextFactory;
         }
 
-        public async Task<CarEntity> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
+        public async Task<CarEntity> GetByIdAsync(CarSpecification specification, Guid id, CancellationToken cancellationToken = default)
         {
-            await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken)) 
+            await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
                 var car = await context.Cars
-                    .Include(c => c.Description)
-                    .Include(c => c.Images)
+                    .Includes(specification.Includes)
                     .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
+
                 return car;
             }
         }
 
-        public async Task<PagedData<CarEntity>> GetAllAsync(ISpecification<CarEntity> specification, GetCarsFilterModel filter, CancellationToken cancellationToken = default)
+        public async Task<PagedData<CarEntity>> GetAllAsync(CarSpecification specification, GetCarsFilterModel filter, CancellationToken cancellationToken = default)
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
-                var cars = await context.Cars.AsQueryable()
-                    .Include(specification.Includes)
+                var cars = await context.Cars
+                    .AsNoTracking()
+                    .Includes(specification.Includes)
                     .Where(specification.Query)
+                    .OrderBy(specification.SortQuery)
                     .ToListAsync(cancellationToken);
 
-                /*var cars = await context.Cars
-                    .Include(c => c.Images)
-                    .Include(c => c.Offers)
+                var pagedCars = cars
                     .Skip((filter.PageNumber - 1) * 8)
                     .Take(filter.PageNumber * 8)
-                    .AsNoTracking()
-                    .ToListAsync(cancellationToken);
-                */
-                var allCars = await context.Cars
-                    .AsNoTracking().ToListAsync(cancellationToken);
+                    .ToList();
 
-                var count = allCars.Count;
+                var count = cars.Count;
                 var pageCount = (int)Math.Ceiling((double)count / 8);
 
-                return new PagedData<CarEntity>(cars, count, pageCount);
+                return new PagedData<CarEntity>(pagedCars, count, pageCount);
             }
         }
+
         public async Task<CarEntity> UpdateAsync(CarEntity car, CancellationToken cancellationToken = default)
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))

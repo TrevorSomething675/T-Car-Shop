@@ -4,6 +4,7 @@
 	{
 		public bool IsSale { get; set; }
 		public bool IsSell { get; set; }
+		public bool IsHit { get; set; }
 
 		public Guid CarId { get; set; }
 		public CarEntity Car { get; set; }

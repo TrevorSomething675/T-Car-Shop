@@ -12,9 +12,15 @@ const CarPage = () => {
     const pathname = usePathname();
 
     useEffect(() => {
+        const includes:string[] = ["Images"];
         const id = pathname.split('/').pop();
         const fetchData = async () => {
-            const response = await axios.get<ApiResponse<Car>>(`https://localhost:7049/Car/${id}`)
+            const response = await axios.get<ApiResponse<Car>>(`https://localhost:7049/Car/${id}`, {
+                params:{
+                    Id: id,
+                    Includes: includes.join(',')
+                }
+            })
             setCar(response.data.value);
         }
         

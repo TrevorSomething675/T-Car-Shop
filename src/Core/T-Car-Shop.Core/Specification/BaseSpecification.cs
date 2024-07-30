@@ -4,21 +4,21 @@ using T_Car_Shop.Core.Shared;
 
 namespace T_Car_Shop.Core.Specification
 {
-	public class BaseSpecification<T> : ISpecification<T>// where T : BaseSpecification<T>, new()
+	public class BaseSpecification<T> : ISpecification<T>
 	{
 		public List<string> Includes { get; set; } = new List<string>();
-		public Expression<Func<T, bool>> Query { get; private set; } = (T => true);
-		public Expression<Func<T, object>> SortQuery { get; private set; }
+		public Expression<Func<T, bool>> Filter { get; private set; } = (T => true);
+		public Expression<Func<T, object>> OrderBy { get; private set; }
 
-		protected void AddFilter(Expression<Func<T, bool>> filter)
+		protected void AddFilter(Expression<Func<T, bool>> filter, bool condition = false)
 		{
-			Query = filter;
+			if(condition)
+				Filter = filter;
 		}
 
 		protected void AddIncludes(List<string> includes)
 		{
 			Includes.AddRange(includes);
-			//return (T)this;
 		}
 
 		public void AddOrderBy(string sortField)
@@ -29,7 +29,7 @@ namespace T_Car_Shop.Core.Specification
 				if (propertyInfo != null)
 				{
 					var orderByExp = Converter.CreateOrderByExpression<T>(sortField);
-					SortQuery = orderByExp;
+					OrderBy = orderByExp;
 				}
 				else
 				{

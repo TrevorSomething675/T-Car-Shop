@@ -16,14 +16,37 @@ namespace T_Car_Shop.DataAccess.Repositories
             _dbContextFactory = dbContextFactory;
         }
 
-        public async Task<PagedData<UserEntity>> GelAllAsync(UserSpectification spectification, CancellationToken cancellationToken = default)
+		public async Task<UserEntity> GetByNameAsync(string name, CancellationToken cancellationToken = default)
+		{
+			await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
+			{
+				var user = await context.Users
+					.AsNoTracking()
+					.Include(u => u.Role)
+					.FirstOrDefaultAsync(u => u.Name == name, cancellationToken);
+				return user;
+			}
+		}
+
+		public async Task<UserEntity> CreateAsync(UserEntity user, CancellationToken cancellationToken = default)
+		{
+            await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
+            {
+                context.Roles.Attach(user.Role);
+                var result = context.Users.Add(user);
+                await context.SaveChangesAsync(cancellationToken);
+                return result.Entity;
+            }
+		}
+
+		public async Task<PagedData<UserEntity>> GelAllAsync(UserSpectification spectification, CancellationToken cancellationToken = default)
         {
-            await using(var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
+            await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
                 var users = await context.Users
                     .AsNoTracking()
                     .Includes(spectification.Includes)
-                    .Where(spectification.Query)
+                    .Where(spectification.Filter)
                     .ToListAsync(cancellationToken);
 
                 var count = users.Count;
@@ -35,11 +58,14 @@ namespace T_Car_Shop.DataAccess.Repositories
 
         public async Task<UserEntity> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
-            await using(var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
+            await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
-                var user = await context.Users.FirstOrDefaultAsync(u => u.Id == id, cancellationToken);
+                var user = await context.Users
+                    .AsNoTracking()
+                    .Include(u => u.Role)
+                    .FirstOrDefaultAsync(u => u.Id == id, cancellationToken);
                 return user;
             }
         }
-    }
+	}
 }

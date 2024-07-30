@@ -212,6 +212,9 @@ namespace T_Car_Shop.DataAccess.Migrations
                     b.Property<Guid>("CarId")
                         .HasColumnType("uuid");
 
+                    b.Property<bool>("IsHit")
+                        .HasColumnType("boolean");
+
                     b.Property<bool>("IsSale")
                         .HasColumnType("boolean");
 
@@ -248,14 +251,13 @@ namespace T_Car_Shop.DataAccess.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("PasswordHash")
+                    b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("text");
 

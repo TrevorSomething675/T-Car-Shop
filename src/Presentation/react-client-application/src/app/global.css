@@ -1,5 +1,5 @@
 html, body {
-    height: 100%;
+    height: auto;
     margin: 0;
     padding: 0;
 }
@@ -18,7 +18,7 @@ ul{
 .page-body {
     flex: 1;
     display: flex;
-    background-color: var(--light-grey-color);
+    background-color: var(--super-light-grey-color);
     flex-direction: column;
     justify-content: space-between;
 }

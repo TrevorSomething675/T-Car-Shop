@@ -6,39 +6,20 @@ import axios from 'axios';
 import Manufacturers from '@/components/manufacturers/Manufacturers';
 import { useState, useEffect } from 'react';
 import Pagging from '@/components/pagging/Paggind';
+import api from '@/http';
 
 
 const ManufacturersPage = () =>{
     const [manufacturers, setManufacturers] = useState<Manufacturer[]>([])
     const [pageCount, setPageCount] = useState<number>(1);
-    const  handlePageNumberChange = (pageNumber: number) =>{
-        fetchData(pageNumber);
+    const  handlePageNumberChange = (pageNumber: number = 1) =>{
+        const source = axios.CancelToken.source();
+        fetchData(pageNumber, source);
     }
-    useEffect(() => {
-        const source = axios.CancelToken.source();
-        const fetchData = async (pageNumber: number) => {
-            try{
-                const response = await axios.get<ApiItemsResponse<Manufacturer>>('https://localhost:7049/Manufacturer', {
-                    cancelToken: source.token, 
-                    params: {
-                        pageNumber: pageNumber
-                    }
-                });
-                setPageCount(response.data.value.pageCount);
-                setManufacturers(response.data.value.items);
-            }
-            catch(error) {
-                console.error(error);
-            }
-        } 
-        fetchData(1);
-    }, []);
-
-    const fetchData = async (pageNumber: number) => {
-        const source = axios.CancelToken.source();
+    const fetchData = async (pageNumber: number = 1, cancelToken: any) => {
         try{
-            const response = await axios.get<ApiItemsResponse<Manufacturer>>('https://localhost:7049/Manufacturer', {
-                cancelToken: source.token, 
+            const response = await api.get<ApiItemsResponse<Manufacturer>>('/Manufacturer', {
+                cancelToken: cancelToken.token, 
                 params: {
                     pageNumber: pageNumber
                 }
@@ -50,6 +31,14 @@ const ManufacturersPage = () =>{
             console.error(error);
         }
     } 
+    useEffect(() => {
+        const source = axios.CancelToken.source();
+        fetchData(1, source);
+
+        return () => {
+            source.cancel();
+        };
+    }, []);
 
     return <div className='page-container'>
         <Header />

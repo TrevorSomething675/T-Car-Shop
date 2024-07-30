@@ -10,26 +10,32 @@ using T_Car_Shop.Core.Enums;
 using Minio.DataModel.Args;
 using System.Reflection;
 using Minio;
+using Microsoft.Extensions.Options;
 
 namespace T_Car_Shop.Web
 {
 	public class Startup
 	{
-		public void ConfigureServices(IServiceCollection services)
+		public async void ConfigureServices(IServiceCollection services)
 		{
+			services.AddMediatR(config => config.RegisterServicesFromAssemblies(Assembly.GetAssembly(typeof(AssemblyMarker))));
+			services.AddSwaggerGen();
 			services.AddAppOptions();
+			services.AddControllers();
+
+			services.AddAppAuth();
 			services.AddAppMinio();
 			services.AddAppDbContext();
 			services.AddAppAutoMapper();
-			services.AddCors();
 
 			services.AddScoped<ICarRepository, CarRepository>();
 			services.AddScoped<IUserRepository, UserRepository>();
+			services.AddScoped<IRoleRepository, RoleRepository>();
 			services.AddScoped<IManufacturerRepository, ManufacturerRepository>();
 
-			services.AddScoped<IAuthService, AuthService>();
 			services.AddScoped<ITokenService, TokenService>();
 			services.AddScoped<IMinioService, MinioService>();
+			services.AddScoped<IUserService, UserService>();
 			services.AddScoped<ICarService, CarService>();
 			services.AddScoped<IManufacturerService, ManufacturerService>();
 
@@ -37,6 +43,26 @@ namespace T_Car_Shop.Web
             {
                 context.Database.EnsureDeleted();
                 context.Database.EnsureCreated();
+
+				if (!context.Roles.Any()) 
+				{
+					context.AddRange(new List<RoleEntity>
+					{
+						new RoleEntity
+						{
+							Name = "User"
+						},
+						new RoleEntity
+						{
+							Name = "Manager"
+						},
+						new RoleEntity
+						{
+							Name = "Admin"
+						}
+					});
+					await context.SaveChangesAsync();
+				}
 
                 if (!context.Manufacturers.Any())
                 {
@@ -479,6 +505,7 @@ namespace T_Car_Shop.Web
                     context.SaveChanges();
                 }
 			}
+
 			using (var minioClinet = services.BuildServiceProvider().GetRequiredService<IMinioClientFactory>().CreateClient())
 			{
 				var argsImageBucket = new BucketExistsArgs()
@@ -501,20 +528,17 @@ namespace T_Car_Shop.Web
 				}
 			}
 
-			services.AddMediatR(config => config.RegisterServicesFromAssemblies(Assembly.GetAssembly(typeof(AssemblyMarker))));
-			services.AddControllers();
-
-			services.AddSwaggerGen();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseCors(builder =>
             {
-                builder.AllowAnyOrigin()
-                    .AllowAnyMethod()
-                    .AllowAnyHeader();
-            });
+				builder.WithOrigins("http://localhost:3000")
+					.AllowAnyMethod()
+					.AllowAnyHeader()
+					.AllowCredentials();
+			});
             app.UseSwagger(options =>
             {
                 options.SerializeAsV2 = true;

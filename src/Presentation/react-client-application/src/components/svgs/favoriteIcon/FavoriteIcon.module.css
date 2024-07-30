@@ -1,0 +1,4 @@
+.icon{
+    fill:var(--super-light-grey-color);
+    filter: drop-shadow(0 0 10px var(--dark-grey-color));
+}

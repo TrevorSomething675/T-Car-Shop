@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using T_Car_Shop.Core.Filters;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 
 namespace T_Car_Shop.Web.Controllers
 {
@@ -15,6 +16,7 @@ namespace T_Car_Shop.Web.Controllers
 			_mediator = mediator;
 		}
 
+		[Authorize]
 		[HttpGet]
 		public async Task<IActionResult> Get([FromQuery] GetManufacturersFilterModel filter, CancellationToken cancellationToken = default)
 		{

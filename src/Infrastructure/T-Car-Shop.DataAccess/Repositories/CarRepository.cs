@@ -20,7 +20,7 @@ namespace T_Car_Shop.DataAccess.Repositories
             _dbContextFactory = dbContextFactory;
         }
 
-        public async Task<CarEntity> GetByIdAsync(CarSpecification specification, Guid id, CancellationToken cancellationToken = default)
+        public async Task<CarEntity> GetByIdAsync(Guid id, CarSpecification specification, CancellationToken cancellationToken = default)
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
@@ -32,15 +32,15 @@ namespace T_Car_Shop.DataAccess.Repositories
             }
         }
 
-        public async Task<PagedData<CarEntity>> GetAllAsync(CarSpecification specification, GetCarsFilterModel filter, CancellationToken cancellationToken = default)
+        public async Task<PagedData<CarEntity>> GetAllAsync(CarsSpecification specification, GetCarsFilterModel filter, CancellationToken cancellationToken = default)
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
                 var cars = await context.Cars
                     .AsNoTracking()
                     .Includes(specification.Includes)
-                    .Where(specification.Query)
-                    .OrderBy(specification.SortQuery)
+                    .Where(specification.Filter)
+                    .OrderBy(specification.OrderBy)
                     .ToListAsync(cancellationToken);
 
                 var pagedCars = cars

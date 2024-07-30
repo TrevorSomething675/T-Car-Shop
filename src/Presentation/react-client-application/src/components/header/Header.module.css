@@ -1,3 +1,4 @@
 .header{
-    background-color: var(--light-grey-color);
+    background-image: url('../../assets/icons/background-image.jpg');
+    background-size: cover;
 }

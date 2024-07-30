@@ -90,8 +90,8 @@ namespace T_Car_Shop.DataAccess.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
-                    Email = table.Column<string>(type: "text", nullable: false),
-                    PasswordHash = table.Column<string>(type: "text", nullable: false),
+                    Email = table.Column<string>(type: "text", nullable: true),
+                    Password = table.Column<string>(type: "text", nullable: false),
                     RoleId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
@@ -172,6 +172,7 @@ namespace T_Car_Shop.DataAccess.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     IsSale = table.Column<bool>(type: "boolean", nullable: false),
                     IsSell = table.Column<bool>(type: "boolean", nullable: false),
+                    IsHit = table.Column<bool>(type: "boolean", nullable: false),
                     CarId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>

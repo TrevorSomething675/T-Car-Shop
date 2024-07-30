@@ -1,13 +1,13 @@
+'use client'
+
 import TopHeader from './topHeader/TopHeader';
-import MiddleHeader from './middleHeader/middleHeader';
 import BottomHeader from './bottomHeader/BottomHeader';
 import styles from './Header.module.css';
 
-const Header = () => {
+const Header:React.FC<{isSmallHeader?:boolean}> = ({isSmallHeader = false}) => {
     return <>
         <div className={styles.header}>
-            <TopHeader />
-            <MiddleHeader />
+            <TopHeader isSmallHeader={isSmallHeader}/>
             <BottomHeader />
         </div>
     </>

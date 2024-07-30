@@ -3,7 +3,6 @@ using T_Car_Shop.Core.Specification.Models;
 using T_Car_Shop.Application.Services;
 using T_Car_Shop.Core.Shared;
 using MediatR;
-using T_Car_Shop.Core.Enums;
 
 namespace T_Car_Shop.Infrastructure.Queries.CarQueries
 {
@@ -18,11 +17,7 @@ namespace T_Car_Shop.Infrastructure.Queries.CarQueries
         {
             try
             {
-                var specification = new CarSpecification()
-                    .Where(c => c.Offers.IsHit, request.Filter.SampleType == SampleType.Hit)
-                    .Where(c => c.Offers.IsSale, request.Filter.SampleType == SampleType.Sale)
-                    .Include(request.Filter.Includes)
-                    .OrderBy(request.Filter.SortFiled);
+                var specification = new CarsSpecification(request?.Filter);
 
 				var cars = await _carService.GetAllAsync(specification, request.Filter, cancellationToken);
                 return new Result<PagedData<Car>>(cars).Success();

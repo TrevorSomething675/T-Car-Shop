@@ -21,9 +21,9 @@ namespace T_Car_Shop.Infrastructure.Services
 			_mapper = mapper;
 		}
 
-		public async Task<Car> GetByIdAsync(CarSpecification specification, Guid id, CancellationToken cancellationToken = default)
+		public async Task<Car> GetByIdAsync(Guid id, CarSpecification specification, CancellationToken cancellationToken = default)
 		{
-			var car = _mapper.Map<Car>(await _carRepository.GetByIdAsync(specification, id, cancellationToken));
+			var car = _mapper.Map<Car>(await _carRepository.GetByIdAsync(id, specification, cancellationToken));
 			foreach (var image in car.Images)
 			{
 				image.Base64String = await _minioService.GetObjectAsync(image.Path);
@@ -31,7 +31,7 @@ namespace T_Car_Shop.Infrastructure.Services
 			return car;
 		}
 
-		public async Task<PagedData<Car>> GetAllAsync(CarSpecification specification, GetCarsFilterModel filter, CancellationToken cancellationToken = default)
+		public async Task<PagedData<Car>> GetAllAsync(CarsSpecification specification, GetCarsFilterModel filter, CancellationToken cancellationToken = default)
 		{
 			var cars = _mapper.Map<PagedData<Car>>(await _carRepository.GetAllAsync(specification, filter, cancellationToken));
 			try 

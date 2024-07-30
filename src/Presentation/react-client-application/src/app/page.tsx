@@ -6,7 +6,7 @@ export default function Home() {
     <Header />
     <div className='page-body'>
       <ul>
-            
+
       </ul>
     </div>
     <Footer />

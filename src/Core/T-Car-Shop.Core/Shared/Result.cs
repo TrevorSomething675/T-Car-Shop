@@ -20,7 +20,7 @@ namespace T_Car_Shop.Core.Shared
             return this;
         }
 
-        public Result<T> NotFound()
+        public Result<T> NotFound(string message = "")
         {
             StatusCode = 404;
             return this;

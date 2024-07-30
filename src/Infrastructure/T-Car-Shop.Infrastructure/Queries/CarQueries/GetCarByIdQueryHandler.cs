@@ -9,7 +9,7 @@ namespace T_Car_Shop.Infrastructure.Queries.CarQueries
     public class GetCarByIdQueryHandler : IRequestHandler<GetCarByIdQuery, Result<Car>>
     {
         private readonly ICarService _carService;
-        public GetCarByIdQueryHandler(ICarService carService) 
+        public GetCarByIdQueryHandler(ICarService carService)
         {
             _carService = carService;
         }
@@ -17,10 +17,9 @@ namespace T_Car_Shop.Infrastructure.Queries.CarQueries
         {
             try
             {
-                var specification = new CarSpecification()
-                    .Include(request.Filter.Includes);
+                var specification = new CarSpecification(request?.Filter);
 
-                var car = await _carService.GetByIdAsync(specification, request.Filter.Id);
+                var car = await _carService.GetByIdAsync(request.Filter.Id, specification, cancellationToken);
                 if (car != null)
                     return new Result<Car>(car).Success();
                 else

@@ -7,6 +7,8 @@ namespace T_Car_Shop.Application.Repositories
     public interface IUserRepository
     {
         Task<UserEntity> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
-        Task<PagedData<UserEntity>> GelAllAsync(UserSpectification spectification, CancellationToken cancellationToken = default);
+        Task<UserEntity> GetByNameAsync(string name, CancellationToken cancellationToken = default);
+		Task<PagedData<UserEntity>> GelAllAsync(UserSpectification spectification, CancellationToken cancellationToken = default);
+        Task<UserEntity> CreateAsync(UserEntity user, CancellationToken cancellationToken = default);
     }
 }

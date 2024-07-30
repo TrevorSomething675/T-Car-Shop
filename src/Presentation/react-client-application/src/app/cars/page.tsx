@@ -6,58 +6,51 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Cars from '@/components/cars/Cars';
 import Pagging from '@/components/pagging/Paggind';
+import CarsHeader from '@/components/cars/carsHeader/CarsHeader';
+import api from '@/http/index';
 
 const CarsPage = () => {
     const [cars, setCars] = useState<Car[]>([]);
     const [pageCount, setPageCount] = useState<number>(1);
-    
-    const handlePageNumberChange = (pageNumber: number) => {
-        fetchData(pageNumber);
-    }
-    useEffect(() => {
-        const includes:string[] = ['Images'];
-        const source = axios.CancelToken.source();
-        const fetchData = async (pageNumber:number) => {
-            try {
-                const response = await axios.get<ApiItemsResponse<Car>>('https://localhost:7049/Car', {
-                    cancelToken: source.token,
-                    params:{
-                        pageNumber: pageNumber,
-                        Includes: includes.join(',')
-                    }
-                });
-                setCars(response.data.value.items);
-                setPageCount(response.data.value.pageCount);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-        fetchData(1);
-        return () => {
-            source.cancel('Operation canceled by the user.');
-        };
-    }, []);
 
-    const fetchData = async (pageNumber:number) => {
+    const fetchData = async (pageNumber: number, cancelToken: any) => {
         try {
-            const includes:string[] = ['Images'];
-            const source = axios.CancelToken.source();
-            const response = await axios.get<ApiItemsResponse<Car>>('https://localhost:7049/Car', {
-                cancelToken: source.token,
-                params:{
+            const response = await api.get<ApiItemsResponse<Car>>('/Car', {
+                cancelToken: cancelToken.token,
+                params: {
                     pageNumber: pageNumber,
-                    Includes: includes.join(',')
+                    Includes: ['Images'].join(',')
                 }
             });
             setCars(response.data.value.items);
+            setPageCount(response.data.value.pageCount);
         } catch (error) {
-            console.error(error);
+            if (axios.isCancel(error)) {
+                console.log();
+            } else {
+                console.error(error);
+            }
         }
-    }
+    };
+
+    const handlePageNumberChange = (pageNumber: number) => {
+        const source = axios.CancelToken.source();
+        fetchData(pageNumber, source);
+    };
+
+    useEffect(() => {
+        const source = axios.CancelToken.source();
+        fetchData(1, source); 
+
+        return () => {
+            source.cancel();
+        };
+    }, []);
 
     return <div className='page-container'>
         <Header />
         <div className='page-body'>
+            <CarsHeader />
             <Cars cars={cars} />
             <Pagging pageCount={pageCount} onPageNumberChange={handlePageNumberChange} />
         </div>

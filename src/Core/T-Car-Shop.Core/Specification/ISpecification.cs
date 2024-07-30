@@ -4,7 +4,7 @@ namespace T_Car_Shop.Core.Specification
 {
 	public interface ISpecification<T>
 	{
-		Expression<Func<T, bool>> Query { get; }
+		Expression<Func<T, bool>> Filter { get; }
 		List<string> Includes { get; }
 	}
 }

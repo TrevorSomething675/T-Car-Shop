@@ -1,15 +1,17 @@
 import { SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
 import styles from './Login.module.css';
-import { useContext, useState } from "react";
-import {Context} from '@/app/layout';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { observer } from "mobx-react-lite";
+import store from '@/store/store';
 
 interface LoginForm{
     name:string;
     password:string;
 }
 
-const Login:React.FC<{changeAuthForm:any}> = ({changeAuthForm}) => {
-    const {store} = useContext(Context)
+const Login:React.FC<{changeAuthForm:any}> = observer(({changeAuthForm}) => {
+    const router = useRouter();
     const handleChangeAuthForm = () =>{
         changeAuthForm(false);
     }
@@ -19,12 +21,12 @@ const Login:React.FC<{changeAuthForm:any}> = ({changeAuthForm}) => {
     const submit:SubmitHandler<LoginForm> = async (data) =>{
         setErrors('');
         await store.login(data.name, data.password);
+        router.push('/');
     }
     const error:SubmitErrorHandler<LoginForm> = (data) =>{
         console.log(data);
     }
     const validator = (data:string) => {
-        console.log(data);
         if(data != null && data.length > 8){
             setErrors('');
             return true;
@@ -63,6 +65,6 @@ const Login:React.FC<{changeAuthForm:any}> = ({changeAuthForm}) => {
             </button>
         </div>
     </form>
-}
+});
 
 export default Login;

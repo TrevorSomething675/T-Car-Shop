@@ -28,7 +28,7 @@ const ManufacturersPage = () =>{
             setManufacturers(response.data.value.items);
         }
         catch(error) {
-            console.error(error);
+            
         }
     } 
     useEffect(() => {

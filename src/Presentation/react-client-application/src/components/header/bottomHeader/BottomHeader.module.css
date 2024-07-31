@@ -4,6 +4,7 @@
     padding: 0 1rem 0 1rem;
     display: flex;
     justify-content: space-between;
+    align-items: end;
 }
 
 .ul{
@@ -21,7 +22,7 @@
     background: none;
     border: none;
     text-shadow: 0px 0px 10px var(--dark-grey-color);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 0 0.5rem 0 0.5rem;
     cursor: pointer;
     position: relative; 
@@ -45,16 +46,15 @@
 }
 
 .button:hover {
-    text-decoration: none;
     transition: .3s;
 }
 
 .rightNavBar{
-    height: 100%;
+    margin: 0.5rem 0 0.5rem 0;
     float: right;
 }
 
 .leftNavBar{
-    height: 100%;
+    margin: 0.5rem 0 0.5rem 0;
     float: left;
 }

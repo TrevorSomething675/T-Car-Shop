@@ -8,7 +8,7 @@ using MediatR;
 
 namespace T_Car_Shop.Infrastructure.Commands.AuthCommands
 {
-	public class LoginCommandHandler : IRequestHandler<LoginCommand, Result<JwtTokensModel>>
+	public class LoginCommandHandler : IRequestHandler<LoginCommand, Result<AuthModel>>
 	{
 		private readonly IMapper _mapper;
 		private readonly IUserService _userService;
@@ -17,20 +17,21 @@ namespace T_Car_Shop.Infrastructure.Commands.AuthCommands
 			_userService = userService;
 			_mapper = mapper;
 		}
-		public async Task<Result<JwtTokensModel>> Handle(LoginCommand request, CancellationToken cancellationToken)
+		public async Task<Result<AuthModel>> Handle(LoginCommand request, CancellationToken cancellationToken)
 		{
 			try
 			{
-				var tokens = await _userService.Login(_mapper.Map<User>(request.FormData), cancellationToken);
-				return new Result<JwtTokensModel>(tokens).Success();
+				var user = await _userService.GetByNameAsync(request.FormData.Name);
+				var authModel = await _userService.Login(_mapper.Map<User>(request.FormData), cancellationToken);
+				return new Result<AuthModel>(authModel).Success();
 			}
 			catch(NotFoundException ex)
 			{
-				return new Result<JwtTokensModel>().NotFound(ex.Message);
+				return new Result<AuthModel>().NotFound(ex.Message);
 			}
 			catch (Exception ex)
 			{
-				return new Result<JwtTokensModel>().BadRequest(ex.Message);
+				return new Result<AuthModel>().BadRequest(ex.Message);
 			}
 		}
 	}

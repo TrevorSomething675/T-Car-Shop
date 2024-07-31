@@ -10,7 +10,6 @@ using T_Car_Shop.Core.Enums;
 using Minio.DataModel.Args;
 using System.Reflection;
 using Minio;
-using Microsoft.Extensions.Options;
 
 namespace T_Car_Shop.Web
 {

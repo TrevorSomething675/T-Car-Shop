@@ -28,7 +28,7 @@ const CarsPage = () => {
             if (axios.isCancel(error)) {
                 console.log();
             } else {
-                console.error(error);
+                console.error();
             }
         }
     };

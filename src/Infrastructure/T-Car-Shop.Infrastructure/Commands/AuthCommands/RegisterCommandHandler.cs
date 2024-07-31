@@ -7,7 +7,7 @@ using MediatR;
 
 namespace T_Car_Shop.Infrastructure.Commands.AuthCommands
 {
-	public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Result<JwtTokensModel>>
+	public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Result<AuthModel>>
 	{
 		private readonly IMapper _mapper;
 		private readonly IUserService _userService;
@@ -16,16 +16,16 @@ namespace T_Car_Shop.Infrastructure.Commands.AuthCommands
 			_userService = userService;
 			_mapper = mapper;
 		}
-		public async Task<Result<JwtTokensModel>> Handle(RegisterCommand request, CancellationToken cancellationToken)
+		public async Task<Result<AuthModel>> Handle(RegisterCommand request, CancellationToken cancellationToken)
 		{
 			try
 			{
 				var tokens = await _userService.Register(_mapper.Map<User>(request.FormData));
-				return new Result<JwtTokensModel>(tokens).Success();
+				return new Result<AuthModel>(tokens).Success();
 			}
 			catch (Exception ex) 
 			{
-				return new Result<JwtTokensModel>().BadRequest(ex.Message);
+				return new Result<AuthModel>().BadRequest(ex.Message);
 			}
 		}
 	}

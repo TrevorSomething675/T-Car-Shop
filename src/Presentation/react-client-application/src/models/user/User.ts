@@ -1,8 +1,7 @@
 interface User{
-    tokens: jwtTokensModel;
-    userName: string;
-    role:string;
     id: string;
+    name: string;
+    role:string;
 }
 
 export default User;

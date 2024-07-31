@@ -1,7 +1,8 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import styles from './Register.module.css';
 import { useContext, useState } from "react";
-import { Context } from '@/app/layout';
+import { useRouter } from 'next/navigation'; 
+import store from '@/store/store';
 
 interface RegisterForm {
     name: string;
@@ -13,13 +14,14 @@ const Register: React.FC<{ changeAuthForm: any }> = ({ changeAuthForm }) => {
     const handleChangeAuthForm = () => {
         changeAuthForm(true);
     }
-    const {store} = useContext(Context);
+    const router = useRouter();
     const [errors, setErrors] = useState<string>('');
     const { register, handleSubmit } = useForm<RegisterForm>();
 
     const submit: SubmitHandler<RegisterForm> = async (data) => {
         setErrors('');
         await store.register(data.name, data.password, data.confirmPassword);
+        router.push('/');
     }
     const validator = (data:string) => {
         if(data != null && data.length > 8){

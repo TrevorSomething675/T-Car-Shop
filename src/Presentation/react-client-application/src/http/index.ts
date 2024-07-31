@@ -3,7 +3,7 @@ import axios from 'axios';
 export const API_URL = 'https://localhost:7049';
 
 const api = axios.create({
-    withCredentials: false,
+    withCredentials: true,
     baseURL: API_URL,
 });
 

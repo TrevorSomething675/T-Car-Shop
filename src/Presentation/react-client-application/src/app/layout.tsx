@@ -4,28 +4,24 @@ import { Inter } from 'next/font/google';
 import './global.css';
 import './colors.css';
 import '@/app/extensions/slider.css'
-import Store from "@/store/store";
-import { createContext } from "react";
-
+import store from '@/store/store';
 const inter = Inter({ subsets: ["latin"] });
 
-interface StoreState {
-    store: Store;
-}
+import React, { useEffect } from 'react';
 
-const store = new Store();
-export const Context = createContext<StoreState>({
-    store,
-})
-
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode;}>) {
+const Layout = ({
+  children,
+}: {
+  children: React.ReactNode
+}) => {
+  useEffect(() =>{
+    store.checkAuth();
+  });
   return (
-    <Context.Provider value={{
-      store
-    }}>
-      <html lang="en">
-        <body className={inter.className}>{children}</body>
-      </html>
-    </Context.Provider>
-  );
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
+    </html>
+  )
 }
+
+export default Layout;

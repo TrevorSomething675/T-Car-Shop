@@ -25,16 +25,15 @@ const CarPage = () => {
         }
         
         fetchData();
-
     }, [])
 
     return <div className='page-container'>
         <Header />
         <div className='page-body'>
-            {
-                car != null &&
-                <MainCarCard car = {car}/>
-            }
+        {
+            car != null &&
+            <MainCarCard car = {car}/>
+        }
         </div>
         <Footer />
     </div>

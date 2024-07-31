@@ -1,10 +1,10 @@
-﻿using T_Car_Shop.Core.Models.Infrastructure;
+﻿using T_Car_Shop.Core.Exceptions.DomainExceptions;
+using T_Car_Shop.Core.Models.Infrastructure;
 using T_Car_Shop.Application.Repositories;
 using T_Car_Shop.Core.Models.DataAccess;
 using T_Car_Shop.Application.Services;
-using AutoMapper;
 using T_Car_Shop.Core.Models.Auth;
-using T_Car_Shop.Core.Exceptions.DomainExceptions;
+using AutoMapper;
 
 namespace T_Car_Shop.Infrastructure.Services
 {
@@ -27,10 +27,14 @@ namespace T_Car_Shop.Infrastructure.Services
 			var createdUser = await _userRepository.CreateAsync(_mapper.Map<UserEntity>(user), cancellationToken);
 			return _mapper.Map<User>(createdUser);
 		}
-
-		public async Task<JwtTokensModel> Login(User user, CancellationToken cancellationToken = default)
+		public async Task<User> GetByNameAsync(string name, CancellationToken cancellationToken = default)
 		{
-			var dbUser = await _userRepository.GetByNameAsync(user.Name);
+			var user = _mapper.Map<User>(await _userRepository.GetByNameAsync(name, cancellationToken));
+			return user;
+		}
+		public async Task<AuthModel> Login(User user, CancellationToken cancellationToken = default)
+		{
+			var dbUser = _mapper.Map<User>(await _userRepository.GetByNameAsync(user.Name));
 			if (dbUser == null)
 				throw new NotFoundException("User not found");
 
@@ -39,22 +43,21 @@ namespace T_Car_Shop.Infrastructure.Services
 				var accessToken = await _tokenService.CreateAccessToken(dbUser.Id, dbUser.Role.Name);
 				var refreshToken = await _tokenService.CreateRefreshToken();
 
-				return new JwtTokensModel(accessToken, refreshToken);
+				return new AuthModel(accessToken, refreshToken, dbUser);
 			}
 			throw new Exception("Wrong password");
         }
-
-		public async Task<JwtTokensModel> Register(User user, CancellationToken cancellationToken = default)
+		public async Task<AuthModel> Register(User user, CancellationToken cancellationToken = default)
 		{
 			var role = _mapper.Map<Role>(await _rolesRepository.GetRoleByName("User"));
 			user.Role = role;
 			var userEntity = _mapper.Map<UserEntity>(user);
-			var createdUser = await _userRepository.CreateAsync(userEntity, cancellationToken);
+			var createdUser = _mapper.Map<User>(await _userRepository.CreateAsync(userEntity, cancellationToken));
 
 			var accessToken = await _tokenService.CreateAccessToken(createdUser.Id, user.Role.Name);
 			var refreshToken = await _tokenService.CreateRefreshToken();
 
-			return new JwtTokensModel(accessToken, refreshToken);
+			return new AuthModel(accessToken, refreshToken, createdUser);
 		}
 	}
 }

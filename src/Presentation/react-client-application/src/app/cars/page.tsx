@@ -8,18 +8,23 @@ import Cars from '@/components/cars/Cars';
 import Pagging from '@/components/pagging/Paggind';
 import CarsHeader from '@/components/cars/carsHeader/CarsHeader';
 import api from '@/http/index';
+import qs from 'qs';
 
 const CarsPage = () => {
     const [cars, setCars] = useState<Car[]>([]);
     const [pageCount, setPageCount] = useState<number>(1);
 
     const fetchData = async (pageNumber: number, cancelToken: any) => {
+
         try {
             const response = await api.get<ApiItemsResponse<Car>>('/Car', {
                 cancelToken: cancelToken.token,
                 params: {
-                    pageNumber: pageNumber,
-                    Includes: ['Images'].join(',')
+                    Includes: ['Images', 'Offers'],
+                    pageNumber: pageNumber
+                },
+                paramsSerializer: params => {
+                    return qs.stringify(params, { arrayFormat: 'repeat' });
                 }
             });
             setCars(response.data.value.items);

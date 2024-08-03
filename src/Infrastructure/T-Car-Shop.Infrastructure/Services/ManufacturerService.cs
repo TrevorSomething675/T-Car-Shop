@@ -1,7 +1,7 @@
 ﻿using T_Car_Shop.Core.Models.Infrastructure;
+using T_Car_Shop.Core.Specification.Models;
 using T_Car_Shop.Application.Repositories;
 using T_Car_Shop.Application.Services;
-using T_Car_Shop.Core.Filters;
 using T_Car_Shop.Core.Shared;
 using T_Car_Shop.Core.Enums;
 using AutoMapper;
@@ -19,11 +19,11 @@ namespace T_Car_Shop.Infrastructure.Services
 			_minioService = minioService;
 			_mapper = mapper;
 		}
-		public async Task<PagedData<Manufacturer>> GetManufacturersAsync(GetManufacturersFilterModel filter, CancellationToken cancellationToken = default)
+		public async Task<PagedData<Manufacturer>> GetManufacturersAsync(ManufacturerSpecification specification, CancellationToken cancellationToken = default)
 		{
-			var manufacturers = _mapper.Map<PagedData<Manufacturer>>(await _manufacturerRepository.GetAllAsync(filter, cancellationToken));
+			var manufacturers = _mapper.Map<PagedData<Manufacturer>>(await _manufacturerRepository.GetAllAsync(specification, cancellationToken));
 			
-			switch (filter.ImagesFillingType)
+			switch (specification.ImagesFillingType)
 			{
 				case ImagesFillingType.WithoutImages:
 					break;

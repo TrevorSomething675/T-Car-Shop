@@ -1,14 +1,26 @@
 ﻿using T_Car_Shop.Core.Models.DataAccess;
 using T_Car_Shop.Core.Filters;
+using T_Car_Shop.Core.Enums;
 
 namespace T_Car_Shop.Core.Specification.Models
 {
 	public class CarSpecification : BaseSpecification<CarEntity>
 	{
-		public CarSpecification(GetCarFilterModel filter) 
+		public ImagesFillingType ImagesFillingType { get; set; } = ImagesFillingType.WithFirstImage;
+		public CarSpecification(GetCarsFilterModel filter) 
 		{
+			PageNumber = filter.PageNumber;
+			ImagesFillingType = filter.ImagesFillingType;
+			AddFilter(c => c.Offers.IsHit, filter.SampleType == SampleType.Hit);
+			AddFilter(c => c.Offers.IsSale, filter.SampleType == SampleType.Sale);
 			AddIncludes(filter.Includes);
-			AddOrderBy(filter.SortFiled);
+			AddOrderBy(filter.SortField);
+		}
+		public CarSpecification(GetCarFilterModel filter)
+		{
+			AddFilter(c => c.Id == filter.Id);
+			AddIncludes(filter.Includes);
+			AddOrderBy(filter.SortField);
 		}
 	}
 }

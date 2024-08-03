@@ -1,9 +1,9 @@
 ﻿using T_Car_Shop.Core.Models.Infrastructure;
-using T_Car_Shop.Core.Models.Auth;
+using T_Car_Shop.Core.Models.Web.Auth;
 
 namespace T_Car_Shop.Application.Services
 {
-	public interface IUserService
+    public interface IUserService
 	{
 		Task<User> GetByNameAsync(string name, CancellationToken cancellationToken = default);
 		Task<User> CreateAsync(User user, CancellationToken cancellationToken = default);

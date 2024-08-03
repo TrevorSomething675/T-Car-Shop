@@ -1,11 +1,11 @@
 ﻿using T_Car_Shop.Infrastructure.Commands.AuthCommands;
-using T_Car_Shop.Core.Models.Auth;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
+using T_Car_Shop.Core.Models.Web.Auth;
 
 namespace T_Car_Shop.Web.Controllers
 {
-	[Route("[controller]")]
+    [Route("[controller]")]
 	[ApiController]
 	public class AuthController : ControllerBase
 	{

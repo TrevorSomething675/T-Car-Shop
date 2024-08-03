@@ -1,3 +1,5 @@
 .textLine{
     margin-left: 2rem;
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
 }

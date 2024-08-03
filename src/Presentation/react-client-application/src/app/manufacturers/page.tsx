@@ -17,24 +17,21 @@ const ManufacturersPage = () =>{
         fetchData(pageNumber, source);
     }
     const fetchData = async (pageNumber: number = 1, cancelToken: any) => {
-        try{
-            const response = await api.get<ApiItemsResponse<Manufacturer>>('/Manufacturer', {
-                cancelToken: cancelToken.token, 
-                params: {
-                    pageNumber: pageNumber
-                }
-            });
+        await api.get<ApiItemsResponse<Manufacturer>>('/Manufacturer', {
+            cancelToken: cancelToken.token, 
+            params: {
+                pageNumber: pageNumber
+            }
+        }).then((response) => {
             setPageCount(response.data.value.pageCount);
             setManufacturers(response.data.value.items);
-        }
-        catch(error) {
-            
-        }
-    } 
+        }).catch((error) => {
+            console.error(error);
+        });
+    }
     useEffect(() => {
         const source = axios.CancelToken.source();
         fetchData(1, source);
-
         return () => {
             source.cancel();
         };

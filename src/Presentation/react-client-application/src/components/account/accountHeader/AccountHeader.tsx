@@ -1,11 +1,11 @@
 import styles from './AccountHeader.module.css';
-import AccountNotification from './accountNotification/AccountNotification';
+import AccountNotifications from './accountNotifications/AccountNotifications';
 import AccountUser from './accountUser/AccountUser';
 
-const AccountHeader = () => {
+const AccountHeader:React.FC<{notifications:UserNotification[]}> = ({notifications}) => {
     return <div className={styles.container}>
         <AccountUser />
-        <AccountNotification />
+        <AccountNotifications notifications={notifications}/>
     </div>
 }
 

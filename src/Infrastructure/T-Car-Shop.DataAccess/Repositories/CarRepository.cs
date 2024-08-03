@@ -4,7 +4,6 @@ using T_Car_Shop.Core.Models.DataAccess;
 using T_Car_Shop.DataAccess.Contexts;
 using Microsoft.EntityFrameworkCore;
 using T_Car_Shop.Core.Extensions;
-using T_Car_Shop.Core.Filters;
 using T_Car_Shop.Core.Shared;
 using AutoMapper;
 
@@ -20,19 +19,19 @@ namespace T_Car_Shop.DataAccess.Repositories
             _dbContextFactory = dbContextFactory;
         }
 
-        public async Task<CarEntity> GetByIdAsync(Guid id, CarSpecification specification, CancellationToken cancellationToken = default)
+        public async Task<CarEntity> GetAsync(CarSpecification specification, CancellationToken cancellationToken = default)
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
                 var car = await context.Cars
                     .Includes(specification.Includes)
-                    .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
+                    .FirstOrDefaultAsync(specification.Filter, cancellationToken);
 
                 return car;
             }
         }
 
-        public async Task<PagedData<CarEntity>> GetAllAsync(CarsSpecification specification, GetCarsFilterModel filter, CancellationToken cancellationToken = default)
+        public async Task<PagedData<CarEntity>> GetAllAsync(CarSpecification specification, CancellationToken cancellationToken = default)
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
@@ -44,9 +43,8 @@ namespace T_Car_Shop.DataAccess.Repositories
                     .ToListAsync(cancellationToken);
 
                 var pagedCars = cars
-                    .Skip((filter.PageNumber - 1) * 8)
-                    .Take(filter.PageNumber * 8)
-                    .ToList();
+                    .Skip((specification.PageNumber - 1) * 8)
+                    .Take(specification.PageNumber * 8);
 
                 var count = cars.Count;
                 var pageCount = (int)Math.Ceiling((double)count / 8);

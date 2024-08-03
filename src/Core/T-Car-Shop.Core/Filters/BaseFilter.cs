@@ -4,7 +4,7 @@ namespace T_Car_Shop.Core.Filters
 {
 	public class BaseFilter
 	{
-		public string SortFiled { get; set; } = nameof(BaseEntity.Id);
+		public string SortField { get; set; } = nameof(BaseEntity.Id);
 		public List<string> Includes { get; set; } = new List<string>();
 	}
 }

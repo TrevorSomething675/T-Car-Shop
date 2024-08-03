@@ -1,13 +1,18 @@
 ﻿using T_Car_Shop.Core.Models.DataAccess;
+using T_Car_Shop.Core.Filters;
+using T_Car_Shop.Core.Enums;
 
 namespace T_Car_Shop.Core.Specification.Models
 {
 	public class ManufacturerSpecification : BaseSpecification<ManufacturerEntity>
 	{
-		public ManufacturerSpecification Include(List<string> includes)
+		public ImagesFillingType ImagesFillingType = ImagesFillingType.WithFirstImage;
+		public ManufacturerSpecification(GetManufacturersFilterModel filter)
 		{
-			AddIncludes(includes);
-			return this;
+			ImagesFillingType = filter.ImagesFillingType;
+			PageNumber = filter.PageNumber;
+			AddIncludes(filter.Includes);
+			AddOrderBy(filter.SortField);
 		}
 	}
 }

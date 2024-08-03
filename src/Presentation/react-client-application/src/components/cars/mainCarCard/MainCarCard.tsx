@@ -1,4 +1,3 @@
-import Base64Image from '@/components/base64Image/Base64Image';
 import styles from './MainCarCard.module.css';
 import MainCarCardBody from './mainCarCardBody/MainCarCardBody';
 import MainCarCardFooter from './mainCarCardFooter/MainCarCardFooter';

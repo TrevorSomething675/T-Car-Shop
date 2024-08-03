@@ -10,6 +10,7 @@ using T_Car_Shop.Core.Enums;
 using Minio.DataModel.Args;
 using System.Reflection;
 using Minio;
+using Microsoft.EntityFrameworkCore;
 
 namespace T_Car_Shop.Web
 {
@@ -31,16 +32,21 @@ namespace T_Car_Shop.Web
 			services.AddScoped<IUserRepository, UserRepository>();
 			services.AddScoped<IRoleRepository, RoleRepository>();
 			services.AddScoped<IManufacturerRepository, ManufacturerRepository>();
+			services.AddScoped<INotificationRepository, NotificationRepository>();
+			services.AddScoped<IPersonalNotificationRepository, PersonalNotificationRepository>();
 
 			services.AddScoped<ITokenService, TokenService>();
 			services.AddScoped<IMinioService, MinioService>();
 			services.AddScoped<IUserService, UserService>();
 			services.AddScoped<ICarService, CarService>();
 			services.AddScoped<IManufacturerService, ManufacturerService>();
-
+			services.AddScoped<INotificationService, NotificationService>();
+			services.AddScoped<IPersonalNotificationService,  PersonalNotificationService>();
+			
             using (var context = services.BuildServiceProvider().GetRequiredService<MainContext>())
             {
                 context.Database.EnsureDeleted();
+				context.Database.Migrate();
                 context.Database.EnsureCreated();
 
 				if (!context.Roles.Any()) 
@@ -62,6 +68,45 @@ namespace T_Car_Shop.Web
 					});
 					await context.SaveChangesAsync();
 				}
+
+				context.Users.AddRange(new List<UserEntity>
+				{
+					new UserEntity
+					{
+						Name = "UserName999",
+						Password = "123123123",
+						Role = context.Roles.FirstOrDefault(r => r.Name == "User"),
+						UserNotification = new List<UserNotificationEntity>
+						{
+							new UserNotificationEntity
+							{
+								Notification = new NotificationEntity
+								{
+									Header = "Notification1Header",
+									Content = "Notification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1Content" +
+									"Notification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1Content" +
+									"Notification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1Content" +
+									"Notification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1Content",
+								},
+								IsChecked = true
+							},
+							new UserNotificationEntity
+							{
+								Notification = new NotificationEntity
+							{
+								Header = "Notification2Header",
+								Content = "Notification2ContentNotification2ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1Content" +
+								"Notification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1Content" +
+								"Notification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1Content" +
+								"Notification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1ContentNotification1Content"
+							}
+							},
+							
+						}
+					}
+				});
+
+				context.SaveChanges();
 
                 if (!context.Manufacturers.Any())
                 {
@@ -131,7 +176,6 @@ namespace T_Car_Shop.Web
                 if (!context.Cars.Any())
                 {
                     var manufacturer = context.Manufacturers.FirstOrDefault();
-
                     var cars = new List<CarEntity>
                     {
                         new CarEntity{
@@ -143,6 +187,7 @@ namespace T_Car_Shop.Web
 									" для пассажиров. BMW X3 2018 также обладает передовыми технологиями, включая инфотейнмент систему, навигацию и системы" +
 									" безопасности, что делает его идеальным выбором для тех, кто ценит высокий уровень комфорта и безопасности при вождении.",
 							Price = 4399000,
+							Users = context.Users.ToList(),
 							Offers = new OffersEntity
 							{
 								IsSale = true,
@@ -504,7 +549,7 @@ namespace T_Car_Shop.Web
                     context.SaveChanges();
                 }
 			}
-
+			
 			using (var minioClinet = services.BuildServiceProvider().GetRequiredService<IMinioClientFactory>().CreateClient())
 			{
 				var argsImageBucket = new BucketExistsArgs()

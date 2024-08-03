@@ -3,12 +3,12 @@ using T_Car_Shop.Core.Models.Infrastructure;
 using T_Car_Shop.Application.Repositories;
 using T_Car_Shop.Core.Models.DataAccess;
 using T_Car_Shop.Application.Services;
-using T_Car_Shop.Core.Models.Auth;
 using AutoMapper;
+using T_Car_Shop.Core.Models.Web.Auth;
 
 namespace T_Car_Shop.Infrastructure.Services
 {
-	public class UserService : IUserService
+    public class UserService : IUserService
 	{
 		private readonly IMapper _mapper;
 		private readonly ITokenService _tokenService;

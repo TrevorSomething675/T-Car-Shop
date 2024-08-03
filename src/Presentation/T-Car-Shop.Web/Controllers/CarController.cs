@@ -18,7 +18,7 @@ namespace T_Car_Shop.Web.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById([FromQuery] GetCarFilterModel filter, CancellationToken cancellationToken = default)
         {
-            return (await _mediator.Send(new GetCarByIdQuery(filter), cancellationToken)).ToActionResult();
+            return (await _mediator.Send(new GetCarQuery(filter), cancellationToken)).ToActionResult();
         }
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] GetCarsFilterModel filter, CancellationToken cancellationToken = default)

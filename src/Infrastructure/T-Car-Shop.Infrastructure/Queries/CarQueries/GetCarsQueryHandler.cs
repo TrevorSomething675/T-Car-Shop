@@ -17,9 +17,9 @@ namespace T_Car_Shop.Infrastructure.Queries.CarQueries
         {
             try
             {
-                var specification = new CarsSpecification(request?.Filter);
+                var specification = new CarSpecification(request?.Filter);
+				var cars = await _carService.GetAllAsync(specification, cancellationToken);
 
-				var cars = await _carService.GetAllAsync(specification, request.Filter, cancellationToken);
                 return new Result<PagedData<Car>>(cars).Success();
             }
             catch (Exception ex)

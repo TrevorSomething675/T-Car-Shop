@@ -16,18 +16,18 @@ namespace T_Car_Shop.DataAccess.Contexts
         public DbSet<RoleEntity> Roles { get; set; }
         public DbSet<ColorEntity> Colors { get; set; }
         public DbSet<DescriptionEntity> Descriptions { get; set; }
+        public DbSet<NotificationEntity> Notifications { get; set; }
+        public DbSet<UserNotificationEntity> UserNotification { get; set; }
         public DbSet<OffersEntity> Offers { get; set; }
 
         public MainContext(IOptions<DataBaseOptions> options)
         {
             _options = options.Value;
         }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseNpgsql(_options.ConnectionString);
         }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new CarEntityConfiguration());
@@ -35,6 +35,7 @@ namespace T_Car_Shop.DataAccess.Contexts
             modelBuilder.ApplyConfiguration(new ImageEntityConfiguration());
             modelBuilder.ApplyConfiguration(new ManufacturerEntityConfiguration());
             modelBuilder.ApplyConfiguration(new ManufacturerImageEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new UserNotificationEntityConfiguration());
         }
     }
 }

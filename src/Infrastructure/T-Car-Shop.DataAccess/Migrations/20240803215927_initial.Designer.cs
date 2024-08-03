@@ -12,7 +12,7 @@ using T_Car_Shop.DataAccess.Contexts;
 namespace T_Car_Shop.DataAccess.Migrations
 {
     [DbContext(typeof(MainContext))]
-    [Migration("20240728221751_initial")]
+    [Migration("20240803215927_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -206,6 +206,28 @@ namespace T_Car_Shop.DataAccess.Migrations
                     b.ToTable("ManufacturerImageEntity");
                 });
 
+            modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.NotificationEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Header")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Notifications");
+                });
+
             modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.OffersEntity", b =>
                 {
                     b.Property<Guid>("Id")
@@ -272,6 +294,33 @@ namespace T_Car_Shop.DataAccess.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.UserNotificationEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsChecked")
+                        .HasColumnType("boolean");
+
+                    b.Property<Guid>("NotificationId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NotificationId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserNotification");
                 });
 
             modelBuilder.Entity("CarEntityUserEntity", b =>
@@ -365,6 +414,25 @@ namespace T_Car_Shop.DataAccess.Migrations
                     b.Navigation("Role");
                 });
 
+            modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.UserNotificationEntity", b =>
+                {
+                    b.HasOne("T_Car_Shop.Core.Models.DataAccess.NotificationEntity", "Notification")
+                        .WithMany("UserNotification")
+                        .HasForeignKey("NotificationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("T_Car_Shop.Core.Models.DataAccess.UserEntity", "User")
+                        .WithMany("UserNotification")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Notification");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.CarEntity", b =>
                 {
                     b.Navigation("Colors");
@@ -385,9 +453,19 @@ namespace T_Car_Shop.DataAccess.Migrations
                     b.Navigation("Images");
                 });
 
+            modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.NotificationEntity", b =>
+                {
+                    b.Navigation("UserNotification");
+                });
+
             modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.RoleEntity", b =>
                 {
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.UserEntity", b =>
+                {
+                    b.Navigation("UserNotification");
                 });
 #pragma warning restore 612, 618
         }

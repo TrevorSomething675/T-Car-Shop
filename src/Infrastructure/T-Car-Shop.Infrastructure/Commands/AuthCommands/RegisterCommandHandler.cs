@@ -1,13 +1,13 @@
 ﻿using T_Car_Shop.Core.Models.Infrastructure;
 using T_Car_Shop.Application.Services;
-using T_Car_Shop.Core.Models.Auth;
 using T_Car_Shop.Core.Shared;
 using AutoMapper;
 using MediatR;
+using T_Car_Shop.Core.Models.Web.Auth;
 
 namespace T_Car_Shop.Infrastructure.Commands.AuthCommands
 {
-	public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Result<AuthModel>>
+    public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Result<AuthModel>>
 	{
 		private readonly IMapper _mapper;
 		private readonly IUserService _userService;

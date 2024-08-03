@@ -1,8 +1,8 @@
-﻿using T_Car_Shop.Core.Models.Infrastructure;
+﻿using T_Car_Shop.Core.Exceptions.DomainExceptions;
+using T_Car_Shop.Core.Models.Infrastructure;
 using T_Car_Shop.Core.Specification.Models;
 using T_Car_Shop.Application.Repositories;
 using T_Car_Shop.Application.Services;
-using T_Car_Shop.Core.Filters;
 using T_Car_Shop.Core.Shared;
 using T_Car_Shop.Core.Enums;
 using AutoMapper;
@@ -21,9 +21,12 @@ namespace T_Car_Shop.Infrastructure.Services
 			_mapper = mapper;
 		}
 
-		public async Task<Car> GetByIdAsync(Guid id, CarSpecification specification, CancellationToken cancellationToken = default)
+		public async Task<Car> GetAsync(CarSpecification specification, CancellationToken cancellationToken = default)
 		{
-			var car = _mapper.Map<Car>(await _carRepository.GetByIdAsync(id, specification, cancellationToken));
+			var car = _mapper.Map<Car>(await _carRepository.GetAsync(specification, cancellationToken));
+			if (car == null)
+				throw new NotFoundException("Car not found");
+
 			foreach (var image in car.Images)
 			{
 				image.Base64String = await _minioService.GetObjectAsync(image.Path);
@@ -31,12 +34,12 @@ namespace T_Car_Shop.Infrastructure.Services
 			return car;
 		}
 
-		public async Task<PagedData<Car>> GetAllAsync(CarsSpecification specification, GetCarsFilterModel filter, CancellationToken cancellationToken = default)
+		public async Task<PagedData<Car>> GetAllAsync(CarSpecification specification, CancellationToken cancellationToken = default)
 		{
-			var cars = _mapper.Map<PagedData<Car>>(await _carRepository.GetAllAsync(specification, filter, cancellationToken));
+			var cars = _mapper.Map<PagedData<Car>>(await _carRepository.GetAllAsync(specification, cancellationToken));
 			try 
 			{ 
-				switch (filter.ImagesFillingType)
+				switch (specification.ImagesFillingType)
 				{
 					case ImagesFillingType.WithoutImages:
 						break;

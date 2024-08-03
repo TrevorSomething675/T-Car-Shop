@@ -5,7 +5,7 @@ using MediatR;
 
 namespace T_Car_Shop.Infrastructure.Queries.CarQueries
 {
-    public class GetCarByIdQuery(GetCarFilterModel filter) : IRequest<Result<Car>>
+    public class GetCarQuery(GetCarFilterModel filter) : IRequest<Result<Car>>
     {
         public GetCarFilterModel Filter { get; set; } = filter;
     }

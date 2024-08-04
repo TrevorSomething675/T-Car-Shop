@@ -46,8 +46,7 @@
               "RelativeToolTip": "src\\Core\\T-Car-Shop.Core\\Models\\DataAccess\\UserNotificationEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-03T22:58:44.016Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-03T22:58:44.016Z"
             },
             {
               "$type": "Document",
@@ -59,8 +58,7 @@
               "RelativeToolTip": "src\\Presentation\\T-Car-Shop.Web\\Controllers\\PersonalNotificationController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-03T21:07:17.247Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-03T21:07:17.247Z"
             },
             {
               "$type": "Document",
@@ -72,8 +70,7 @@
               "RelativeToolTip": "src\\Infrastructure\\T-Car-Shop.Infrastructure\\Commands\\PersonalNotificationCommands\\UpdatePersonalNotificationHandler.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-03T22:38:30.61Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-03T22:38:30.61Z"
             },
             {
               "$type": "Document",
@@ -83,7 +80,7 @@
               "RelativeDocumentMoniker": "src\\Infrastructure\\T-Car-Shop.DataAccess\\Repositories\\PersonalNotificationRepository.cs",
               "ToolTip": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\Repositories\\PersonalNotificationRepository.cs",
               "RelativeToolTip": "src\\Infrastructure\\T-Car-Shop.DataAccess\\Repositories\\PersonalNotificationRepository.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAA3wCgAAAACAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADUAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-03T22:17:23.537Z",
               "EditorCaption": ""
@@ -98,8 +95,7 @@
               "RelativeToolTip": "src\\Core\\T-Car-Shop.Core\\Mappings\\NotificationProfile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-03T22:48:35.212Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-03T22:48:35.212Z"
             }
           ]
         },

@@ -2,7 +2,6 @@ import Text from '@/components/text/Text';
 import styles from './AccountNotification.module.css';
 import { useState } from 'react';
 import api from '@/http/index';
-import { headers } from 'next/headers';
 
 const AccountNotification:React.FC<{notification:UserNotification}> = ({notification}) => {
     const [IsExpanded, ChangeExpanded] = useState(false);

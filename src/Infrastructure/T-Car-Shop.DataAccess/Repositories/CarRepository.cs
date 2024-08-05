@@ -30,14 +30,16 @@ namespace T_Car_Shop.DataAccess.Repositories
                 return car;
             }
         }
-
         public async Task<PagedData<CarEntity>> GetAllAsync(CarSpecification specification, CancellationToken cancellationToken = default)
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
-                var cars = await context.Cars
-                    .AsNoTracking()
-                    .Includes(specification.Includes)
+                var query = context.Cars.AsNoTracking();
+
+                query = query.Include(c => c.UserCar.Where(uc => uc.UserId == specification.UserId));
+
+                var cars = await query
+					.Includes(specification.Includes)
                     .Where(specification.Filter)
                     .OrderBy(specification.OrderBy)
                     .ToListAsync(cancellationToken);
@@ -46,13 +48,12 @@ namespace T_Car_Shop.DataAccess.Repositories
                     .Skip((specification.PageNumber - 1) * 8)
                     .Take(specification.PageNumber * 8);
 
-                var count = cars.Count;
+                var count = cars.ToList().Count;
                 var pageCount = (int)Math.Ceiling((double)count / 8);
 
                 return new PagedData<CarEntity>(pagedCars, count, pageCount);
             }
         }
-
         public async Task<CarEntity> UpdateAsync(CarEntity car, CancellationToken cancellationToken = default)
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))

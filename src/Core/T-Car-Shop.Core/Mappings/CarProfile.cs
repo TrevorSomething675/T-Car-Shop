@@ -16,6 +16,8 @@ namespace T_Car_Shop.Core.Mappings
                 .ForMember(src => src.Count, opt => opt.MapFrom(x => x.Count))
                 .ForMember(src => src.PageCount, opt => opt.MapFrom(x => x.PageCount))
                 .ReverseMap();
+
+            CreateMap<UserCar, UserCarEntity>().ReverseMap();
         }
     }
 }

@@ -11,11 +11,12 @@ namespace T_Car_Shop.Core.Models.DataAccess
 		public decimal OldPrice { get; set; }
 		public CurrencyType CurrencyType { get; set; }
 
-        public List<UserEntity> Users { get; set; } = new List<UserEntity>();
         public List<ImageEntity> Images { get; set; } = new List<ImageEntity>();
         public List<ColorEntity> Colors { get; set; } = new List<ColorEntity>();
 
-        public DescriptionEntity Description { get; set; }
+		public List<UserCarEntity>? UserCar { get; set; }
+
+		public DescriptionEntity Description { get; set; }
 
         public Guid ManufacturerId { get; set; }
         public ManufacturerEntity Manufacturer { get; set; } = null!;

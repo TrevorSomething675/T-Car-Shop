@@ -7,7 +7,7 @@
         public string Password { get; set; }
 
         public RoleEntity Role { get; set; }
-        public List<CarEntity>? Cars { get; set; }
+        public List<UserCarEntity>? UserCar { get; set; }
 
         public List<UserNotificationEntity> UserNotification { get; set; } = null!;
     }

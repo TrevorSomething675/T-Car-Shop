@@ -13,11 +13,13 @@ namespace T_Car_Shop.DataAccess.Contexts
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<ImageEntity> Images { get; set; }
         public DbSet<ManufacturerEntity> Manufacturers { get; set; }
+        public DbSet<ManufacturerImageEntity> ManufacturerImages { get; set; }
         public DbSet<RoleEntity> Roles { get; set; }
         public DbSet<ColorEntity> Colors { get; set; }
         public DbSet<DescriptionEntity> Descriptions { get; set; }
         public DbSet<NotificationEntity> Notifications { get; set; }
-        public DbSet<UserNotificationEntity> UserNotification { get; set; }
+        public DbSet<UserNotificationEntity> UserNotifications { get; set; }
+        public DbSet<UserCarEntity> UserCars { get; set; }
         public DbSet<OffersEntity> Offers { get; set; }
 
         public MainContext(IOptions<DataBaseOptions> options)
@@ -36,6 +38,7 @@ namespace T_Car_Shop.DataAccess.Contexts
             modelBuilder.ApplyConfiguration(new ManufacturerEntityConfiguration());
             modelBuilder.ApplyConfiguration(new ManufacturerImageEntityConfiguration());
             modelBuilder.ApplyConfiguration(new UserNotificationEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new UserCarConfiguration());
         }
     }
 }

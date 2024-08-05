@@ -20,7 +20,7 @@ namespace T_Car_Shop.DataAccess.Repositories
 		{
 			await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
 			{
-				var userNotifications = await context.UserNotification
+				var userNotifications = await context.UserNotifications
 					.AsNoTracking()
 					.Includes(specification.Includes)
 					.Where(specification.Filter)
@@ -41,7 +41,7 @@ namespace T_Car_Shop.DataAccess.Repositories
 		{
 			await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
 			{
-				var userNotificationEntity = await context.UserNotification
+				var userNotificationEntity = await context.UserNotifications
 					.FirstOrDefaultAsync(u => u.Id == userNotification.Id, cancellationToken);
 
 				context.Entry(userNotificationEntity).CurrentValues.SetValues(userNotification);

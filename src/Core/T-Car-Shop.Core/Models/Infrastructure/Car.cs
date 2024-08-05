@@ -11,10 +11,9 @@ namespace T_Car_Shop.Core.Models.Infrastructure
 		public decimal OldPrice { get; set; }
         public CurrencyType CurrencyType { get; set; }
 
-		public List<User>? Users { get; set; }
         public List<Image>? Images { get; set; }
-
-        public Description Description { get; set; }
+		public List<UserCar>? UserCar { get; set; }
+		public Description Description { get; set; }
 
 		public Guid ManufacturerId { get; set; }
         public Manufacturer? Manufacturer { get; set; }

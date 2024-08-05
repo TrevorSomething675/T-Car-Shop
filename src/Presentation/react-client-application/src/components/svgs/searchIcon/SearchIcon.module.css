@@ -1,7 +1,5 @@
 .logo{
     fill: var(--light-grey-color);
     stroke: var(--light-grey-color);
-    height: auto;
-    width: auto;
-    margin-top: 1px;
+    margin-top: .2rem;
 }

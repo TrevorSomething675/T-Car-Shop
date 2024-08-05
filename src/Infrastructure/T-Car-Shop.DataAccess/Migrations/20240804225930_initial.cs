@@ -78,7 +78,7 @@ namespace T_Car_Shop.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ManufacturerImageEntity",
+                name: "ManufacturerImages",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -89,9 +89,9 @@ namespace T_Car_Shop.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ManufacturerImageEntity", x => x.Id);
+                    table.PrimaryKey("PK_ManufacturerImages", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ManufacturerImageEntity_Manufacturers_ManufacturerId",
+                        name: "FK_ManufacturerImages_Manufacturers_ManufacturerId",
                         column: x => x.ManufacturerId,
                         principalTable: "Manufacturers",
                         principalColumn: "Id",
@@ -201,31 +201,32 @@ namespace T_Car_Shop.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CarUser",
+                name: "UserCars",
                 columns: table => new
                 {
-                    CarsId = table.Column<Guid>(type: "uuid", nullable: false),
-                    UsersId = table.Column<Guid>(type: "uuid", nullable: false)
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    UserId = table.Column<Guid>(type: "uuid", nullable: false),
+                    CarId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CarUser", x => new { x.CarsId, x.UsersId });
+                    table.PrimaryKey("PK_UserCars", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CarUser_Cars_CarsId",
-                        column: x => x.CarsId,
+                        name: "FK_UserCars_Cars_CarId",
+                        column: x => x.CarId,
                         principalTable: "Cars",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CarUser_Users_UsersId",
-                        column: x => x.UsersId,
+                        name: "FK_UserCars_Users_UserId",
+                        column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserNotification",
+                name: "UserNotifications",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -236,15 +237,15 @@ namespace T_Car_Shop.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserNotification", x => x.Id);
+                    table.PrimaryKey("PK_UserNotifications", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserNotification_Notifications_NotificationId",
+                        name: "FK_UserNotifications_Notifications_NotificationId",
                         column: x => x.NotificationId,
                         principalTable: "Notifications",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_UserNotification_Users_UserId",
+                        name: "FK_UserNotifications_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
@@ -255,11 +256,6 @@ namespace T_Car_Shop.DataAccess.Migrations
                 name: "IX_Cars_ManufacturerId",
                 table: "Cars",
                 column: "ManufacturerId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CarUser_UsersId",
-                table: "CarUser",
-                column: "UsersId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Colors_CarId",
@@ -278,8 +274,8 @@ namespace T_Car_Shop.DataAccess.Migrations
                 column: "CarId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ManufacturerImageEntity_ManufacturerId",
-                table: "ManufacturerImageEntity",
+                name: "IX_ManufacturerImages_ManufacturerId",
+                table: "ManufacturerImages",
                 column: "ManufacturerId");
 
             migrationBuilder.CreateIndex(
@@ -289,13 +285,23 @@ namespace T_Car_Shop.DataAccess.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserNotification_NotificationId",
-                table: "UserNotification",
+                name: "IX_UserCars_CarId",
+                table: "UserCars",
+                column: "CarId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserCars_UserId",
+                table: "UserCars",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserNotifications_NotificationId",
+                table: "UserNotifications",
                 column: "NotificationId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserNotification_UserId",
-                table: "UserNotification",
+                name: "IX_UserNotifications_UserId",
+                table: "UserNotifications",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
@@ -308,9 +314,6 @@ namespace T_Car_Shop.DataAccess.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CarUser");
-
-            migrationBuilder.DropTable(
                 name: "Colors");
 
             migrationBuilder.DropTable(
@@ -320,13 +323,16 @@ namespace T_Car_Shop.DataAccess.Migrations
                 name: "Images");
 
             migrationBuilder.DropTable(
-                name: "ManufacturerImageEntity");
+                name: "ManufacturerImages");
 
             migrationBuilder.DropTable(
                 name: "Offers");
 
             migrationBuilder.DropTable(
-                name: "UserNotification");
+                name: "UserCars");
+
+            migrationBuilder.DropTable(
+                name: "UserNotifications");
 
             migrationBuilder.DropTable(
                 name: "Cars");

@@ -1,17 +1,26 @@
 import api from '@/http/index';
-import axios, { AxiosRequestConfig } from 'axios';
 import qs from 'qs';
+import carStore from '@/store/carStore';
 
-const GetCars = async (params:AxiosRequestConfig) => {
-    const source = axios.CancelToken.source();
-    const response = await api.get<ApiItemsResponse<Car>>('/Car', {
-        cancelToken: source.token,
-        params,
-        paramsSerializer: params => {
-            return qs.stringify(params, { arrayFormat: 'repeat' });
-        }
-    });
-    return response;
+class CarService {
+    static GetCars = async (params:any, cancelToken:any) => {
+        const response = await api.get<ApiItemsResponse<Car>>('/Car', {
+            cancelToken: cancelToken,
+            params,
+            paramsSerializer: params => {
+                return qs.stringify(params, { arrayFormat: 'repeat' });
+            }
+        });
+        carStore.setCarsData(response?.data);
+        return response;
+    }
+    static UpdateCar = async (params:any, cancelToken:any) => {
+        const response = await api.put<Car>('/Car', {
+            cancelToken: cancelToken,
+            params
+        })
+        return response;
+    }
 }
-
-export default GetCars;
+    
+export default CarService;

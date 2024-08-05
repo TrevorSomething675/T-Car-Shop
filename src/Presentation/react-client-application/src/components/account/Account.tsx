@@ -17,7 +17,6 @@ const Account = () => {
                 includes: "Notification",
             }
         }).then((response) => {
-            console.log(response.data.value.items);
             setNotifications(response.data.value.items);
         })
     }, []);

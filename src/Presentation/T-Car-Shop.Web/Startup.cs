@@ -34,11 +34,13 @@ namespace T_Car_Shop.Web
 			services.AddScoped<IManufacturerRepository, ManufacturerRepository>();
 			services.AddScoped<INotificationRepository, NotificationRepository>();
 			services.AddScoped<IPersonalNotificationRepository, PersonalNotificationRepository>();
+			services.AddScoped<IUserCarRepository, UserCarRepository>();
 
 			services.AddScoped<ITokenService, TokenService>();
 			services.AddScoped<IMinioService, MinioService>();
 			services.AddScoped<IUserService, UserService>();
 			services.AddScoped<ICarService, CarService>();
+			services.AddScoped<IUserCarService, UserCarService>();
 			services.AddScoped<IManufacturerService, ManufacturerService>();
 			services.AddScoped<INotificationService, NotificationService>();
 			services.AddScoped<IPersonalNotificationService,  PersonalNotificationService>();
@@ -103,6 +105,12 @@ namespace T_Car_Shop.Web
 							},
 							
 						}
+					},
+					new UserEntity
+					{
+						Name = "UserName888",
+						Password = "123123123",
+						Role = context.Roles.FirstOrDefault(r => r.Name == "User"),
 					}
 				});
 
@@ -187,9 +195,20 @@ namespace T_Car_Shop.Web
 									" для пассажиров. BMW X3 2018 также обладает передовыми технологиями, включая инфотейнмент систему, навигацию и системы" +
 									" безопасности, что делает его идеальным выбором для тех, кто ценит высокий уровень комфорта и безопасности при вождении.",
 							Price = 4399000,
-							Users = context.Users.ToList(),
+							UserCar = new List<UserCarEntity>
+							{
+								new UserCarEntity
+								{
+									User = context.Users.FirstOrDefault(u => u.Name == "UserName999")
+								},
+								new UserCarEntity
+								{
+									User = context.Users.FirstOrDefault(u => u.Name == "UserName888")
+								}
+							},
 							Offers = new OffersEntity
 							{
+								IsHit = true,
 								IsSale = true,
 								IsSell = true
 							},
@@ -571,9 +590,7 @@ namespace T_Car_Shop.Web
 					minioClinet.MakeBucketAsync(createaManufacturerBucketArgs).Wait();
 				}
 			}
-
         }
-
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseCors(builder =>

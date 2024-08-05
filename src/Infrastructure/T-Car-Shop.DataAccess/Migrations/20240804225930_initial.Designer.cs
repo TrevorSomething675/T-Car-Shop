@@ -12,7 +12,7 @@ using T_Car_Shop.DataAccess.Contexts;
 namespace T_Car_Shop.DataAccess.Migrations
 {
     [DbContext(typeof(MainContext))]
-    [Migration("20240803215927_initial")]
+    [Migration("20240804225930_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -24,21 +24,6 @@ namespace T_Car_Shop.DataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
-
-            modelBuilder.Entity("CarEntityUserEntity", b =>
-                {
-                    b.Property<Guid>("CarsId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("UsersId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("CarsId", "UsersId");
-
-                    b.HasIndex("UsersId");
-
-                    b.ToTable("CarUser", (string)null);
-                });
 
             modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.CarEntity", b =>
                 {
@@ -203,7 +188,7 @@ namespace T_Car_Shop.DataAccess.Migrations
 
                     b.HasIndex("ManufacturerId");
 
-                    b.ToTable("ManufacturerImageEntity");
+                    b.ToTable("ManufacturerImages");
                 });
 
             modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.NotificationEntity", b =>
@@ -269,6 +254,27 @@ namespace T_Car_Shop.DataAccess.Migrations
                     b.ToTable("Roles");
                 });
 
+            modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.UserCarEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CarId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserCars");
+                });
+
             modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.UserEntity", b =>
                 {
                     b.Property<Guid>("Id")
@@ -320,22 +326,7 @@ namespace T_Car_Shop.DataAccess.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserNotification");
-                });
-
-            modelBuilder.Entity("CarEntityUserEntity", b =>
-                {
-                    b.HasOne("T_Car_Shop.Core.Models.DataAccess.CarEntity", null)
-                        .WithMany()
-                        .HasForeignKey("CarsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("T_Car_Shop.Core.Models.DataAccess.UserEntity", null)
-                        .WithMany()
-                        .HasForeignKey("UsersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.ToTable("UserNotifications");
                 });
 
             modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.CarEntity", b =>
@@ -403,6 +394,25 @@ namespace T_Car_Shop.DataAccess.Migrations
                     b.Navigation("Car");
                 });
 
+            modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.UserCarEntity", b =>
+                {
+                    b.HasOne("T_Car_Shop.Core.Models.DataAccess.CarEntity", "Car")
+                        .WithMany("UserCar")
+                        .HasForeignKey("CarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("T_Car_Shop.Core.Models.DataAccess.UserEntity", "User")
+                        .WithMany("UserCar")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Car");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.UserEntity", b =>
                 {
                     b.HasOne("T_Car_Shop.Core.Models.DataAccess.RoleEntity", "Role")
@@ -444,6 +454,8 @@ namespace T_Car_Shop.DataAccess.Migrations
 
                     b.Navigation("Offers")
                         .IsRequired();
+
+                    b.Navigation("UserCar");
                 });
 
             modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.ManufacturerEntity", b =>
@@ -465,6 +477,8 @@ namespace T_Car_Shop.DataAccess.Migrations
 
             modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.UserEntity", b =>
                 {
+                    b.Navigation("UserCar");
+
                     b.Navigation("UserNotification");
                 });
 #pragma warning restore 612, 618

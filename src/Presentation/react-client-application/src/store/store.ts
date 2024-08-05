@@ -1,7 +1,6 @@
 import User from '@/models/user/User';
 import { makeAutoObservable } from 'mobx';
 import AuthService from '@/services/AuthService';
-import { Exception } from 'sass';
 
 class Store{
     user = {} as User;
@@ -31,7 +30,6 @@ class Store{
     {
         try{
             const response = await AuthService.login(userName, password);
-            console.log(response.data.statusCode);
             if(response.data.statusCode != 200){
                 throw ('user not found');
             }

@@ -3,33 +3,66 @@ import styles from './CarCard.module.css';
 import Link from 'next/link'
 import CurrencyType from '@/models/CurrencyType';
 import Offers from '../offers/Offers';
+import { toJS } from 'mobx';
+import store from '@/store/store';
+import carStore from '@/store/carStore';
+import SvgFavoriteIcon from '../svgs/favoriteIcon/FavoriteIcon';
+import { useState } from 'react';
+import axios from 'axios';
+import UserCarService from '@/services/UserCarService';
 
 const CarCard: React.FC<{car: Car}> = ({car}) => {
+    const[isFavorite, changeFavoriteState] = useState(car?.userCar[0]?.userId == toJS(store.user.id));
+    const changeFavorite = async () => {
+
+        const userCar:UserCar = {
+            id: null,
+            carId: car.id,
+            userId: toJS(store.user.id)
+        }
+        const source = axios.CancelToken.source();
+        if(isFavorite){
+            UserCarService.RemoveUserCar(userCar, source.token);
+        } else {
+            UserCarService.CreateUserCar(userCar, source.token);
+        }
+        changeFavoriteState(!isFavorite);
+    }
     return <div className={styles.car}>
         <Link href={`car/${car.id}`}>
             <Offers offers={car?.offers} />
             {car.images.length > 0 && 
                 <Base64Image base64String={car?.images[0].base64String} />
             }
-            <div className={styles.cardBotton}>
-                <h2 className={styles.h2}>
-                    {car.name}
-                </h2>
-                <p className={styles.description}>
-                    {car.shortDescription}
-                </p>
+        </Link>
+        <div className={styles.cardBotton}>
+            <h2 className={styles.h2}>
+                {car.name}
+            </h2>
+            <p className={styles.description}>
+                {car.shortDescription}
+            </p>
+            <div className={styles.footerContainer}>
                 <div className={styles.priceContainer}>
                     <div className={styles.price}>
                         {car?.price} {CurrencyType[car.currencyType]}
                     </div>
                     {car?.oldPrice != 0 &&
-                        <div className={styles.oldPrice}>
-                            {car.oldPrice}
-                        </div>
+                    <div className={styles.oldPrice}>
+                        {car.oldPrice}
+                    </div>
                     }
                 </div>
+                {isFavorite ?
+                    <button className={styles.favoriteCar} onClick={changeFavorite}>
+                        <SvgFavoriteIcon />
+                    </button> : 
+                    <button className={styles.defaultCar} onClick={changeFavorite}>
+                        <SvgFavoriteIcon />
+                    </button>
+                }
             </div>
-        </Link>
+        </div>
     </div>
 }
 

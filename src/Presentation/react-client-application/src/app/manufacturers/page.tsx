@@ -31,7 +31,7 @@ const ManufacturersPage = () =>{
     }
     useEffect(() => {
         const source = axios.CancelToken.source();
-        fetchData(1, source);
+        fetchData(1, source.token);
         return () => {
             source.cancel();
         };

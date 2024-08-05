@@ -10,10 +10,6 @@ namespace T_Car_Shop.DataAccess.Configuration
         {
             builder.HasKey(c => c.Id);
 
-            builder.HasMany(c => c.Users)
-                .WithMany(u => u.Cars)
-                .UsingEntity(uc => uc.ToTable("CarUser"));
-
             builder.HasMany(c => c.Images)
                 .WithOne(i => i.Car)
                 .OnDelete(DeleteBehavior.Cascade)

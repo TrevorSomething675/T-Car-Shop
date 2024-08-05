@@ -7,7 +7,6 @@
         public string Password { get; set; }
 
         public Role Role { get; set; }
-        public List<Car>? Cars { get; set; }
 
         public List<UserNotification> UserNotifications { get; set; }
     }

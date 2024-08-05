@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import styles from './MainCarCardFooter.module.css';
 import CurrencyType from '@/models/CurrencyType';
 
 const MainCarCardFooter:React.FC<{car: Car}> = ({car}) => {
+    const [favoriteCarState, ChangeFavoriteCar] = useState();
     return <div className={styles.container}>
         <div className={styles.priceContainer}>
             <div className={styles.price}>

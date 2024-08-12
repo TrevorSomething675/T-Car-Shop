@@ -4,6 +4,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { observer } from "mobx-react-lite";
 import store from '@/store/store';
+import CarService from "@/services/CarService";
+import axios from "axios";
+import { toJS } from "mobx";
 
 interface LoginForm{
     name:string;
@@ -21,6 +24,13 @@ const Login:React.FC<{changeAuthForm:any}> = observer(({changeAuthForm}) => {
     const submit:SubmitHandler<LoginForm> = async (data) =>{
         setErrors('');
         await store.login(data.name, data.password);
+        const source = axios.CancelToken.source();
+        const params = {
+            includes: ['Images', 'Offers'],
+            pageNumber: 1,
+            userId: toJS(store?.user?.id)
+        };
+        await CarService.GetCars(params, source.token);
         router.push('/');
     }
     const error:SubmitErrorHandler<LoginForm> = (data) =>{

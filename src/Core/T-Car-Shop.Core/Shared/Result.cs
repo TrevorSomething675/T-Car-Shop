@@ -19,19 +19,24 @@ namespace T_Car_Shop.Core.Shared
             StatusCode = 200;
             return this;
         }
-
         public Result<T> NotFound(string message = "")
         {
             StatusCode = 404;
             return this;
         }
-
         public Result<T> BadRequest(string message = "")
         {
             ErrorMessages.Add(message);
             StatusCode = 400;
             return this;
         }
+        public Result<T> Invalid(List<string> errors)
+        {
+            ErrorMessages.AddRange(errors);
+            StatusCode = 400;
+            return this;
+
+		}
 
         public ActionResult ToActionResult()
         {

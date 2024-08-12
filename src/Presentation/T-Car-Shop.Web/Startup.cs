@@ -11,6 +11,8 @@ using Minio.DataModel.Args;
 using System.Reflection;
 using Minio;
 using Microsoft.EntityFrameworkCore;
+using FluentValidation;
+using T_Car_Shop.Web.MIddlewares;
 
 namespace T_Car_Shop.Web
 {
@@ -27,6 +29,7 @@ namespace T_Car_Shop.Web
 			services.AddAppMinio();
 			services.AddAppDbContext();
 			services.AddAppAutoMapper();
+			services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
 			services.AddScoped<ICarRepository, CarRepository>();
 			services.AddScoped<IUserRepository, UserRepository>();
@@ -36,6 +39,7 @@ namespace T_Car_Shop.Web
 			services.AddScoped<IPersonalNotificationRepository, PersonalNotificationRepository>();
 			services.AddScoped<IUserCarRepository, UserCarRepository>();
 
+			services.AddScoped<IImageService,  ImageService>();
 			services.AddScoped<ITokenService, TokenService>();
 			services.AddScoped<IMinioService, MinioService>();
 			services.AddScoped<IUserService, UserService>();
@@ -593,6 +597,7 @@ namespace T_Car_Shop.Web
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+			app.UseMiddleware<ExceptionMiddleware>();
             app.UseCors(builder =>
             {
 				builder.WithOrigins("http://localhost:3000")

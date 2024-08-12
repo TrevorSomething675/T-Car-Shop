@@ -21,7 +21,8 @@ namespace T_Car_Shop.Core.Specification.Models
 		}
 		public CarSpecification(GetCarFilterModel filter)
 		{
-			AddFilter(c => c.Id == filter.Id);
+			ImagesFillingType = filter.ImagesFillingType;
+			AddFilter(c => c.Id == filter.Id, true);
 			AddIncludes(filter.Includes);
 			AddOrderBy(filter.SortField);
 		}

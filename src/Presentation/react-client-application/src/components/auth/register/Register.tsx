@@ -3,6 +3,9 @@ import styles from './Register.module.css';
 import { useContext, useState } from "react";
 import { useRouter } from 'next/navigation'; 
 import store from '@/store/store';
+import CarService from "@/services/CarService";
+import axios from "axios";
+import { toJS } from "mobx";
 
 interface RegisterForm {
     name: string;
@@ -21,6 +24,13 @@ const Register: React.FC<{ changeAuthForm: any }> = ({ changeAuthForm }) => {
     const submit: SubmitHandler<RegisterForm> = async (data) => {
         setErrors('');
         await store.register(data.name, data.password, data.confirmPassword);
+        const source = axios.CancelToken.source();
+        const params = {
+            includes: ['Images', 'Offers'],
+            pageNumber: 1,
+            userId: toJS(store?.user?.id)
+        };
+        await CarService.GetCars(params, source.token);
         router.push('/');
     }
     const validator = (data:string) => {

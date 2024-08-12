@@ -73,6 +73,12 @@
     height: 1.6rem;
     width: 1.6rem;
     filter: none;
+    transition: .1s;
+}
+
+.favoriteCar svg:hover{
+    transition: .1s;
+    filter: drop-shadow(0 0 10px var(--dark-grey-color));
 }
 
 .defaultCar{
@@ -88,7 +94,37 @@
     filter: none;
 }
 
+.defaultCar svg:hover{
+    transition: .1s;
+    filter: drop-shadow(0 0 10px var(--dark-grey-color));
+}
+
 .footerContainer{
     display: flex;
     justify-content: space-between;
+}
+
+.cartButtonCar{
+    font-size: 1.4rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.cartButtonCar svg{
+    transition: .1s;
+    fill: var(--green-color);
+    height: 1.6rem;
+    width: 1.6rem;
+    filter: none;
+}
+
+.cartButtonCar svg:hover{
+    transition: .1s;
+    filter: drop-shadow(0 0 10px var(--dark-grey-color));
+}
+
+.offersContainer{
+    margin: 1rem 0 0 0;
 }

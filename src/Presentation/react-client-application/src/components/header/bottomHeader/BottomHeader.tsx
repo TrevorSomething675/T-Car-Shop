@@ -10,6 +10,7 @@ import { observer } from 'mobx-react-lite';
 import { useEffect, useState } from 'react';
 import CarService from '@/services/CarService';
 import axios from 'axios';
+import { toJS } from 'mobx';
 
 const BottomHeader = observer(() => {
     const fetchCarsWithHitOffer = async () => {
@@ -33,7 +34,8 @@ const BottomHeader = observer(() => {
     const fetchCars = async () => {
         const cancelToken = axios.CancelToken.source();
         const params = {
-            includes: ["Offers", "Images"]
+            includes: ["Offers", "Images"],
+            userId: toJS(store?.user?.id)
         };
         const result = await CarService.GetCars(params, cancelToken.token);
     }

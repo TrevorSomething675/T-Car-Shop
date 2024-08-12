@@ -4,24 +4,32 @@ import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import MainCarCard from '@/components/cars/mainCarCard/MainCarCard';
+import api from '@/http';
+import qs from 'qs';
+import { toJS } from 'mobx';
+import store from '@/store/store';
 
 const CarPage = () => {
     const [car, setCar] = useState<Car | null>(null);
     const pathname = usePathname();
 
     useEffect(() => {
-        const includes:string[] = ["Images"];
+        const includes:string[] = ["Images", "UserCar"];
         const id = pathname.split('/').pop();
         const fetchData = async () => {
-            const response = await axios.get<ApiResponse<Car>>(`https://localhost:7049/Car/${id}`, {
+            const response = await api.get<ApiResponse<Car>>(`https://localhost:7049/Car/${id}`, {
                 params:{
                     Id: id,
-                    Includes: includes.join(',')
+                    Includes: includes,
+                    ImagesFillingType: 0,
+                    UserId: toJS(store.user.id)
+                },
+                paramsSerializer: params => {
+                    return qs.stringify(params, { arrayFormat: 'repeat' });
                 }
             })
-            setCar(response.data.value);
+            setCar(response?.data?.value);
         }
         
         fetchData();

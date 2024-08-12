@@ -26,7 +26,7 @@ namespace T_Car_Shop.Infrastructure.Services
 						.WithObject(objectName)
 						.WithCallbackStream(async (stream) => 
 						{
-							await using (var ms = new MemoryStream())
+							using (var ms = new MemoryStream())
 							{
 								stream.CopyTo(ms);
 								objectBytes = ms.ToArray();

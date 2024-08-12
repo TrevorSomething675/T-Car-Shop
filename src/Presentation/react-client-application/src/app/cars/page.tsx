@@ -2,7 +2,7 @@
 
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import Cars from '@/components/cars/Cars';
 import Pagging from '@/components/pagging/Paggind';
@@ -22,7 +22,8 @@ const CarsPage = observer(() => {
         const params = {
             includes: ['Images', 'Offers'],
             pageNumber: pageNumber,
-            userId: toJS(store?.user?.id)
+            userId: toJS(store?.user?.id),
+            imagesFillingType: 1
         }
         fetchData(params, source.token);
     };
@@ -33,7 +34,8 @@ const CarsPage = observer(() => {
             const params = {
                 includes: ['Images', 'Offers'],
                 pageNumber: 1,
-                userId: toJS(store?.user?.id)
+                userId: toJS(store?.user?.id),
+                imagesFillingType: 1
             };
             fetchData(params, source.token);
         }

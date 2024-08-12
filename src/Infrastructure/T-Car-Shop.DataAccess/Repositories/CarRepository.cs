@@ -23,8 +23,12 @@ namespace T_Car_Shop.DataAccess.Repositories
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
             {
-                var car = await context.Cars
-                    .Includes(specification.Includes)
+                var query = context.Cars.AsNoTracking();
+
+                query = query.Include(c => c.UserCar.Where(uc => uc.UserId == specification.UserId));
+
+				var car = await query
+					.Includes(specification.Includes)
                     .FirstOrDefaultAsync(specification.Filter, cancellationToken);
 
                 return car;

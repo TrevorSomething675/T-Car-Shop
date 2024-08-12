@@ -41,6 +41,12 @@
     transition: .2s;
 }
 
+.submitButton svg{
+    width: 1.2rem;
+    height: 1.2rem;
+    filter: none;
+}
+
 .favoriteButton{
     color: var(--orange-color);
     font-size: 1.4rem;
@@ -55,6 +61,13 @@
     transition: .2s;
 }
 
+.favoriteButton svg{
+    fill:var(--orange-color);
+    width: 1.2rem;
+    height: 1.2rem;
+    filter: none;
+}
+
 .actionContainer{
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -62,4 +75,25 @@
 
 .actionContainer > button{
     margin-left: 0.25rem;
+}
+
+.defaultButton {
+    color: var(--dark-red-color);
+    font-size: 1.4rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.defaultButton svg{
+    color: var(--dark-red-color);
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: var(--dark-red-color);
+}
+
+.defaultButton:hover{
+    text-shadow: 0px 0px 15px var(--grey-color);
+    transition: .2s;
 }

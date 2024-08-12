@@ -38,7 +38,7 @@ namespace T_Car_Shop.Infrastructure.Services
 		{
 			var cars = _mapper.Map<PagedData<Car>>(await _carRepository.GetAllAsync(specification, cancellationToken));
 			try 
-			{ 
+			{
 				switch (specification.ImagesFillingType)
 				{
 					case ImagesFillingType.WithoutImages:

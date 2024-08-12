@@ -15,7 +15,6 @@ namespace T_Car_Shop.DataAccess.Repositories
         {
             _dbContextFactory = dbContextFactory;
         }
-
 		public async Task<UserEntity> GetByNameAsync(string name, CancellationToken cancellationToken = default)
 		{
 			await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
@@ -27,7 +26,6 @@ namespace T_Car_Shop.DataAccess.Repositories
 				return user;
 			}
 		}
-
 		public async Task<UserEntity> CreateAsync(UserEntity user, CancellationToken cancellationToken = default)
 		{
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
@@ -38,7 +36,6 @@ namespace T_Car_Shop.DataAccess.Repositories
                 return result.Entity;
             }
 		}
-
 		public async Task<PagedData<UserEntity>> GelAllAsync(UserSpectification spectification, CancellationToken cancellationToken = default)
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
@@ -55,7 +52,6 @@ namespace T_Car_Shop.DataAccess.Repositories
                 return new PagedData<UserEntity>(users, count, pageCount);
             }
         }
-
         public async Task<UserEntity> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
             await using (var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))

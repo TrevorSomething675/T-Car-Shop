@@ -5,16 +5,16 @@ import CurrencyType from '@/models/CurrencyType';
 import Offers from '../offers/Offers';
 import { toJS } from 'mobx';
 import store from '@/store/store';
-import carStore from '@/store/carStore';
 import SvgFavoriteIcon from '../svgs/favoriteIcon/FavoriteIcon';
 import { useState } from 'react';
 import axios from 'axios';
 import UserCarService from '@/services/UserCarService';
+import SvgCartIcon from '../svgs/cartIcon/CartIcon';
+import { observer } from 'mobx-react-lite';
 
-const CarCard: React.FC<{car: Car}> = ({car}) => {
+const CarCard: React.FC<{car: Car}> = observer(({car}) => {
     const[isFavorite, changeFavoriteState] = useState(car?.userCar[0]?.userId == toJS(store.user.id));
     const changeFavorite = async () => {
-
         const userCar:UserCar = {
             id: null,
             carId: car.id,
@@ -53,6 +53,7 @@ const CarCard: React.FC<{car: Car}> = ({car}) => {
                     </div>
                     }
                 </div>
+                <div className={styles.offersContainer}>
                 {isFavorite ?
                     <button className={styles.favoriteCar} onClick={changeFavorite}>
                         <SvgFavoriteIcon />
@@ -61,9 +62,15 @@ const CarCard: React.FC<{car: Car}> = ({car}) => {
                         <SvgFavoriteIcon />
                     </button>
                 }
+                {store.isAuth &&
+                    <button className={styles.cartButtonCar}>
+                        <SvgCartIcon />
+                    </button>
+                }
+                </div>
             </div>
         </div>
     </div>
-}
+});
 
 export default CarCard;

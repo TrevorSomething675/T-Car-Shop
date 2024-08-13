@@ -22,23 +22,13 @@ namespace T_Car_Shop.Infrastructure.Services
 			_tokenService = tokenService;
 			_mapper = mapper;
 		}
-		public async Task<User> CreateAsync(User user, CancellationToken cancellationToken = default)
-		{
-			var createdUser = await _userRepository.CreateAsync(_mapper.Map<UserEntity>(user), cancellationToken);
-			return _mapper.Map<User>(createdUser);
-		}
-		public async Task<User> GetByNameAsync(string name, CancellationToken cancellationToken = default)
-		{
-			var user = _mapper.Map<User>(await _userRepository.GetByNameAsync(name, cancellationToken));
-			return user;
-		}
 		public async Task<AuthModel> Login(User user, CancellationToken cancellationToken = default)
 		{
 			var dbUser = _mapper.Map<User>(await _userRepository.GetByNameAsync(user.Name));
 			if (dbUser == null)
 				throw new NotFoundException("User not found");
 
-			if(dbUser.Password == user.Password)
+			if (dbUser.Password == user.Password)
 			{
 				var accessToken = await _tokenService.CreateAccessToken(dbUser.Id, dbUser.Role.Name);
 				var refreshToken = await _tokenService.CreateRefreshToken();

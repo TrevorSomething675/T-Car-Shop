@@ -2,11 +2,11 @@
 using T_Car_Shop.Core.Models.Infrastructure;
 using T_Car_Shop.Core.Specification.Models;
 using T_Car_Shop.Application.Repositories;
+using T_Car_Shop.Application.Services;
 using T_Car_Shop.Core.Shared;
 using FluentValidation;
 using AutoMapper;
 using MediatR;
-using T_Car_Shop.Application.Services;
 
 namespace T_Car_Shop.Infrastructure.Queries.CarQueries
 {
@@ -32,10 +32,10 @@ namespace T_Car_Shop.Infrastructure.Queries.CarQueries
 
             var specification = new CarSpecification(request.Filter);
             var car = _mapper.Map<Car>(await _carRepository.GetAsync(specification, cancellationToken));
-            await _imageService.FillImages(car, specification.ImagesFillingType, cancellationToken);
-            
             if(car == null)
-				throw new NotFoundException("NOT FOUND!!!");
+				throw new NotFoundException($"Car not found!");
+            
+            await _imageService.FillImages(car, specification.ImagesFillingType, cancellationToken);
 
 			return new Result<Car>(car).Success();
         }

@@ -43,7 +43,6 @@ namespace T_Car_Shop.Web
 			services.AddScoped<ITokenService, TokenService>();
 			services.AddScoped<IMinioService, MinioService>();
 			services.AddScoped<IUserService, UserService>();
-			services.AddScoped<ICarService, CarService>();
 			services.AddScoped<IUserCarService, UserCarService>();
 			services.AddScoped<IManufacturerService, ManufacturerService>();
 			services.AddScoped<INotificationService, NotificationService>();

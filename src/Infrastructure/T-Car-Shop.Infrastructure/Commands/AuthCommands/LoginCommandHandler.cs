@@ -1,10 +1,9 @@
 ﻿using T_Car_Shop.Core.Models.Infrastructure;
+using T_Car_Shop.Core.Models.Web.Auth;
 using T_Car_Shop.Application.Services;
 using T_Car_Shop.Core.Shared;
 using AutoMapper;
 using MediatR;
-using T_Car_Shop.Core.Models.Web.Auth;
-using T_Car_Shop.Application.Repositories;
 
 namespace T_Car_Shop.Infrastructure.Commands.AuthCommands
 {
@@ -12,10 +11,8 @@ namespace T_Car_Shop.Infrastructure.Commands.AuthCommands
 	{
 		private readonly IMapper _mapper;
 		private readonly IUserService _userService;
-		private readonly IUserRepository _userRepository;
-		public LoginCommandHandler(IUserRepository userRepository, IUserService userService, IMapper mapper)
+		public LoginCommandHandler(IUserService userService, IMapper mapper)
 		{
-			_userRepository = userRepository;
 			_userService = userService;
 			_mapper = mapper;
 		}

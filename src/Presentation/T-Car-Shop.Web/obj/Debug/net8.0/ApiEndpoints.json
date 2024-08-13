@@ -1,0 +1,1486 @@
+[
+  {
+    "ContainingType": "T_Car_Shop.Web.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "T_Car_Shop.Web.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "Auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ConfirmPassword",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "T_Car_Shop.Web.Controllers.CarController",
+    "Method": "Get",
+    "RelativePath": "Car",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "SampleType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImagesFillingType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortField",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Includes",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "T_Car_Shop.Web.Controllers.CarController",
+    "Method": "Create",
+    "RelativePath": "Car",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Car.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.ShortDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.IsVisible",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.OldPrice",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.CurrencyType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Images",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.Image, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.UserCar",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.UserCar, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.LongDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Color",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.CarId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.ShortDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.IsVisible",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.OldPrice",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.CurrencyType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Images",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.Image, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.UserCar",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.UserCar, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Description",
+        "Type": "T_Car_Shop.Core.Models.Infrastructure.Description",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.ManufacturerId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Manufacturer.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Manufacturer.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Manufacturer.City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Manufacturer.PhoneNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Manufacturer.OfficialWebsite",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Manufacturer.Cars",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.Car, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Manufacturer.Images",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.ManufacturerImage, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Manufacturer.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.IsSale",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.IsSell",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.IsHit",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.CarId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.ShortDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.IsVisible",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.OldPrice",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.CurrencyType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Images",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.Image, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.UserCar",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.UserCar, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Description",
+        "Type": "T_Car_Shop.Core.Models.Infrastructure.Description",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.ManufacturerId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Manufacturer.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Manufacturer.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Manufacturer.City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Manufacturer.PhoneNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Manufacturer.OfficialWebsite",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Manufacturer.Cars",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.Car, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Manufacturer.Images",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.ManufacturerImage, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Manufacturer.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Offers",
+        "Type": "T_Car_Shop.Core.Models.Infrastructure.Offers",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.ManufacturerId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Manufacturer.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Manufacturer.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Manufacturer.City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Manufacturer.PhoneNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Manufacturer.OfficialWebsite",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Manufacturer.Cars",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.Car, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Manufacturer.Images",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.ManufacturerImage, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Manufacturer.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.IsSale",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.IsSell",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.IsHit",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.CarId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.ShortDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.IsVisible",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.OldPrice",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.CurrencyType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Images",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.Image, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.UserCar",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.UserCar, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.LongDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Color",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.CarId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.ShortDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.IsVisible",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.OldPrice",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.CurrencyType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Images",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.Image, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.UserCar",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.UserCar, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Description",
+        "Type": "T_Car_Shop.Core.Models.Infrastructure.Description",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.ManufacturerId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Manufacturer.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Manufacturer.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Manufacturer.City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Manufacturer.PhoneNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Manufacturer.OfficialWebsite",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Manufacturer.Cars",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.Car, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Manufacturer.Images",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.ManufacturerImage, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Manufacturer.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Offers",
+        "Type": "T_Car_Shop.Core.Models.Infrastructure.Offers",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.ManufacturerId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Manufacturer.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Manufacturer.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Manufacturer.City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Manufacturer.PhoneNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Manufacturer.OfficialWebsite",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Manufacturer.Cars",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.Car, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Manufacturer.Images",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.ManufacturerImage, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Manufacturer.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Offers",
+        "Type": "T_Car_Shop.Core.Models.Infrastructure.Offers",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "T_Car_Shop.Web.Controllers.CarController",
+    "Method": "Remove",
+    "RelativePath": "Car",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "T_Car_Shop.Web.Controllers.CarController",
+    "Method": "Update",
+    "RelativePath": "Car",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Car.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.ShortDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.IsVisible",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.OldPrice",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.CurrencyType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Images",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.Image, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.UserCar",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.UserCar, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.LongDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Color",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.CarId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.ShortDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.IsVisible",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.OldPrice",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.CurrencyType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Images",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.Image, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.UserCar",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.UserCar, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Description",
+        "Type": "T_Car_Shop.Core.Models.Infrastructure.Description",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.ManufacturerId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Manufacturer.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Manufacturer.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Manufacturer.City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Manufacturer.PhoneNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Manufacturer.OfficialWebsite",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Manufacturer.Cars",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.Car, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Manufacturer.Images",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.ManufacturerImage, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Manufacturer.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.IsSale",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.IsSell",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.IsHit",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.CarId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.ShortDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.IsVisible",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.OldPrice",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.CurrencyType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Images",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.Image, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.UserCar",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.UserCar, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Description",
+        "Type": "T_Car_Shop.Core.Models.Infrastructure.Description",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.ManufacturerId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Manufacturer.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Manufacturer.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Manufacturer.City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Manufacturer.PhoneNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Manufacturer.OfficialWebsite",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Manufacturer.Cars",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.Car, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Manufacturer.Images",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.ManufacturerImage, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Manufacturer.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Offers",
+        "Type": "T_Car_Shop.Core.Models.Infrastructure.Offers",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Offers.Car.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Description.Car.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.ManufacturerId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Manufacturer.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Manufacturer.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Manufacturer.City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Manufacturer.PhoneNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Manufacturer.OfficialWebsite",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Manufacturer.Cars",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.Car, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Manufacturer.Images",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.ManufacturerImage, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Manufacturer.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.IsSale",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.IsSell",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.IsHit",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.CarId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.ShortDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.IsVisible",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.OldPrice",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.CurrencyType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Images",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.Image, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.UserCar",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.UserCar, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.LongDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Color",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.CarId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.ShortDescription",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.IsVisible",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.OldPrice",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.CurrencyType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Images",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.Image, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.UserCar",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.UserCar, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Description",
+        "Type": "T_Car_Shop.Core.Models.Infrastructure.Description",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.ManufacturerId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Manufacturer.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Manufacturer.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Manufacturer.City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Manufacturer.PhoneNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Manufacturer.OfficialWebsite",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Manufacturer.Cars",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.Car, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Manufacturer.Images",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.ManufacturerImage, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Manufacturer.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Offers",
+        "Type": "T_Car_Shop.Core.Models.Infrastructure.Offers",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Description.Car.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.ManufacturerId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Manufacturer.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Manufacturer.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Manufacturer.City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Manufacturer.PhoneNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Manufacturer.OfficialWebsite",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Manufacturer.Cars",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.Car, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Manufacturer.Images",
+        "Type": "System.Collections.Generic.List\u00601[[T_Car_Shop.Core.Models.Infrastructure.ManufacturerImage, T-Car-Shop.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Manufacturer.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Offers",
+        "Type": "T_Car_Shop.Core.Models.Infrastructure.Offers",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Offers.Car.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Car.Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "T_Car_Shop.Web.Controllers.CarController",
+    "Method": "GetById",
+    "RelativePath": "Car/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImagesFillingType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortField",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Includes",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "T_Car_Shop.Web.Controllers.ManufacturerController",
+    "Method": "Get",
+    "RelativePath": "Manufacturer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImagesFillingType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortField",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Includes",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "T_Car_Shop.Web.Controllers.ManufacturerController",
+    "Method": "Create",
+    "RelativePath": "Manufacturer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "T_Car_Shop.Web.Controllers.NotificationController",
+    "Method": "GetNotificationsByUserId",
+    "RelativePath": "Notification",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortField",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Includes",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "T_Car_Shop.Web.Controllers.PersonalCarController",
+    "Method": "Create",
+    "RelativePath": "PersonalCar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "T_Car_Shop.Core.Models.Web.UserCar.UserCarRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "T_Car_Shop.Web.Controllers.PersonalCarController",
+    "Method": "Update",
+    "RelativePath": "PersonalCar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "CarId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "T_Car_Shop.Web.Controllers.PersonalCarController",
+    "Method": "Delete",
+    "RelativePath": "PersonalCar",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "CarId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "T_Car_Shop.Web.Controllers.PersonalNotificationController",
+    "Method": "Get",
+    "RelativePath": "PersonalNotification",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "UserId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortField",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Includes",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "T_Car_Shop.Web.Controllers.PersonalNotificationController",
+    "Method": "Update",
+    "RelativePath": "PersonalNotification",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "T_Car_Shop.Core.Models.Web.UserNotification.UserNotificationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "T_Car_Shop.Web.Controllers.UserController",
+    "Method": "Get",
+    "RelativePath": "User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

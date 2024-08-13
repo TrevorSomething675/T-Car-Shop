@@ -5,7 +5,6 @@ using T_Car_Shop.DataAccess.Contexts;
 using Microsoft.EntityFrameworkCore;
 using T_Car_Shop.Core.Extensions;
 using T_Car_Shop.Core.Shared;
-using AutoMapper;
 
 namespace T_Car_Shop.DataAccess.Repositories
 {

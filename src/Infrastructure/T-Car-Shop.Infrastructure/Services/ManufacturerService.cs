@@ -8,7 +8,7 @@ using AutoMapper;
 
 namespace T_Car_Shop.Infrastructure.Services
 {
-	public class ManufacturerService : IManufacturerService
+	public class ManufacturerService
 	{
 		private readonly IMapper _mapper;
 		private readonly IMinioService _minioService;

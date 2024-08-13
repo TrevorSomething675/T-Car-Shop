@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = T_Car_Shop.DataAccess
-build_property.ProjectDir = E:\Repositories\T-Car-Shop\src\Infrastructure\T-Car-Shop.DataAccess\
+build_property.ProjectDir = C:\Users\Jija\Desktop\Repositories\T-Car-Shop\src\Infrastructure\T-Car-Shop.DataAccess\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

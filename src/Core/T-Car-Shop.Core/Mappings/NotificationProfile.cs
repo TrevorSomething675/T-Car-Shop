@@ -1,9 +1,8 @@
-﻿using T_Car_Shop.Core.Models.Web.UserNotification;
+﻿using T_Car_Shop.Core.Models.Web.Notification;
 using T_Car_Shop.Core.Models.Infrastructure;
 using T_Car_Shop.Core.Models.DataAccess;
 using T_Car_Shop.Core.Shared;
 using AutoMapper;
-using T_Car_Shop.Core.Models.Web.Notification;
 
 namespace T_Car_Shop.Core.Mappings
 {
@@ -15,7 +14,6 @@ namespace T_Car_Shop.Core.Mappings
 			CreateMap<Notification,  NotificationEntity>().ReverseMap();
 			CreateMap<PagedData<Notification>, PagedData<NotificationEntity>>().ReverseMap();
 
-			CreateMap<UserNotificationRequest, UserNotification>();
 			CreateMap<UserNotification, UserNotificationEntity>().ReverseMap();
 			CreateMap<PagedData<UserNotification>, PagedData<UserNotificationEntity>>().ReverseMap();
 		}

@@ -2,7 +2,7 @@ import api from '@/http/index';
 import qs from 'qs';
 
 class UserCarService {
-    static RemoveUserCar = async (userCar:UserCar, cancelToken: any) => {
+    static RemoveUserCar = async (userCar: UserCar, cancelToken: any) => {
         const response = await api.delete<ApiResponse<UserCar>>('/PersonalCar', {
             cancelToken: cancelToken,
             params: {
@@ -16,12 +16,12 @@ class UserCarService {
         });
         return response;
     }
-    static CreateUserCar = async (userCar:UserCar, cancelToken: any) => {
+    static CreateUserCar = async (userCar: UserCar, cancelToken: any) => {
         const response = await api.post<ApiResponse<UserCar>>('/PersonalCar', {
             id: userCar.id,
             userId: userCar.userId,
             carId: userCar.carId
-        }, 
+        },
         {
             cancelToken: cancelToken
         });

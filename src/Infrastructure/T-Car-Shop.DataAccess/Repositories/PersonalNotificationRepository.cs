@@ -5,6 +5,7 @@ using T_Car_Shop.DataAccess.Contexts;
 using Microsoft.EntityFrameworkCore;
 using T_Car_Shop.Core.Extensions;
 using T_Car_Shop.Core.Shared;
+using T_Car_Shop.Core.Exceptions.DomainExceptions;
 
 namespace T_Car_Shop.DataAccess.Repositories
 {
@@ -42,6 +43,9 @@ namespace T_Car_Shop.DataAccess.Repositories
 			{
 				var userNotificationEntity = await context.UserNotifications
 					.FirstOrDefaultAsync(u => u.Id == userNotification.Id, cancellationToken);
+
+				if (userNotificationEntity == null)
+					throw new NotFoundException("UserNotification not found.");
 
 				context.Entry(userNotificationEntity).CurrentValues.SetValues(userNotification);
 				await context.SaveChangesAsync(cancellationToken);

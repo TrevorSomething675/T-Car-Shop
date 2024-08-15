@@ -19,7 +19,6 @@ namespace T_Car_Shop.Infrastructure.Queries.PresonalNotificationQueries
 		public async Task<Result<PagedData<UserNotification>>> Handle(GetPersonalNotificationsQuery request, CancellationToken cancellationToken)
 		{
 			var specification = new PersonalNotificationsSpecification(request.Filter);
-
 			var personalNotifications = _mapper.Map<PagedData<UserNotification>>(await _personalNotificationRepository.GetAllAsync(specification, cancellationToken));
 
 			return new Result<PagedData<UserNotification>>(personalNotifications);

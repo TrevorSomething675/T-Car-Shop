@@ -13,6 +13,9 @@
           "Microsoft.EntityFrameworkCore.Design": "8.0.6",
           "Newtonsoft.Json": "13.0.3",
           "Swashbuckle.AspNetCore": "6.6.2",
+          "T-Car-Shop.Application": "1.0.0",
+          "T-Car-Shop.Core": "1.0.0",
+          "T-Car-Shop.DataAccess": "1.0.0",
           "T-Car-Shop.Infrastructure": "1.0.0"
         },
         "runtime": {

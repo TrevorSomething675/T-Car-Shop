@@ -31,7 +31,16 @@ namespace T_Car_Shop.Infrastructure.Services
 					break;
 			}
 		}
-
+		public async Task FillImages(PagedData<Manufacturer> manufacturers, CancellationToken cancellationToken = default)
+		{
+			foreach (var manufacturer in manufacturers?.Items)
+			{
+				foreach (var img in manufacturer.Images)
+				{
+					img.Base64String = await _minioService.GetObjectAsync(img.Path, cancellationToken);
+				}
+			}
+		}
 		public async Task FillImages(PagedData<Car> cars, ImagesFillingType fillingType, CancellationToken cancellationToken = default)
 		{
 			switch (fillingType)

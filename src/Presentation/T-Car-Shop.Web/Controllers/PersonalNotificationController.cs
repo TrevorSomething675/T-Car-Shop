@@ -1,6 +1,6 @@
 ﻿using T_Car_Shop.Infrastructure.Commands.PersonalNotificationCommands;
 using T_Car_Shop.Infrastructure.Queries.PresonalNotificationQueries;
-using T_Car_Shop.Core.Models.Web.UserNotification;
+using T_Car_Shop.Core.Models.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using T_Car_Shop.Core.Filters;
 using MediatR;
@@ -22,7 +22,7 @@ namespace T_Car_Shop.Web.Controllers
 			return (await _mediator.Send(new GetPersonalNotificationsQuery(filter), cancellationToken)).ToActionResult();
 		}
 		[HttpPost]
-		public async Task<IActionResult> Update([FromBody] UserNotificationRequest user, CancellationToken cancellationToken = default)
+		public async Task<IActionResult> Update([FromBody] UserNotification user, CancellationToken cancellationToken = default)
 		{
 			return (await _mediator.Send(new UpdatePersonalNotification(user), cancellationToken)).ToActionResult();
 		}

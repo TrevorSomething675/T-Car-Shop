@@ -15,6 +15,8 @@ namespace T_Car_Shop.DataAccess.Configuration
 			builder.HasOne(uc => uc.Car)
 				.WithMany(c => c.UserCar)
 				.HasForeignKey(un => un.CarId);
+
+			builder.HasKey(uc => new { uc.UserId, uc.CarId });
 		}
 	}
 }

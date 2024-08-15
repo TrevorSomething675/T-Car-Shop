@@ -20,7 +20,6 @@ ul{
     display: flex;
     background-color: var(--super-light-grey-color);
     flex-direction: column;
-    justify-content: space-between;
 }
 
 a{

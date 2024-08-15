@@ -53,21 +53,23 @@ const CarCard: React.FC<{car: Car}> = observer(({car}) => {
                     </div>
                     }
                 </div>
-                <div className={styles.offersContainer}>
-                {isFavorite ?
-                    <button className={styles.favoriteCar} onClick={changeFavorite}>
-                        <SvgFavoriteIcon />
-                    </button> : 
-                    <button className={styles.defaultCar} onClick={changeFavorite}>
-                        <SvgFavoriteIcon />
-                    </button>
-                }
                 {store.isAuth &&
-                    <button className={styles.cartButtonCar}>
+                <div className={styles.offersContainer}>
+                    {isFavorite ?
+                        <button className={styles.favoriteCar} onClick={changeFavorite}>
+                        <SvgFavoriteIcon />
+                        </button> : 
+                        <button className={styles.defaultCar} onClick={changeFavorite}>
+                            <SvgFavoriteIcon />
+                        </button>
+                    }
+                    {store.isAuth &&
+                        <button className={styles.cartButtonCar}>
                         <SvgCartIcon />
-                    </button>
-                }
+                        </button>
+                    }
                 </div>
+                }
             </div>
         </div>
     </div>

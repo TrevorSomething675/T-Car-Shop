@@ -21,6 +21,7 @@ namespace T_Car_Shop.Core.Specification.Models
 		}
 		public CarSpecification(GetCarFilterModel filter)
 		{
+			UserId = filter.UserId;
 			ImagesFillingType = filter.ImagesFillingType;
 			AddFilter(c => c.Id == filter.Id, true);
 			AddIncludes(filter.Includes);

@@ -22,7 +22,8 @@ namespace T_Car_Shop.Web.Controllers
 		[HttpPut]
 		public async Task<IActionResult> Update([FromQuery] UserCarRequest request, CancellationToken cancellationToken = default)
 		{
-			return (await _mediator.Send(new ChangeFavoriteCarCommand(request), cancellationToken)).ToActionResult();
+			throw new Exception();
+			//return (await _mediator.Send(new ChangeFavoriteCarCommand(request), cancellationToken)).ToActionResult();
 		}
 		[HttpDelete]
 		public async Task<IActionResult> Delete([FromQuery] UserCarRequest request, CancellationToken cancellationToken = default)

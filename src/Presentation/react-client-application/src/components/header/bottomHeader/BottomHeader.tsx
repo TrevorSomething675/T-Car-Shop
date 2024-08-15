@@ -90,7 +90,7 @@ const BottomHeader = observer(() => {
                 {store.isAuth && 
                 <>
                     <li className={styles.li}>
-                        <Link href='/account'>
+                        <Link href='/notifications'>
                             <button className={styles.button}>
                                 <SvgNotificationIcon />
                                 Уведомления

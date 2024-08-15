@@ -1,6 +1,6 @@
 ﻿namespace T_Car_Shop.Core.Models.DataAccess
 {
-	public class UserCarEntity : BaseEntity
+	public class UserCarEntity
 	{
 		public Guid UserId { get; set; }
 		public UserEntity User { get; set; }

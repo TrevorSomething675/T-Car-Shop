@@ -204,13 +204,12 @@ namespace T_Car_Shop.DataAccess.Migrations
                 name: "UserCars",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
                     UserId = table.Column<Guid>(type: "uuid", nullable: false),
                     CarId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserCars", x => x.Id);
+                    table.PrimaryKey("PK_UserCars", x => new { x.UserId, x.CarId });
                     table.ForeignKey(
                         name: "FK_UserCars_Cars_CarId",
                         column: x => x.CarId,
@@ -288,11 +287,6 @@ namespace T_Car_Shop.DataAccess.Migrations
                 name: "IX_UserCars_CarId",
                 table: "UserCars",
                 column: "CarId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserCars_UserId",
-                table: "UserCars",
-                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserNotifications_NotificationId",

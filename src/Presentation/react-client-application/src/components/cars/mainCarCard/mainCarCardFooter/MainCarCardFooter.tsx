@@ -10,16 +10,20 @@ import axios from 'axios';
 
 const MainCarCardFooter:React.FC<{car: Car}> = ({car}) => {
     const [isFavorite, ChangeFavoriteState] = useState(car?.userCar[0]?.userId == toJS(store.user.id));
-    const userCar:UserCar = {
+    const userCar: UserCar = {
         id: null,
         carId: car.id,
         userId: toJS(store.user.id),
     }
     const source = axios.CancelToken.source();
-    if(isFavorite){
-        UserCarService.RemoveUserCar(userCar, source.token);
-    } else {
-        UserCarService.CreateUserCar(userCar, source.token);
+
+    const changeFavoriteState = () => {
+        ChangeFavoriteState(!isFavorite);
+        if(isFavorite){
+            UserCarService.RemoveUserCar(userCar, source.token);
+        } else {
+            UserCarService.CreateUserCar(userCar, source.token);
+        }
     }
 
     return <div className={styles.container}>
@@ -38,15 +42,19 @@ const MainCarCardFooter:React.FC<{car: Car}> = ({car}) => {
                 <SvgCartIcon />
                 Оставить заявку
             </button>
-            {!isFavorite ?
-                <button className={styles.favoriteButton} onClick={() => ChangeFavoriteState(!isFavorite)}>
+            {toJS(store.isAuth) && 
+            <>
+                {!isFavorite ?
+                <button className={styles.favoriteButton} onClick={changeFavoriteState}>
                     <SvgFavoriteIcon />
                     В избранное
                 </button> : 
-                <button className={styles.defaultButton} onClick={() => ChangeFavoriteState(!isFavorite)}>
+                <button className={styles.defaultButton} onClick={changeFavoriteState}>
                     <SvgFavoriteIcon />
                     В избранном
                 </button>
+                }
+            </>
             }
         </div>
     </div>

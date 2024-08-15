@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("T-Car-Shop.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d9fc8b2e527de0ff408885e0ae0bb3127453f8f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+33580b4d7d3d5aec56849c6b5fe287b5cda7f801")]
 [assembly: System.Reflection.AssemblyProductAttribute("T-Car-Shop.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("T-Car-Shop.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

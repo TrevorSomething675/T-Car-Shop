@@ -12,7 +12,7 @@ using T_Car_Shop.DataAccess.Contexts;
 namespace T_Car_Shop.DataAccess.Migrations
 {
     [DbContext(typeof(MainContext))]
-    [Migration("20240804225930_initial")]
+    [Migration("20240814172555_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -256,21 +256,15 @@ namespace T_Car_Shop.DataAccess.Migrations
 
             modelBuilder.Entity("T_Car_Shop.Core.Models.DataAccess.UserCarEntity", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
 
                     b.Property<Guid>("CarId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
+                    b.HasKey("UserId", "CarId");
 
                     b.HasIndex("CarId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("UserCars");
                 });

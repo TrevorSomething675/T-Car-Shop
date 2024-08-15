@@ -44,7 +44,6 @@ namespace T_Car_Shop.Web
 			services.AddScoped<IMinioService, MinioService>();
 			services.AddScoped<IUserService, UserService>();
 			services.AddScoped<IUserCarService, UserCarService>();
-			services.AddScoped<INotificationService, NotificationService>();
 			
             using (var context = services.BuildServiceProvider().GetRequiredService<MainContext>())
             {

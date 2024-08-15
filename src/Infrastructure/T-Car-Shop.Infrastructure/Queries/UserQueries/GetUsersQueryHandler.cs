@@ -18,16 +18,10 @@ namespace T_Car_Shop.Infrastructure.Queries.UserQueries
         }
         public async Task<Result<PagedData<User>>> Handle(GetUsersQuery request, CancellationToken cancellationToken)
         {
-            try
-            {
-                var specification = new UserSpectification();
-				var users = _mapper.Map<PagedData<User>>(await _userRepository.GelAllAsync(specification, cancellationToken));
-                return new Result<PagedData<User>>(users).Success();
-            }
-            catch (Exception ex) 
-            {
-                return new Result<PagedData<User>>().BadRequest(ex.Message);
-            }
+            var specification = new UserSpectification();
+			var users = _mapper.Map<PagedData<User>>(await _userRepository.GelAllAsync(specification, cancellationToken));
+
+            return new Result<PagedData<User>>(users).Success();
         }
     }
 }

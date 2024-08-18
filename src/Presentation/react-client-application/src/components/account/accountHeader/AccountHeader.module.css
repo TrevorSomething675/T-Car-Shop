@@ -3,4 +3,54 @@
     flex-direction: column;
     box-shadow: 0px 0px 5px var(--grey-color);
     border: 2px var(--grey-color) solid;
+    text-align: center;
+}
+
+.h2{
+    text-decoration: underline 0.1rem;
+    text-decoration-color: var(--blue-color);
+}
+
+.label{
+    text-wrap: nowrap;
+}
+
+.loginField{
+    margin: 0 0.5rem 0 0.5rem;
+    text-decoration: solid;
+}
+
+.passwordField{
+    margin: 0 0.5rem 0 0.5rem;
+}
+
+.dataContainer{
+    display: flex;
+    margin: 0 0 1rem 0;
+    justify-content: space-between;
+}
+
+.passwordDataItem{
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: var(--light-grey-color);
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    margin: 0 auto 0 auto;
+    box-shadow: 0px 0px 2px var(--grey-color);
+    border: 2px var(--grey-color) solid;
+    transition: .2s;
+}
+
+.passwordDataItem:hover{
+    background-color: var(--super-light-grey-color);
+    transition: .2s
+}
+
+.dataItem{
+    border-radius: 10px;
+    background-color: var(--light-grey-color);
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    margin: 0 auto 0 auto;
+    box-shadow: 0px 0px 2px var(--grey-color);
+    border: 2px var(--grey-color) solid;
 }

@@ -5,7 +5,7 @@ using T_Car_Shop.Core.Shared;
 using AutoMapper;
 using MediatR;
 
-namespace T_Car_Shop.Infrastructure.Commands.UserCarCommand
+namespace T_Car_Shop.Infrastructure.Commands.UserCarCommands
 {
 	public class CreateUserCarCommandHandler : IRequestHandler<CreateUserCarCommand, Result<UserCarResponse>>
 	{

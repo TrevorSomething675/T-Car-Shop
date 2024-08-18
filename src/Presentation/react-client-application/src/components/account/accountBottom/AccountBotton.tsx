@@ -20,7 +20,8 @@ const AccountBotton = () => {
 
     return <div className={styles.container}>
         <div>
-            goisdfj
+            <button className={styles.changeAccountDataButton}>Изменить пароль</button>
+            <button className={styles.changeAccountDataButton}>Изменить логин</button>
         </div>
         <button className={styles.exitButton} onClick={logout}>
             Выйти

@@ -22,5 +22,5 @@ class CarService {
         return response;
     }
 }
-    
+
 export default CarService;

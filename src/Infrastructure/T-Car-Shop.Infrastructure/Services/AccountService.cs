@@ -8,13 +8,13 @@ using T_Car_Shop.Core.Models.Web.Auth;
 
 namespace T_Car_Shop.Infrastructure.Services
 {
-    public class UserService : IUserService
+    public class AccountService : IAccountService
 	{
 		private readonly IMapper _mapper;
 		private readonly ITokenService _tokenService;
 		private readonly IUserRepository _userRepository;
 		private readonly IRoleRepository _rolesRepository;
-		public UserService(IUserRepository userRepository, IRoleRepository rolesRepository, 
+		public AccountService(IUserRepository userRepository, IRoleRepository rolesRepository, 
 			IMapper mapper, ITokenService tokenService)
 		{
 			_rolesRepository = rolesRepository;

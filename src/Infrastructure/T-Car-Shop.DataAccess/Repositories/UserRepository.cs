@@ -5,6 +5,7 @@ using T_Car_Shop.DataAccess.Contexts;
 using Microsoft.EntityFrameworkCore;
 using T_Car_Shop.Core.Extensions;
 using T_Car_Shop.Core.Shared;
+using T_Car_Shop.Core.Exceptions.DomainExceptions;
 
 namespace T_Car_Shop.DataAccess.Repositories
 {
@@ -63,5 +64,22 @@ namespace T_Car_Shop.DataAccess.Repositories
                 return user;
             }
         }
+
+		public async Task<UserEntity> UpdateAsync(UserEntity user, CancellationToken cancellationToken = default)
+		{
+            await using(var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))
+            {
+                var userEntity = await context.Users
+                    .FirstOrDefaultAsync(u => u.Id == user.Id, cancellationToken);
+
+                if(userEntity == null)
+					throw new NotFoundException("User not found!");
+
+                context.Entry(userEntity).CurrentValues.SetValues(user);
+				await context.SaveChangesAsync(cancellationToken);
+
+                return userEntity;
+            }
+		}
 	}
 }

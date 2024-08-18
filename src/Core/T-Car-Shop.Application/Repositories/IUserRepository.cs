@@ -10,5 +10,6 @@ namespace T_Car_Shop.Application.Repositories
         Task<UserEntity> GetByNameAsync(string name, CancellationToken cancellationToken = default);
 		Task<PagedData<UserEntity>> GelAllAsync(UserSpectification spectification, CancellationToken cancellationToken = default);
         Task<UserEntity> CreateAsync(UserEntity user, CancellationToken cancellationToken = default);
+        Task<UserEntity> UpdateAsync(UserEntity user, CancellationToken cancellationToken = default);
     }
 }

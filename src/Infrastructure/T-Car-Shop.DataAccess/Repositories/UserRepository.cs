@@ -64,7 +64,6 @@ namespace T_Car_Shop.DataAccess.Repositories
                 return user;
             }
         }
-
 		public async Task<UserEntity> UpdateAsync(UserEntity user, CancellationToken cancellationToken = default)
 		{
             await using(var context = await _dbContextFactory.CreateDbContextAsync(cancellationToken))

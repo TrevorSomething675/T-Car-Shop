@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Repositories\\T-Car-Shop\\src\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj": {}
+    "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj": {}
   },
   "projects": {
-    "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj": {
+    "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj",
         "projectName": "T-Car-Shop.Application",
-        "projectPath": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj",
-        "packagesPath": "C:\\Users\\Win10Pro\\.nuget\\packages\\",
-        "outputPath": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\obj\\",
+        "projectPath": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj",
+        "packagesPath": "C:\\Users\\Jija\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Win10Pro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jija\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,15 +22,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj": {
-                "projectPath": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj"
+              "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj": {
+                "projectPath": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj"
               }
             }
           }
@@ -65,21 +64,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj": {
+    "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj",
         "projectName": "T-Car-Shop.Core",
-        "projectPath": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj",
-        "packagesPath": "C:\\Users\\Win10Pro\\.nuget\\packages\\",
-        "outputPath": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\obj\\",
+        "projectPath": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj",
+        "packagesPath": "C:\\Users\\Jija\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Win10Pro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jija\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -87,7 +86,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -140,21 +138,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj": {
+    "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj",
         "projectName": "T-Car-Shop.DataAccess",
-        "projectPath": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Win10Pro\\.nuget\\packages\\",
-        "outputPath": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Jija\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Win10Pro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jija\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -162,15 +160,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj": {
-                "projectPath": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj"
+              "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj": {
+                "projectPath": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj"
               }
             }
           }
@@ -231,21 +228,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj": {
+    "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj",
         "projectName": "T-Car-Shop.Infrastructure",
-        "projectPath": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Win10Pro\\.nuget\\packages\\",
-        "outputPath": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Jija\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Win10Pro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jija\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -253,18 +250,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj": {
-                "projectPath": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj"
+              "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj": {
+                "projectPath": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj"
               },
-              "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj": {
-                "projectPath": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj"
+              "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj"
               }
             }
           }
@@ -321,21 +317,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Repositories\\T-Car-Shop\\src\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj": {
+    "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Repositories\\T-Car-Shop\\src\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj",
+        "projectUniqueName": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj",
         "projectName": "T-Car-Shop.Web",
-        "projectPath": "E:\\Repositories\\T-Car-Shop\\src\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj",
-        "packagesPath": "C:\\Users\\Win10Pro\\.nuget\\packages\\",
-        "outputPath": "E:\\Repositories\\T-Car-Shop\\src\\Presentation\\T-Car-Shop.Web\\obj\\",
+        "projectPath": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj",
+        "packagesPath": "C:\\Users\\Jija\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Presentation\\T-Car-Shop.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Win10Pro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jija\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -343,24 +339,23 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj": {
-                "projectPath": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj"
+              "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj": {
+                "projectPath": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj"
               },
-              "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj": {
-                "projectPath": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj"
+              "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj": {
+                "projectPath": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj"
               },
-              "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj": {
-                "projectPath": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj"
+              "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj"
               },
-              "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj": {
-                "projectPath": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj"
+              "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj"
               }
             }
           }
@@ -422,7 +417,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

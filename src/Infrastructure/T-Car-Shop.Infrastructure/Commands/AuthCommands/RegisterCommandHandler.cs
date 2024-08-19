@@ -20,7 +20,7 @@ namespace T_Car_Shop.Infrastructure.Commands.AuthCommands
 		{
 			try
 			{
-				var tokens = await _accountService.Register(_mapper.Map<User>(request.FormData));
+				var tokens = await _accountService.RegisterAsync(_mapper.Map<User>(request.FormData));
 				return new Result<AuthModel>(tokens).Success();
 			}
 			catch (Exception ex) 

@@ -18,7 +18,7 @@ namespace T_Car_Shop.Infrastructure.Commands.AuthCommands
 		}
 		public async Task<Result<AuthModel>> Handle(LoginCommand request, CancellationToken cancellationToken)
 		{
-			var authModel = await _accountService.Login(_mapper.Map<User>(request.FormData), cancellationToken);
+			var authModel = await _accountService.LoginAsync(_mapper.Map<User>(request.FormData), cancellationToken);
 			return new Result<AuthModel>(authModel).Success();
 		}
 	}

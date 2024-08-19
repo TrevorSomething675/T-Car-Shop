@@ -5,6 +5,7 @@ using T_Car_Shop.Core.Models.DataAccess;
 using T_Car_Shop.Application.Services;
 using AutoMapper;
 using T_Car_Shop.Core.Models.Web.Auth;
+using T_Car_Shop.Core.Models.Web.Account;
 
 namespace T_Car_Shop.Infrastructure.Services
 {
@@ -22,7 +23,7 @@ namespace T_Car_Shop.Infrastructure.Services
 			_tokenService = tokenService;
 			_mapper = mapper;
 		}
-		public async Task<AuthModel> Login(User user, CancellationToken cancellationToken = default)
+		public async Task<AuthModel> LoginAsync(User user, CancellationToken cancellationToken = default)
 		{
 			var dbUser = _mapper.Map<User>(await _userRepository.GetByNameAsync(user.Name));
 			if (dbUser == null)
@@ -37,7 +38,7 @@ namespace T_Car_Shop.Infrastructure.Services
 			}
 			throw new Exception("Wrong password");
         }
-		public async Task<AuthModel> Register(User user, CancellationToken cancellationToken = default)
+		public async Task<AuthModel> RegisterAsync(User user, CancellationToken cancellationToken = default)
 		{
 			var role = _mapper.Map<Role>(await _rolesRepository.GetRoleByName("User"));
 			user.Role = role;
@@ -49,5 +50,16 @@ namespace T_Car_Shop.Infrastructure.Services
 
 			return new AuthModel(accessToken, refreshToken, createdUser);
 		}
-	}
+        public async Task<User> UpdateAccountDataAsync(User user, CancellationToken cancellationToken = default)
+        {
+			var dbUser = await _userRepository.GetByIdAsync(user.Id);
+			if(user.Name != null)
+				dbUser.Name = user.Name;
+			if(user.Password != null)
+				dbUser.Password = user.Password;
+
+			var updatedUser = await _userRepository.UpdateAsync(dbUser, cancellationToken);
+			return _mapper.Map<User>(updatedUser);
+        }
+    }
 }

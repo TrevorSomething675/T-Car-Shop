@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj": {}
+    "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj": {
+    "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj",
+        "projectUniqueName": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj",
         "projectName": "T-Car-Shop.Core",
-        "projectPath": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj",
-        "packagesPath": "C:\\Users\\Jija\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jija\\Desktop\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\obj\\",
+        "projectPath": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj",
+        "packagesPath": "C:\\Users\\Win10Pro\\.nuget\\packages\\",
+        "outputPath": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jija\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Win10Pro\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -74,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

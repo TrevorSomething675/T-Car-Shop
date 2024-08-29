@@ -1,0 +1,12 @@
+E:\Repositories\T-Car-Shop\src\Domain\T-Car-Shop.Domain\bin\Debug\net8.0\T-Car-Shop.Domain.deps.json
+E:\Repositories\T-Car-Shop\src\Domain\T-Car-Shop.Domain\bin\Debug\net8.0\T-Car-Shop.Domain.dll
+E:\Repositories\T-Car-Shop\src\Domain\T-Car-Shop.Domain\bin\Debug\net8.0\T-Car-Shop.Domain.pdb
+E:\Repositories\T-Car-Shop\src\Domain\T-Car-Shop.Domain\obj\Debug\net8.0\T-Car-Shop.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Repositories\T-Car-Shop\src\Domain\T-Car-Shop.Domain\obj\Debug\net8.0\T-Car-Shop.Domain.AssemblyInfoInputs.cache
+E:\Repositories\T-Car-Shop\src\Domain\T-Car-Shop.Domain\obj\Debug\net8.0\T-Car-Shop.Domain.AssemblyInfo.cs
+E:\Repositories\T-Car-Shop\src\Domain\T-Car-Shop.Domain\obj\Debug\net8.0\T-Car-Shop.Domain.csproj.CoreCompileInputs.cache
+E:\Repositories\T-Car-Shop\src\Domain\T-Car-Shop.Domain\obj\Debug\net8.0\T-Car-Shop.Domain.sourcelink.json
+E:\Repositories\T-Car-Shop\src\Domain\T-Car-Shop.Domain\obj\Debug\net8.0\T-Car-Shop.Domain.dll
+E:\Repositories\T-Car-Shop\src\Domain\T-Car-Shop.Domain\obj\Debug\net8.0\refint\T-Car-Shop.Domain.dll
+E:\Repositories\T-Car-Shop\src\Domain\T-Car-Shop.Domain\obj\Debug\net8.0\T-Car-Shop.Domain.pdb
+E:\Repositories\T-Car-Shop\src\Domain\T-Car-Shop.Domain\obj\Debug\net8.0\ref\T-Car-Shop.Domain.dll

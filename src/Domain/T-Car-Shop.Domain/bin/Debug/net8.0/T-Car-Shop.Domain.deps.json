@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "T-Car-Shop.Domain/1.0.0": {
+        "runtime": {
+          "T-Car-Shop.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "T-Car-Shop.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

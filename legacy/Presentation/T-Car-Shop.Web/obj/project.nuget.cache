@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< Updated upstream:src/Presentation/T-Car-Shop.Web/obj/project.nuget.cache
-  "dgSpecHash": "ZLIZK0q99Is=",
-  "success": false,
-  "projectFilePath": "E:\\Repositories\\T-Car-Shop\\src\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj",
-=======
-  "dgSpecHash": "yLQ/pMRCcD4=",
-  "success": false,
+  "dgSpecHash": "v72t/WKvMKY=",
+  "success": true,
   "projectFilePath": "E:\\Repositories\\T-Car-Shop\\legacy\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj",
->>>>>>> Stashed changes:legacy/Presentation/T-Car-Shop.Web/obj/project.nuget.cache
   "expectedPackageFiles": [
     "C:\\Users\\Win10Pro\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Win10Pro\\.nuget\\packages\\communitytoolkit.highperformance\\8.2.2\\communitytoolkit.highperformance.8.2.2.nupkg.sha512",
@@ -74,6 +68,8 @@
     "C:\\Users\\Win10Pro\\.nuget\\packages\\minio.aspnetcore\\6.0.1\\minio.aspnetcore.6.0.1.nupkg.sha512",
     "C:\\Users\\Win10Pro\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\Win10Pro\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Win10Pro\\.nuget\\packages\\npgsql\\8.0.3\\npgsql.8.0.3.nupkg.sha512",
+    "C:\\Users\\Win10Pro\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.4\\npgsql.entityframeworkcore.postgresql.8.0.4.nupkg.sha512",
     "C:\\Users\\Win10Pro\\.nuget\\packages\\swashbuckle.aspnetcore\\6.6.2\\swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
     "C:\\Users\\Win10Pro\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.6.2\\swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
     "C:\\Users\\Win10Pro\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.6.2\\swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",
@@ -100,31 +96,5 @@
     "C:\\Users\\Win10Pro\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512",
     "C:\\Users\\Win10Pro\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512"
   ],
-  "logs": [
-    {
-<<<<<<< Updated upstream:src/Presentation/T-Car-Shop.Web/obj/project.nuget.cache
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Не удалось найти проект \"E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj\". Убедитесь, что ссылка на проект действительна и файл проекта существует.",
-      "libraryId": "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Не удалось найти проект \"E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj\". Убедитесь, что ссылка на проект действительна и файл проекта существует.",
-      "libraryId": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj",
-=======
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Не удалось найти сведения о проекте для \"E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj\". Если вы используете Visual Studio, причина может заключаться в том, что проект выгружен или не является частью текущего решения. В этом случае выполните восстановление из командной строки. В противном случае причина может быть связана с тем, что файл проекта является недопустимым или отсутствуют целевые объекты, необходимые для восстановления.",
-      "libraryId": "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj",
->>>>>>> Stashed changes:legacy/Presentation/T-Car-Shop.Web/obj/project.nuget.cache
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }

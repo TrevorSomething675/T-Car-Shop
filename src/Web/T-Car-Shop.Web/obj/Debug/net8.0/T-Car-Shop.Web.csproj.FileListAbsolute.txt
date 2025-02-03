@@ -104,3 +104,5 @@ E:\Repositories\T-Car-Shop\src\Web\T-Car-Shop.Web\bin\Debug\net8.0\ru\Microsoft.
 E:\Repositories\T-Car-Shop\src\Web\T-Car-Shop.Web\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\Repositories\T-Car-Shop\src\Web\T-Car-Shop.Web\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\Repositories\T-Car-Shop\src\Web\T-Car-Shop.Web\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Repositories\T-Car-Shop\src\Web\T-Car-Shop.Web\bin\Debug\net8.0\MediatR.dll
+E:\Repositories\T-Car-Shop\src\Web\T-Car-Shop.Web\bin\Debug\net8.0\MediatR.Contracts.dll

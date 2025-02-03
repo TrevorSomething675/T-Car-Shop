@@ -4,6 +4,8 @@ using T_Car_Shop.Infrastructure.Repositories;
 using T_Car_Shop.Infrastructure.Services;
 using T_Car_Shop.Web.Configurations;
 using T_Car_Shop.Infrastructure;
+using System.Reflection;
+using T_Car_Shop.Application;
 
 namespace T_Car_Shop.Web
 {
@@ -11,6 +13,7 @@ namespace T_Car_Shop.Web
 	{
 		public async void ConfigureServices(IServiceCollection services)
 		{
+			services.AddMediatR(config => config.RegisterServicesFromAssemblies(Assembly.GetAssembly(typeof(AssemblyMarker))));
 			services.AddAppOptions();
 			services.AddControllers();
 			services.AddScoped<ICarService, CarService>();

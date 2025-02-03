@@ -5,11 +5,10 @@ using T_Car_Shop.Core.Models.DataAccess;
 using T_Car_Shop.Application.Services;
 using AutoMapper;
 using T_Car_Shop.Core.Models.Web.Auth;
-using T_Car_Shop.Core.Models.Web.Account;
 
 namespace T_Car_Shop.Infrastructure.Services
 {
-    public class AccountService : IAccountService
+	public class AccountService : IAccountService
 	{
 		private readonly IMapper _mapper;
 		private readonly ITokenService _tokenService;

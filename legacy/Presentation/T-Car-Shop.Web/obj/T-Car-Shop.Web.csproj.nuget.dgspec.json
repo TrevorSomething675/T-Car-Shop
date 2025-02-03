@@ -4,17 +4,75 @@
     "E:\\Repositories\\T-Car-Shop\\legacy\\Presentation\\T-Car-Shop.Web\\T-Car-Shop.Web.csproj": {}
   },
   "projects": {
-<<<<<<< Updated upstream:src/Presentation/T-Car-Shop.Web/obj/T-Car-Shop.Web.csproj.nuget.dgspec.json
-    "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj": {
+    "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj",
-=======
+        "projectUniqueName": "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj",
+        "projectName": "T-Car-Shop.Application",
+        "projectPath": "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj",
+        "packagesPath": "C:\\Users\\Win10Pro\\.nuget\\packages\\",
+        "outputPath": "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Win10Pro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj": {
+                "projectPath": "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj": {
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj",
->>>>>>> Stashed changes:legacy/Presentation/T-Car-Shop.Web/obj/T-Car-Shop.Web.csproj.nuget.dgspec.json
         "projectName": "T-Car-Shop.Core",
         "projectPath": "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj",
         "packagesPath": "C:\\Users\\Win10Pro\\.nuget\\packages\\",
@@ -86,9 +144,6 @@
         }
       }
     },
-<<<<<<< Updated upstream:src/Presentation/T-Car-Shop.Web/obj/T-Car-Shop.Web.csproj.nuget.dgspec.json
-    "E:\\Repositories\\T-Car-Shop\\src\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj": {
-=======
     "E:\\Repositories\\T-Car-Shop\\legacy\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -181,7 +236,6 @@
       }
     },
     "E:\\Repositories\\T-Car-Shop\\legacy\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj": {
->>>>>>> Stashed changes:legacy/Presentation/T-Car-Shop.Web/obj/T-Car-Shop.Web.csproj.nuget.dgspec.json
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "E:\\Repositories\\T-Car-Shop\\legacy\\Infrastructure\\T-Car-Shop.Infrastructure\\T-Car-Shop.Infrastructure.csproj",
@@ -208,9 +262,6 @@
             "projectReferences": {
               "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj": {
                 "projectPath": "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj"
-              },
-              "E:\\Repositories\\T-Car-Shop\\legacy\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj": {
-                "projectPath": "E:\\Repositories\\T-Car-Shop\\legacy\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj"
               }
             }
           }
@@ -298,9 +349,6 @@
             "projectReferences": {
               "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj": {
                 "projectPath": "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj"
-              },
-              "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj": {
-                "projectPath": "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj"
               },
               "E:\\Repositories\\T-Car-Shop\\legacy\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj": {
                 "projectPath": "E:\\Repositories\\T-Car-Shop\\legacy\\Infrastructure\\T-Car-Shop.DataAccess\\T-Car-Shop.DataAccess.csproj"

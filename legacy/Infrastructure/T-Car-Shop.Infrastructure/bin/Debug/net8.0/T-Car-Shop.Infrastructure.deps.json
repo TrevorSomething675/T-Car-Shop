@@ -13,8 +13,7 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.7",
           "Minio": "6.0.3",
           "Minio.AspNetCore": "6.0.1",
-          "T-Car-Shop.Application": "1.0.0",
-          "T-Car-Shop.DataAccess": "1.0.0"
+          "T-Car-Shop.Application": "1.0.0"
         },
         "runtime": {
           "T-Car-Shop.Infrastructure.dll": {}
@@ -280,18 +279,6 @@
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/8.0.6": {},
-      "Microsoft.EntityFrameworkCore.Relational/8.0.4": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "8.0.6",
-          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0"
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll": {
-            "assemblyVersion": "8.0.4.0",
-            "fileVersion": "8.0.424.16902"
-          }
-        }
-      },
       "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "8.0.0"
@@ -516,31 +503,6 @@
           "lib/netstandard1.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "9.0.0.0",
             "fileVersion": "9.0.1.19813"
-          }
-        }
-      },
-      "Npgsql/8.0.3": {
-        "dependencies": {
-          "Microsoft.Extensions.Logging.Abstractions": "8.0.0"
-        },
-        "runtime": {
-          "lib/net8.0/Npgsql.dll": {
-            "assemblyVersion": "8.0.3.0",
-            "fileVersion": "8.0.3.0"
-          }
-        }
-      },
-      "Npgsql.EntityFrameworkCore.PostgreSQL/8.0.4": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "8.0.6",
-          "Microsoft.EntityFrameworkCore.Abstractions": "8.0.6",
-          "Microsoft.EntityFrameworkCore.Relational": "8.0.4",
-          "Npgsql": "8.0.3"
-        },
-        "runtime": {
-          "lib/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
-            "assemblyVersion": "8.0.4.0",
-            "fileVersion": "8.0.4.0"
           }
         }
       },
@@ -899,17 +861,6 @@
         "runtime": {
           "T-Car-Shop.Core.dll": {}
         }
-      },
-      "T-Car-Shop.DataAccess/1.0.0": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "8.0.6",
-          "Microsoft.EntityFrameworkCore.Abstractions": "8.0.6",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.4",
-          "T-Car-Shop.Application": "1.0.0"
-        },
-        "runtime": {
-          "T-Car-Shop.DataAccess.dll": {}
-        }
       }
     }
   },
@@ -1122,13 +1073,6 @@
       "path": "microsoft.entityframeworkcore.analyzers/8.0.6",
       "hashPath": "microsoft.entityframeworkcore.analyzers.8.0.6.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Relational/8.0.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-aWLT6e9a8oMzXgF0YQpYYa3mDeU+yb2UQSQ+RrIgyGgSpzPfSKgpA7v2kOVDuZr2AQ6NNAlWPaBG7wZuKQI96w==",
-      "path": "microsoft.entityframeworkcore.relational/8.0.4",
-      "hashPath": "microsoft.entityframeworkcore.relational.8.0.4.nupkg.sha512"
-    },
     "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1317,20 +1261,6 @@
       "sha512": "sha512-U82mHQSKaIk+lpSVCbWYKNavmNH1i5xrExDEquU1i6I5pV6UMOqRnJRSlKO3cMPfcpp0RgDY+8jUXHdQ4IfXvw==",
       "path": "newtonsoft.json/9.0.1",
       "hashPath": "newtonsoft.json.9.0.1.nupkg.sha512"
-    },
-    "Npgsql/8.0.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-6WEmzsQJCZAlUG1pThKg/RmeF6V+I0DmBBBE/8YzpRtEzhyZzKcK7ulMANDm5CkxrALBEC8H+5plxHWtIL7xnA==",
-      "path": "npgsql/8.0.3",
-      "hashPath": "npgsql.8.0.3.nupkg.sha512"
-    },
-    "Npgsql.EntityFrameworkCore.PostgreSQL/8.0.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-/hHd9MqTRVDgIpsToCcxMDxZqla0HAQACiITkq1+L9J2hmHKV6lBAPlauF+dlNSfHpus7rrljWx4nAanKD6qAw==",
-      "path": "npgsql.entityframeworkcore.postgresql/8.0.4",
-      "hashPath": "npgsql.entityframeworkcore.postgresql.8.0.4.nupkg.sha512"
     },
     "runtime.native.System/4.0.0": {
       "type": "package",
@@ -1625,11 +1555,6 @@
       "sha512": ""
     },
     "T-Car-Shop.Core/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "T-Car-Shop.DataAccess/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -27,9 +27,9 @@ namespace T_Car_Shop.Infrastructure.Commands.AccountCommands
 				throw new ValidationException(validationResult.Errors.ToList());
 
 			var user = _mapper.Map<User>(request.AccountUserData);
-			var updatedUser = await _accountService.UpdateAccountDataAsync(user, cancellationToken);
+			//var updatedUser = await _accountService.UpdateAccountDataAsync(user, cancellationToken);
 
-			return new Result<User>(updatedUser);
+			return new Result<User>(user);
 		}
 	}
 }

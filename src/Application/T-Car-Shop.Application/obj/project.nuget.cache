@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ARmajqT6G74=",
+  "dgSpecHash": "JOLXALEUNk0=",
   "success": true,
   "projectFilePath": "E:\\Repositories\\T-Car-Shop\\src\\Application\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Win10Pro\\.nuget\\packages\\mediatr\\12.4.0\\mediatr.12.4.0.nupkg.sha512",
+    "C:\\Users\\Win10Pro\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Win10Pro\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.8\\microsoft.entityframeworkcore.8.0.8.nupkg.sha512",
     "C:\\Users\\Win10Pro\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.8\\microsoft.entityframeworkcore.abstractions.8.0.8.nupkg.sha512",
     "C:\\Users\\Win10Pro\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.8\\microsoft.entityframeworkcore.analyzers.8.0.8.nupkg.sha512",

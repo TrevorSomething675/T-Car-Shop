@@ -4347,11 +4347,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj",
+      "projectUniqueName": "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj",
       "projectName": "T-Car-Shop.Application",
-      "projectPath": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj",
+      "projectPath": "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Application\\T-Car-Shop.Application.csproj",
       "packagesPath": "C:\\Users\\Win10Pro\\.nuget\\packages\\",
-      "outputPath": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Application\\obj\\",
+      "outputPath": "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Win10Pro\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4369,8 +4369,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj": {
-              "projectPath": "E:\\Repositories\\T-Car-Shop\\src\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj"
+            "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj": {
+              "projectPath": "E:\\Repositories\\T-Car-Shop\\legacy\\Core\\T-Car-Shop.Core\\T-Car-Shop.Core.csproj"
             }
           }
         }

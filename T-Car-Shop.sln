@@ -21,13 +21,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{48AD9373-0D8F-4A25-8930-670C07CA206C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T-Car-Shop.Application", "src\Application\T-Car-Shop.Application\T-Car-Shop.Application.csproj", "{85FFA0CF-DFCD-42A7-B09E-7473820E5106}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "T-Car-Shop.Application", "src\Application\T-Car-Shop.Application\T-Car-Shop.Application.csproj", "{85FFA0CF-DFCD-42A7-B09E-7473820E5106}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T-Car-Shop.Web", "src\Web\T-Car-Shop.Web\T-Car-Shop.Web.csproj", "{FED08D69-1E4B-4813-8574-D2C2BD39EB57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "T-Car-Shop.Web", "src\Web\T-Car-Shop.Web\T-Car-Shop.Web.csproj", "{FED08D69-1E4B-4813-8574-D2C2BD39EB57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T-Car-Shop.Domain", "src\Domain\T-Car-Shop.Domain\T-Car-Shop.Domain.csproj", "{E7500C16-7C69-41E8-9E8F-040B0A83318E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "T-Car-Shop.Domain", "src\Domain\T-Car-Shop.Domain\T-Car-Shop.Domain.csproj", "{E7500C16-7C69-41E8-9E8F-040B0A83318E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T-Car-Shop.Infrastructure", "src\Infrastructure\T-Car-Shop.Infrastructure\T-Car-Shop.Infrastructure.csproj", "{C4030F6C-CBDF-4337-AAEE-140F795AC4AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "T-Car-Shop.Infrastructure", "src\Infrastructure\T-Car-Shop.Infrastructure\T-Car-Shop.Infrastructure.csproj", "{C4030F6C-CBDF-4337-AAEE-140F795AC4AB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "T-Car-Shop.Core", "legacy\Core\T-Car-Shop.Core\T-Car-Shop.Core.csproj", "{7A62DBAE-2B1A-4D55-88D5-17432F114BA0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "T-Car-Shop.Application", "legacy\Core\T-Car-Shop.Application\T-Car-Shop.Application.csproj", "{9CE1BAC0-F80A-4DF7-ADEB-0786F5948075}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "T-Car-Shop.Infrastructure", "legacy\Infrastructure\T-Car-Shop.Infrastructure\T-Car-Shop.Infrastructure.csproj", "{7E6AC54C-31D7-4297-8CA7-EC25FCBF9E94}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "T-Car-Shop.DataAccess", "legacy\Infrastructure\T-Car-Shop.DataAccess\T-Car-Shop.DataAccess.csproj", "{1249075D-0AA3-43A9-AA49-30D68948B3B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "T-Car-Shop.Web", "legacy\Presentation\T-Car-Shop.Web\T-Car-Shop.Web.csproj", "{2FF9A936-7D67-4531-BB0B-EB0B6D8CBCF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +61,26 @@ Global
 		{C4030F6C-CBDF-4337-AAEE-140F795AC4AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4030F6C-CBDF-4337-AAEE-140F795AC4AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4030F6C-CBDF-4337-AAEE-140F795AC4AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A62DBAE-2B1A-4D55-88D5-17432F114BA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A62DBAE-2B1A-4D55-88D5-17432F114BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A62DBAE-2B1A-4D55-88D5-17432F114BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A62DBAE-2B1A-4D55-88D5-17432F114BA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CE1BAC0-F80A-4DF7-ADEB-0786F5948075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CE1BAC0-F80A-4DF7-ADEB-0786F5948075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CE1BAC0-F80A-4DF7-ADEB-0786F5948075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CE1BAC0-F80A-4DF7-ADEB-0786F5948075}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E6AC54C-31D7-4297-8CA7-EC25FCBF9E94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E6AC54C-31D7-4297-8CA7-EC25FCBF9E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E6AC54C-31D7-4297-8CA7-EC25FCBF9E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E6AC54C-31D7-4297-8CA7-EC25FCBF9E94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1249075D-0AA3-43A9-AA49-30D68948B3B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1249075D-0AA3-43A9-AA49-30D68948B3B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1249075D-0AA3-43A9-AA49-30D68948B3B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1249075D-0AA3-43A9-AA49-30D68948B3B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FF9A936-7D67-4531-BB0B-EB0B6D8CBCF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FF9A936-7D67-4531-BB0B-EB0B6D8CBCF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FF9A936-7D67-4531-BB0B-EB0B6D8CBCF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FF9A936-7D67-4531-BB0B-EB0B6D8CBCF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +97,11 @@ Global
 		{FED08D69-1E4B-4813-8574-D2C2BD39EB57} = {48AD9373-0D8F-4A25-8930-670C07CA206C}
 		{E7500C16-7C69-41E8-9E8F-040B0A83318E} = {7A09B3B1-A97E-4E77-AD3C-D9FB5D2F87F3}
 		{C4030F6C-CBDF-4337-AAEE-140F795AC4AB} = {AF16036E-EBA5-40A8-B6B4-4D901A7E9504}
+		{7A62DBAE-2B1A-4D55-88D5-17432F114BA0} = {A5D61A28-FEC0-4315-96FE-1B0C61EC31C9}
+		{9CE1BAC0-F80A-4DF7-ADEB-0786F5948075} = {A5D61A28-FEC0-4315-96FE-1B0C61EC31C9}
+		{7E6AC54C-31D7-4297-8CA7-EC25FCBF9E94} = {83315DD6-F61F-4CE3-9762-AB84CC1E7505}
+		{1249075D-0AA3-43A9-AA49-30D68948B3B6} = {83315DD6-F61F-4CE3-9762-AB84CC1E7505}
+		{2FF9A936-7D67-4531-BB0B-EB0B6D8CBCF2} = {156D31A4-8907-4E35-A25A-45A8641D87BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {814AFE13-8D0A-4FE7-A055-B7F090A28900}

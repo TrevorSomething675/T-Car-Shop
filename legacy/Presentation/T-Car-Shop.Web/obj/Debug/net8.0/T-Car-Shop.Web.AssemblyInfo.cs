@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("T-Car-Shop.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< Updated upstream:src/Presentation/T-Car-Shop.Web/obj/Debug/net8.0/T-Car-Shop.Web.AssemblyInfo.cs
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06f6e7502f4f43c3ff88b78962c6132043b2a6e2")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+067088a3a70268e01601a54dbd98a8e7423b0d27")]
->>>>>>> Stashed changes:legacy/Presentation/T-Car-Shop.Web/obj/Debug/net8.0/T-Car-Shop.Web.AssemblyInfo.cs
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d704ccf5f13c99c9b37afc9457a975eaae96bf25")]
 [assembly: System.Reflection.AssemblyProductAttribute("T-Car-Shop.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("T-Car-Shop.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
